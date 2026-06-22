@@ -1,0 +1,89 @@
+{
+  "generated_utc": "2026-06-22T22:26:43+00:00",
+  "source": {
+    "results_by_station": "https://www.elections.am/File/ElectionResult?electionId=28826",
+    "polling_station_registry": "https://www.elections.am/File/SubDistrictsToExcel?electionId=28826",
+    "authority": "Central Electoral Commission of the Republic of Armenia (elections.am)",
+    "election": "National Assembly of Armenia — ordinary election, 7 June 2026",
+    "boundaries": "geoBoundaries ARM ADM1 (CC-BY 4.0)"
+  },
+  "marzer": {
+    "AM-ER": {
+      "en": "Yerevan",
+      "fr": "Erevan",
+      "hy": "Երևան"
+    },
+    "AM-AG": {
+      "en": "Aragatsotn",
+      "fr": "Aragatsotn",
+      "hy": "Արագածոտն"
+    },
+    "AM-AR": {
+      "en": "Ararat",
+      "fr": "Ararat",
+      "hy": "Արարատ"
+    },
+    "AM-AV": {
+      "en": "Armavir",
+      "fr": "Armavir",
+      "hy": "Արմավիր"
+    },
+    "AM-GR": {
+      "en": "Gegharkunik",
+      "fr": "Guégharkounik",
+      "hy": "Գեղարքունիք"
+    },
+    "AM-LO": {
+      "en": "Lori",
+      "fr": "Lorri",
+      "hy": "Լոռի"
+    },
+    "AM-KT": {
+      "en": "Kotayk",
+      "fr": "Kotayk",
+      "hy": "Կոտայք"
+    },
+    "AM-SH": {
+      "en": "Shirak",
+      "fr": "Chirak",
+      "hy": "Շիրակ"
+    },
+    "AM-SU": {
+      "en": "Syunik",
+      "fr": "Syunik",
+      "hy": "Սյունիք"
+    },
+    "AM-VD": {
+      "en": "Vayots Dzor",
+      "fr": "Vayots Dzor",
+      "hy": "Վայոց ձոր"
+    },
+    "AM-TV": {
+      "en": "Tavush",
+      "fr": "Tavouch",
+      "hy": "Տավուշ"
+    }
+  },
+  "integrity": {
+    "stations_parsed": 2005,
+    "national_valid_votes": 1456351,
+    "national_ballots_cast": 1476359,
+    "civil_contract_votes": 726489,
+    "strong_armenia_votes": 339993,
+    "armenia_alliance_votes": 144975
+  },
+  "files": {
+    "stations": [
+      "data/clean/stations.parquet",
+      "data/clean/stations.csv"
+    ],
+    "communities": [
+      "data/clean/communities.parquet",
+      "data/clean/communities.csv"
+    ],
+    "marz": [
+      "data/clean/marz.parquet",
+      "data/clean/marz.csv"
+    ]
+  }
+}

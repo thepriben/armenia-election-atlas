@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Armenia 2026 Election Atlas</title>
+  <meta name="description" content="A fun, sharable geographic study of Armenia's 7 June 2026 parliamentary election — winner, margins, party maps and electoral forensics from official CEC data." />
+  <meta property="og:title" content="Armenia 2026 Election Atlas" />
+  <meta property="og:description" content="The geography of Armenia's 2026 parliamentary election — explore maps, parties and 2,005 polling stations." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Armenian:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-theme="dark">
+  <header class="topbar">
+    <a class="brand" href="#top" data-i18n="site_title">Armenia 2026 Election Atlas</a>
+    <nav class="mainnav" id="mainnav">
+      <a href="#overview" data-i18n="nav_overview">Overview</a>
+      <a href="#map" data-i18n="nav_map">Map</a>
+      <a href="#explore" data-i18n="nav_explore">Zoom</a>
+      <a href="#parties" data-i18n="nav_parties">Parties</a>
+      <a href="#context" data-i18n="nav_context">Context</a>
+      <a href="#forensics" data-i18n="nav_forensics">Forensics</a>
+      <a href="#data" data-i18n="nav_data">Data</a>
+      <a href="#about" data-i18n="nav_about">About</a>
+    </nav>
+    <div class="topctrl">
+      <div class="langswitch" id="langswitch" role="group" aria-label="Language"></div>
+      <button class="iconbtn" id="themebtn" title="Theme" aria-label="Toggle theme">◐</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-bg" id="heroMap" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="kicker" data-i18n="hero_kicker">National Assembly of Armenia · 7 June 2026</p>
+        <h1 class="hero-title" data-i18n="site_title">Armenia 2026 Election Atlas</h1>
+        <p class="hero-lede" data-i18n="hero_lede"></p>
+        <div class="statgrid" id="statgrid"></div>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="section" id="overview">
+      <div class="section-head">
+        <h2 data-i18n="overview_title">National result</h2>
+        <p class="muted" data-i18n="overview_sub"></p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div id="voteBars" class="chart"></div>
+        </div>
+        <div class="card">
+          <h3 data-i18n="seats_title">The 105-seat National Assembly</h3>
+          <p class="muted small" data-i18n="seats_sub"></p>
+          <div id="hemicycle" class="chart"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="table-wrap"><table class="datatable" id="nationalTable"></table></div>
+      </div>
+    </section>
+
+    <!-- MAP -->
+    <section class="section" id="map">
+      <div class="section-head">
+        <h2 data-i18n="map_title">The geography of the vote</h2>
+        <p class="muted" data-i18n="map_sub"></p>
+      </div>
+      <div class="map-controls">
+        <div class="segmented" id="mapModes" role="tablist"></div>
+        <select id="partySelect" class="select" hidden></select>
+        <button class="sharebtn" id="shareMap"><span data-i18n="share_view">Copy link to this view</span></button>
+      </div>
+      <p class="callout" id="mapNote" hidden></p>
+      <div class="map-layout">
+        <div class="map-stage">
+          <div id="choropleth" class="choropleth"></div>
+          <div id="mapLegend" class="legend"></div>
+        </div>
+        <aside class="map-panel card" id="marzPanel">
+          <p class="muted" data-i18n="panel_pick">Select a province on the map</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- EXPLORE / ZOOM -->
+    <section class="section" id="explore">
+      <div class="section-head">
+        <h2 data-i18n="explore_title">Zoom in to the communities</h2>
+        <p class="muted" data-i18n="explore_sub"></p>
+      </div>
+      <div class="map-stage">
+        <div class="zoom-ctrl">
+          <button id="zoomIn" class="iconbtn">+</button>
+          <button id="zoomOut" class="iconbtn">−</button>
+          <button id="zoomReset" class="iconbtn" title="Reset">⟲</button>
+        </div>
+        <div id="communityMap" class="choropleth"></div>
+        <div class="legend" id="communityLegend"></div>
+        <p class="muted small" id="communityHint"></p>
+      </div>
+    </section>
+
+    <!-- PARTIES -->
+    <section class="section" id="parties">
+      <div class="section-head">
+        <h2 data-i18n="parties_title">The forces, explained</h2>
+        <p class="muted" data-i18n="parties_sub"></p>
+      </div>
+      <div class="party-chips" id="partyChips"></div>
+      <div class="party-detail card" id="partyDetail"></div>
+    </section>
+
+    <!-- CONTEXT / CORRELATIONS -->
+    <section class="section" id="context">
+      <div class="section-head">
+        <h2 data-i18n="context_title">Context &amp; correlations</h2>
+        <p class="muted" data-i18n="context_sub"></p>
+      </div>
+      <div class="map-controls">
+        <label class="muted small" data-i18n="ctx_x">X axis</label>
+        <select id="ctxX" class="select"></select>
+        <label class="muted small" data-i18n="ctx_y">Y axis</label>
+        <select id="ctxY" class="select"></select>
+      </div>
+      <div class="card"><div id="ctxScatter" class="chart"></div>
+        <p class="muted small" id="ctxSource"></p></div>
+    </section>
+
+    <!-- FORENSICS -->
+    <section class="section" id="forensics">
+      <div class="section-head">
+        <h2 data-i18n="forensics_title">Electoral forensics</h2>
+        <p class="muted" data-i18n="forensics_sub"></p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3 data-i18n="forensics_scatter">Turnout vs. winner's share</h3>
+          <div id="scatter" class="chart"></div>
+        </div>
+        <div class="card">
+          <h3 data-i18n="forensics_hist">Distribution of turnout across stations</h3>
+          <div id="histogram" class="chart"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DATA -->
+    <section class="section" id="data">
+      <div class="section-head">
+        <h2 data-i18n="data_title">Explore &amp; download the data</h2>
+        <p class="muted" data-i18n="data_sub"></p>
+      </div>
+      <div class="data-toolbar">
+        <div class="segmented" id="dataLevels"></div>
+        <input type="search" id="dataSearch" class="select" placeholder="Filter…" />
+        <div class="dl-links" id="downloadLinks"></div>
+      </div>
+      <div class="card"><div class="table-wrap"><table class="datatable" id="explorerTable"></table></div></div>
+    </section>
+
+    <!-- OVERSEAS -->
+    <section class="section narrow" id="overseas">
+      <div class="card overseas">
+        <div class="globe">🌐</div>
+        <div>
+          <h3 data-i18n="overseas_title">Voting from abroad</h3>
+          <p class="muted" data-i18n="overseas_body"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section narrow" id="about">
+      <div class="section-head">
+        <h2 data-i18n="about_title">Methodology &amp; sources</h2>
+      </div>
+      <div class="about-grid" id="aboutGrid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p id="footerLicense" class="muted small"></p>
+    <p class="muted small">© 2026 · <a href="https://github.com/thepriben" rel="noopener">thepriben</a> · <span id="genStamp"></span></p>
+  </footer>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

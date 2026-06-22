@@ -1,0 +1,45 @@
+{
+  "_note": "Neutral, descriptive profiles. en/hy/fr. Authored for this atlas; figures live in national.json/parties.json.",
+  "profiles": {
+    "civil_contract": {
+      "en": "The party of Prime Minister Nikol Pashinyan, in power since the 2018 'Velvet Revolution'. It presents itself as a liberal, reformist and institution-building force, oriented towards the West and the European Union. Opponents attack it chiefly on national security and the concessions made to Azerbaijan and Turkey after the loss of Nagorno-Karabakh.",
+      "hy": "Վարչապետ Նիկոլ Փաշինյանի կուսակցությունը՝ իշխանության 2018-ի «թավշյա հեղափոխությունից» ի վեր։ Ներկայանում է որպես ազատական, բարեփոխական և ինստիտուցիոնալ ուժ՝ արևմտյան և եվրոպական կողմնորոշմամբ։ Հակառակորդները քննադատում են հիմնականում ազգային անվտանգության և Ադրբեջանին ու Թուրքիային արված զիջումների համար։",
+      "fr": "Le parti du Premier ministre Nikol Pashinyan, au pouvoir depuis la « révolution de velours » de 2018. Il se présente comme une force libérale, réformatrice et institutionnelle, tournée vers l’Occident et l’Union européenne. Ses adversaires l’attaquent surtout sur la sécurité nationale et les concessions faites à l’Azerbaïdjan et à la Turquie après la perte du Haut-Karabakh."
+    },
+    "strong_armenia": {
+      "en": "An opposition alliance built around businessman Samvel Karapetyan, who entered politics in 2025. It is conservative and sovereigntist in tone, critical of the government's foreign-policy concessions and emphasising national security, the Church and ties beyond the West. It became the main opposition force in 2026.",
+      "hy": "Ընդդիմադիր դաշինք՝ գործարար Սամվել Կարապետյանի շուրջ, ով քաղաքականություն մտավ 2025-ին։ Պահպանողական և ինքնիշխանական շեշտադրմամբ, քննադատում է իշխանության արտաքին զիջումները՝ ընդգծելով ազգային անվտանգությունը, Եկեղեցին և արևմուտքից դուրս կապերը։ 2026-ին դարձավ գլխավոր ընդդիմադիր ուժը։",
+      "fr": "Une alliance d’opposition bâtie autour de l’homme d’affaires Samvel Karapetyan, entré en politique en 2025. De tonalité conservatrice et souverainiste, elle critique les concessions diplomatiques du gouvernement et met en avant la sécurité nationale, l’Église et des liens au-delà de l’Occident. Elle est devenue la principale force d’opposition en 2026."
+    },
+    "armenia_alliance": {
+      "en": "An opposition alliance led by former president Robert Kocharyan, drawing on the traditional national-conservative camp and historically closer to Russia. Rooted in the pre-2018 establishment, it stresses security and continuity and is sharply critical of Pashinyan's record on Karabakh.",
+      "hy": "Ընդդիմադիր դաշինք՝ նախկին նախագահ Ռոբերտ Քոչարյանի գլխավորությամբ, ավանդական ազգային-պահպանողական ճամբարից, պատմականորեն ավելի մոտ Ռուսաստանին։ Արմատավորված 2018-ից առաջ իշխանությունում, ընդգծում է անվտանգությունն ու շարունակականությունը և սուր քննադատում Փաշինյանին Ղարաբաղի հարցում։",
+      "fr": "Une alliance d’opposition menée par l’ancien président Robert Kocharyan, issue du camp national-conservateur traditionnel et historiquement plus proche de la Russie. Ancrée dans l’establishment d’avant 2018, elle insiste sur la sécurité et la continuité et critique vivement le bilan de Pashinyan sur le Karabakh."
+    },
+    "prosperous_armenia": {
+      "en": "A centrist, populist party founded by businessman Gagik Tsarukyan, long a fixture of Armenian politics. In 2026 it fell just short of the 4% threshold and did not enter parliament.",
+      "hy": "Կենտրոնամետ, պոպուլիստական կուսակցություն՝ հիմնադրված գործարար Գագիկ Ծառուկյանի կողմից, երկար տարիներ հայ քաղաքականության մշտական դերակատար։ 2026-ին փոքր-ինչ զիջեց 4% շեմին և չմտավ խորհրդարան։",
+      "fr": "Un parti centriste et populiste fondé par l’homme d’affaires Gagik Tsarukyan, longtemps incontournable de la vie politique arménienne. En 2026, il échoue de peu sous le seuil de 4% et n’entre pas au parlement."
+    },
+    "wings_of_unity": {
+      "en": "A small reform-minded party that did not clear the threshold in 2026.",
+      "hy": "Փոքր բարեփոխական կուսակցություն, որը 2026-ին շեմ չհաղթահարեց։",
+      "fr": "Un petit parti réformateur qui n’a pas franchi le seuil en 2026."
+    },
+    "hanrapetutyun": {
+      "en": "A liberal-republican party led by Aram Sargsyan, part of the established opposition; below the threshold in 2026.",
+      "hy": "Ազատական-հանրապետական կուսակցություն՝ Արամ Սարգսյանի գլխավորությամբ, կայացած ընդդիմությունից. 2026-ին շեմից ցածր։",
+      "fr": "Un parti libéral-républicain dirigé par Aram Sargsyan, issu de l’opposition établie ; sous le seuil en 2026."
+    },
+    "bright_armenia": {
+      "en": "A liberal, pro-Western party led by Edmon Marukyan; below the threshold in 2026.",
+      "hy": "Ազատական, արևմտամետ կուսակցություն՝ Էդմոն Մարուքյանի գլխավորությամբ. 2026-ին շեմից ցածր։",
+      "fr": "Un parti libéral et pro-occidental dirigé par Edmon Marukyan ; sous le seuil en 2026."
+    },
+    "anc": {
+      "en": "The Armenian National Congress of Armenia's first president, Levon Ter-Petrosyan; a veteran social-liberal opposition party, below the threshold in 2026.",
+      "hy": "Հայաստանի առաջին նախագահ Լևոն Տեր-Պետրոսյանի Հայ ազգային կոնգրեսը՝ վաստակաշատ սոցիալ-ազատական ընդդիմադիր ուժ. 2026-ին շեմից ցածր։",
+      "fr": "Le Congrès national arménien du premier président de l’Arménie, Levon Ter-Petrosyan ; un parti d’opposition social-libéral historique, sous le seuil en 2026."
+    }
+  }
+}

@@ -1,0 +1,2194 @@
+{
+  "source": "GeoNames (CC-BY) + CEC results",
+  "located": 81,
+  "total": 81,
+  "communities": [
+    {
+      "community": "Ալագյազ",
+      "marz_en": "Aragatsotn",
+      "marz_iso": "AM-AG",
+      "registered": 2761,
+      "turnout_pct": 43.06,
+      "valid": 1175,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 48.6,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 64.4
+        },
+        {
+          "id": "prosperous_armenia",
+          "pct": 15.8
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 11.6
+        }
+      ],
+      "lat": 40.68082,
+      "lon": 44.28797
+    },
+    {
+      "community": "Աշտարակ",
+      "marz_en": "Aragatsotn",
+      "marz_iso": "AM-AG",
+      "registered": 56973,
+      "turnout_pct": 60.61,
+      "valid": 34221,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 35.5,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 56.9
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 21.4
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 10.3
+        }
+      ],
+      "lat": 40.2976,
+      "lon": 44.36152
+    },
+    {
+      "community": "Ապարան",
+      "marz_en": "Aragatsotn",
+      "marz_iso": "AM-AG",
+      "registered": 18250,
+      "turnout_pct": 65.83,
+      "valid": 11892,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 38.8,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 58.4
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 19.6
+        },
+        {
+          "id": "prosperous_armenia",
+          "pct": 7.1
+        }
+      ],
+      "lat": 40.59297,
+      "lon": 44.35945
+    },
+    {
+      "community": "Արեվուտ",
+      "marz_en": "Aragatsotn",
+      "marz_iso": "AM-AG",
+      "registered": 521,
+      "turnout_pct": 50.48,
+      "valid": 261,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 43.7,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 63.2
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 19.5
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 10.7
+        }
+      ],
+      "lat": 40.3253,
+      "lon": 44.619
+    },
+    {
+      "community": "Թալին",
+      "marz_en": "Aragatsotn",
+      "marz_iso": "AM-AG",
+      "registered": 27352,
+      "turnout_pct": 64.49,
+      "valid": 17424,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 43.4,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 61.4
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 18.0
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 9.3
+        }
+      ],
+      "lat": 40.39172,
+      "lon": 43.87793
+    },
+    {
+      "community": "Ծաղկահովիտ",
+      "marz_en": "Aragatsotn",
+      "marz_iso": "AM-AG",
+      "registered": 7036,
+      "turnout_pct": 58.03,
+      "valid": 4048,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 47.5,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 62.5
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 15.0
+        },
+        {
+          "id": "prosperous_armenia",
+          "pct": 10.8
+        }
+      ],
+      "lat": 40.63883,
+      "lon": 44.22252
+    },
+    {
+      "community": "Մեծաձոր",
+      "marz_en": "Aragatsotn",
+      "marz_iso": "AM-AG",
+      "registered": 145,
+      "turnout_pct": 51.72,
+      "valid": 75,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 76.0,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 84.0
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 8.0
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 4.0
+        }
+      ],
+      "lat": 40.38036,
+      "lon": 44.04591
+    },
+    {
+      "community": "Շամիրամ",
+      "marz_en": "Aragatsotn",
+      "marz_iso": "AM-AG",
+      "registered": 505,
+      "turnout_pct": 36.24,
+      "valid": 181,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 73.5,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 85.1
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 11.6
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 1.7
+        }
+      ],
+      "lat": 40.27654,
+      "lon": 44.09846
+    },
+    {
+      "community": "Արարատ",
+      "marz_en": "Ararat",
+      "marz_iso": "AM-AR",
+      "registered": 30589,
+      "turnout_pct": 62.18,
+      "valid": 18838,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 40.5,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 54.9
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 14.4
+        },
+        {
+          "id": "prosperous_armenia",
+          "pct": 14.1
+        }
+      ],
+      "lat": 39.85494,
+      "lon": 44.6947
+    },
+    {
+      "community": "Արտաշատ",
+      "marz_en": "Ararat",
+      "marz_iso": "AM-AR",
+      "registered": 80027,
+      "turnout_pct": 58.39,
+      "valid": 45398,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 43.6,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 60.9
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 17.3
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 9.6
+        }
+      ],
+      "lat": 39.95484,
+      "lon": 44.54874
+    },
+    {
+      "community": "Մասիս",
+      "marz_en": "Ararat",
+      "marz_iso": "AM-AR",
+      "registered": 69539,
+      "turnout_pct": 58.82,
+      "valid": 40537,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 25.7,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 50.6
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 24.9
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 10.6
+        }
+      ],
+      "lat": 40.06595,
+      "lon": 44.43669
+    },
+    {
+      "community": "Վեդի",
+      "marz_en": "Ararat",
+      "marz_iso": "AM-AR",
+      "registered": 38597,
+      "turnout_pct": 62.52,
+      "valid": 23809,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 39.7,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 58.2
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 18.5
+        },
+        {
+          "id": "prosperous_armenia",
+          "pct": 8.4
+        }
+      ],
+      "lat": 39.91291,
+      "lon": 44.72083
+    },
+    {
+      "community": "Վերին Դվին",
+      "marz_en": "Ararat",
+      "marz_iso": "AM-AR",
+      "registered": 1616,
+      "turnout_pct": 56.19,
+      "valid": 891,
+      "winner": "prosperous_armenia",
+      "winner_color": "#E8A300",
+      "margin": 9.0,
+      "top": [
+        {
+          "id": "prosperous_armenia",
+          "pct": 41.2
+        },
+        {
+          "id": "civil_contract",
+          "pct": 32.2
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 14.5
+        }
+      ],
+      "lat": 40.02393,
+      "lon": 44.5924
+    },
+    {
+      "community": "Արաքս",
+      "marz_en": "Armavir",
+      "marz_iso": "AM-AV",
+      "registered": 19819,
+      "turnout_pct": 56.03,
+      "valid": 11004,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 38.5,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 58.6
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 20.1
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 10.3
+        }
+      ],
+      "lat": 40.05548,
+      "lon": 44.30292
+    },
+    {
+      "community": "Արմավիր",
+      "marz_en": "Armavir",
+      "marz_iso": "AM-AV",
+      "registered": 47265,
+      "turnout_pct": 56.24,
+      "valid": 26301,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 41.3,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 60.8
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 19.5
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 7.8
+        }
+      ],
+      "lat": 40.15553,
+      "lon": 44.0388
+    },
+    {
+      "community": "Բաղրամյան",
+      "marz_en": "Armavir",
+      "marz_iso": "AM-AV",
+      "registered": 12672,
+      "turnout_pct": 59.16,
+      "valid": 7423,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 35.5,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 56.9
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 21.4
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 11.9
+        }
+      ],
+      "lat": 40.19324,
+      "lon": 44.36934
+    },
+    {
+      "community": "Մեծամոր",
+      "marz_en": "Armavir",
+      "marz_iso": "AM-AV",
+      "registered": 55619,
+      "turnout_pct": 55.83,
+      "valid": 30786,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 34.7,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 57.4
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 22.7
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 7.1
+        }
+      ],
+      "lat": 40.14459,
+      "lon": 44.11484
+    },
+    {
+      "community": "Վաղարշապատ",
+      "marz_en": "Armavir",
+      "marz_iso": "AM-AV",
+      "registered": 69588,
+      "turnout_pct": 54.58,
+      "valid": 37566,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 23.9,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 50.4
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 26.5
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 10.8
+        }
+      ],
+      "lat": 40.16557,
+      "lon": 44.29462
+    },
+    {
+      "community": "Փարաքար",
+      "marz_en": "Armavir",
+      "marz_iso": "AM-AV",
+      "registered": 21258,
+      "turnout_pct": 56.04,
+      "valid": 11793,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 27.7,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 52.9
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 25.2
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 8.5
+        }
+      ],
+      "lat": 40.16388,
+      "lon": 44.4057
+    },
+    {
+      "community": "Ֆերիկ",
+      "marz_en": "Armavir",
+      "marz_iso": "AM-AV",
+      "registered": 251,
+      "turnout_pct": 51.0,
+      "valid": 125,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 52.0,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 69.6
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 17.6
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 8.0
+        }
+      ],
+      "lat": 40.1874,
+      "lon": 44.20952
+    },
+    {
+      "community": "Գավառ",
+      "marz_en": "Gegharkunik",
+      "marz_iso": "AM-GR",
+      "registered": 42937,
+      "turnout_pct": 50.69,
+      "valid": 21491,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 32.0,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 55.8
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 23.8
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 5.9
+        }
+      ],
+      "lat": 40.35398,
+      "lon": 45.12386
+    },
+    {
+      "community": "Ճամբարակ",
+      "marz_en": "Gegharkunik",
+      "marz_iso": "AM-GR",
+      "registered": 11491,
+      "turnout_pct": 65.14,
+      "valid": 7396,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 25.2,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 47.9
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 22.7
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 11.4
+        }
+      ],
+      "lat": 40.59655,
+      "lon": 45.35498
+    },
+    {
+      "community": "Մարտունի",
+      "marz_en": "Gegharkunik",
+      "marz_iso": "AM-GR",
+      "registered": 62164,
+      "turnout_pct": 49.3,
+      "valid": 30289,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 47.6,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 62.4
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 14.8
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 7.0
+        }
+      ],
+      "lat": 40.14028,
+      "lon": 45.30232
+    },
+    {
+      "community": "Սեվան",
+      "marz_en": "Gegharkunik",
+      "marz_iso": "AM-GR",
+      "registered": 32267,
+      "turnout_pct": 60.73,
+      "valid": 19386,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 30.3,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 52.4
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 22.1
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 14.1
+        }
+      ],
+      "lat": 40.548,
+      "lon": 44.95314
+    },
+    {
+      "community": "Վարդենիս",
+      "marz_en": "Gegharkunik",
+      "marz_iso": "AM-GR",
+      "registered": 29334,
+      "turnout_pct": 60.46,
+      "valid": 17486,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 38.6,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 55.6
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 17.0
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 10.8
+        }
+      ],
+      "lat": 40.1827,
+      "lon": 45.73156
+    },
+    {
+      "community": "Աբովյան",
+      "marz_en": "Kotayk",
+      "marz_iso": "AM-KT",
+      "registered": 65919,
+      "turnout_pct": 60.21,
+      "valid": 39241,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 23.1,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 42.2
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 19.1
+        },
+        {
+          "id": "prosperous_armenia",
+          "pct": 16.7
+        }
+      ],
+      "lat": 40.2717,
+      "lon": 44.63342
+    },
+    {
+      "community": "Ակունք",
+      "marz_en": "Kotayk",
+      "marz_iso": "AM-KT",
+      "registered": 7312,
+      "turnout_pct": 67.59,
+      "valid": 4900,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 28.3,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 48.9
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 20.6
+        },
+        {
+          "id": "prosperous_armenia",
+          "pct": 18.0
+        }
+      ],
+      "lat": 40.16056,
+      "lon": 45.72707
+    },
+    {
+      "community": "Արզնի",
+      "marz_en": "Kotayk",
+      "marz_iso": "AM-KT",
+      "registered": 2335,
+      "turnout_pct": 56.19,
+      "valid": 1297,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 14.4,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 41.5
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 27.1
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 17.0
+        }
+      ],
+      "lat": 40.29636,
+      "lon": 44.5958
+    },
+    {
+      "community": "Բյուրեղավան",
+      "marz_en": "Kotayk",
+      "marz_iso": "AM-KT",
+      "registered": 9075,
+      "turnout_pct": 61.54,
+      "valid": 5502,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 17.0,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 45.2
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 28.2
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 11.7
+        }
+      ],
+      "lat": 40.31335,
+      "lon": 44.59685
+    },
+    {
+      "community": "Գառնի",
+      "marz_en": "Kotayk",
+      "marz_iso": "AM-KT",
+      "registered": 9884,
+      "turnout_pct": 64.69,
+      "valid": 6296,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 40.7,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 58.4
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 17.7
+        },
+        {
+          "id": "prosperous_armenia",
+          "pct": 10.3
+        }
+      ],
+      "lat": 40.11931,
+      "lon": 44.73442
+    },
+    {
+      "community": "Ծաղկաձոր",
+      "marz_en": "Kotayk",
+      "marz_iso": "AM-KT",
+      "registered": 5552,
+      "turnout_pct": 67.54,
+      "valid": 3716,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 32.8,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 55.3
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 22.5
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 10.1
+        }
+      ],
+      "lat": 40.5325,
+      "lon": 44.72323
+    },
+    {
+      "community": "Հրազդան",
+      "marz_en": "Kotayk",
+      "marz_iso": "AM-KT",
+      "registered": 48071,
+      "turnout_pct": 61.85,
+      "valid": 29357,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 20.3,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 46.4
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 26.1
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 12.4
+        }
+      ],
+      "lat": 40.5169,
+      "lon": 44.75591
+    },
+    {
+      "community": "Նաիրի",
+      "marz_en": "Kotayk",
+      "marz_iso": "AM-KT",
+      "registered": 30443,
+      "turnout_pct": 60.84,
+      "valid": 18282,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 32.9,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 53.5
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 20.6
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 10.8
+        }
+      ],
+      "lat": 40.17143,
+      "lon": 43.94993
+    },
+    {
+      "community": "Նոր Հաճըն",
+      "marz_en": "Kotayk",
+      "marz_iso": "AM-KT",
+      "registered": 24762,
+      "turnout_pct": 62.18,
+      "valid": 15149,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 26.0,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 47.3
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 21.3
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 11.7
+        }
+      ],
+      "lat": 40.30296,
+      "lon": 44.58314
+    },
+    {
+      "community": "Չարենցավան",
+      "marz_en": "Kotayk",
+      "marz_iso": "AM-KT",
+      "registered": 28279,
+      "turnout_pct": 61.34,
+      "valid": 17126,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 28.3,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 49.4
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 21.1
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 13.8
+        }
+      ],
+      "lat": 40.40289,
+      "lon": 44.64447
+    },
+    {
+      "community": "Ջրվեժ",
+      "marz_en": "Kotayk",
+      "marz_iso": "AM-KT",
+      "registered": 9040,
+      "turnout_pct": 59.92,
+      "valid": 5360,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 34.0,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 51.9
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 17.9
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 9.4
+        }
+      ],
+      "lat": 40.18889,
+      "lon": 44.62414
+    },
+    {
+      "community": "Ալավերդի",
+      "marz_en": "Lori",
+      "marz_iso": "AM-LO",
+      "registered": 30362,
+      "turnout_pct": 61.63,
+      "valid": 18484,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 25.1,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 56.0
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 30.9
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 3.3
+        }
+      ],
+      "lat": 41.09766,
+      "lon": 44.67316
+    },
+    {
+      "community": "Գյուլագարակ",
+      "marz_en": "Lori",
+      "marz_iso": "AM-LO",
+      "registered": 6413,
+      "turnout_pct": 65.4,
+      "valid": 4152,
+      "winner": "strong_armenia",
+      "winner_color": "#C8102E",
+      "margin": 0.6,
+      "top": [
+        {
+          "id": "strong_armenia",
+          "pct": 44.3
+        },
+        {
+          "id": "civil_contract",
+          "pct": 43.7
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 4.1
+        }
+      ],
+      "lat": 40.96528,
+      "lon": 44.47128
+    },
+    {
+      "community": "Թումանյան",
+      "marz_en": "Lori",
+      "marz_iso": "AM-LO",
+      "registered": 5046,
+      "turnout_pct": 64.88,
+      "valid": 3215,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 32.5,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 58.6
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 26.1
+        },
+        {
+          "id": "prosperous_armenia",
+          "pct": 6.8
+        }
+      ],
+      "lat": 40.9617,
+      "lon": 44.65003
+    },
+    {
+      "community": "Լերմոնտովո",
+      "marz_en": "Lori",
+      "marz_iso": "AM-LO",
+      "registered": 685,
+      "turnout_pct": 38.83,
+      "valid": 259,
+      "winner": "strong_armenia",
+      "winner_color": "#C8102E",
+      "margin": 10.8,
+      "top": [
+        {
+          "id": "strong_armenia",
+          "pct": 43.2
+        },
+        {
+          "id": "civil_contract",
+          "pct": 32.4
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 15.1
+        }
+      ],
+      "lat": 40.75843,
+      "lon": 44.63401
+    },
+    {
+      "community": "Լոռի Բերդ",
+      "marz_en": "Lori",
+      "marz_iso": "AM-LO",
+      "registered": 4063,
+      "turnout_pct": 64.46,
+      "valid": 2592,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 27.2,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 58.1
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 30.9
+        },
+        {
+          "id": "prosperous_armenia",
+          "pct": 3.5
+        }
+      ],
+      "lat": 41.01355,
+      "lon": 44.41342
+    },
+    {
+      "community": "Սպիտակ",
+      "marz_en": "Lori",
+      "marz_iso": "AM-LO",
+      "registered": 30231,
+      "turnout_pct": 57.11,
+      "valid": 17057,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 25.8,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 53.4
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 27.6
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 7.6
+        }
+      ],
+      "lat": 40.83131,
+      "lon": 44.27019
+    },
+    {
+      "community": "Ստեփանավան",
+      "marz_en": "Lori",
+      "marz_iso": "AM-LO",
+      "registered": 13084,
+      "turnout_pct": 57.94,
+      "valid": 7504,
+      "winner": "strong_armenia",
+      "winner_color": "#C8102E",
+      "margin": 0.0,
+      "top": [
+        {
+          "id": "strong_armenia",
+          "pct": 42.7
+        },
+        {
+          "id": "civil_contract",
+          "pct": 42.7
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 4.4
+        }
+      ],
+      "lat": 41.00995,
+      "lon": 44.38531
+    },
+    {
+      "community": "Վանաձոր",
+      "marz_en": "Lori",
+      "marz_iso": "AM-LO",
+      "registered": 93875,
+      "turnout_pct": 57.28,
+      "valid": 53065,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 23.0,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 50.5
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 27.5
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 6.0
+        }
+      ],
+      "lat": 40.8074,
+      "lon": 44.49704
+    },
+    {
+      "community": "Տաշիր",
+      "marz_en": "Lori",
+      "marz_iso": "AM-LO",
+      "registered": 19087,
+      "turnout_pct": 58.21,
+      "valid": 11014,
+      "winner": "strong_armenia",
+      "winner_color": "#C8102E",
+      "margin": 50.8,
+      "top": [
+        {
+          "id": "strong_armenia",
+          "pct": 73.5
+        },
+        {
+          "id": "civil_contract",
+          "pct": 22.7
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 1.2
+        }
+      ],
+      "lat": 41.11922,
+      "lon": 44.28649
+    },
+    {
+      "community": "Փամբակ",
+      "marz_en": "Lori",
+      "marz_iso": "AM-LO",
+      "registered": 9827,
+      "turnout_pct": 60.53,
+      "valid": 5889,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 41.2,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 61.2
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 20.0
+        },
+        {
+          "id": "prosperous_armenia",
+          "pct": 6.8
+        }
+      ],
+      "lat": 40.83086,
+      "lon": 44.55725
+    },
+    {
+      "community": "Ֆիոլետովո",
+      "marz_en": "Lori",
+      "marz_iso": "AM-LO",
+      "registered": 804,
+      "turnout_pct": 17.91,
+      "valid": 144,
+      "winner": "strong_armenia",
+      "winner_color": "#C8102E",
+      "margin": 16.7,
+      "top": [
+        {
+          "id": "strong_armenia",
+          "pct": 49.3
+        },
+        {
+          "id": "prosperous_armenia",
+          "pct": 32.6
+        },
+        {
+          "id": "civil_contract",
+          "pct": 11.8
+        }
+      ],
+      "lat": 40.72365,
+      "lon": 44.71664
+    },
+    {
+      "community": "Ախուրյան",
+      "marz_en": "Shirak",
+      "marz_iso": "AM-SH",
+      "registered": 31572,
+      "turnout_pct": 58.61,
+      "valid": 18313,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 43.9,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 64.2
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 20.3
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 4.8
+        }
+      ],
+      "lat": 40.78081,
+      "lon": 43.90037
+    },
+    {
+      "community": "Ամասիա",
+      "marz_en": "Shirak",
+      "marz_iso": "AM-SH",
+      "registered": 5842,
+      "turnout_pct": 53.73,
+      "valid": 3098,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 31.0,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 56.4
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 25.4
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 10.2
+        }
+      ],
+      "lat": 40.95566,
+      "lon": 43.78379
+    },
+    {
+      "community": "Անի",
+      "marz_en": "Shirak",
+      "marz_iso": "AM-SH",
+      "registered": 15964,
+      "turnout_pct": 60.15,
+      "valid": 9471,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 34.8,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 59.1
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 24.3
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 6.3
+        }
+      ],
+      "lat": 40.15832,
+      "lon": 44.40149
+    },
+    {
+      "community": "Աշոցք",
+      "marz_en": "Shirak",
+      "marz_iso": "AM-SH",
+      "registered": 9033,
+      "turnout_pct": 51.98,
+      "valid": 4635,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 42.5,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 60.4
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 17.9
+        },
+        {
+          "id": "prosperous_armenia",
+          "pct": 7.8
+        }
+      ],
+      "lat": 41.0377,
+      "lon": 43.85843
+    },
+    {
+      "community": "Արթիկ",
+      "marz_en": "Shirak",
+      "marz_iso": "AM-SH",
+      "registered": 37125,
+      "turnout_pct": 61.55,
+      "valid": 22642,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 42.4,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 61.3
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 18.9
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 6.7
+        }
+      ],
+      "lat": 40.61918,
+      "lon": 43.97207
+    },
+    {
+      "community": "Գյումրի",
+      "marz_en": "Shirak",
+      "marz_iso": "AM-SH",
+      "registered": 108356,
+      "turnout_pct": 52.1,
+      "valid": 55497,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 23.9,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 50.5
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 26.6
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 8.1
+        }
+      ],
+      "lat": 40.79305,
+      "lon": 43.84635
+    },
+    {
+      "community": "Գորիս",
+      "marz_en": "Syunik",
+      "marz_iso": "AM-SU",
+      "registered": 22861,
+      "turnout_pct": 63.37,
+      "valid": 14298,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 23.2,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 48.8
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 25.6
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 9.8
+        }
+      ],
+      "lat": 39.51111,
+      "lon": 46.34168
+    },
+    {
+      "community": "Կապան",
+      "marz_en": "Syunik",
+      "marz_iso": "AM-SU",
+      "registered": 34014,
+      "turnout_pct": 68.11,
+      "valid": 22885,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 28.8,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 46.7
+        },
+        {
+          "id": "wings_of_unity",
+          "pct": 17.9
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 16.2
+        }
+      ],
+      "lat": 39.20762,
+      "lon": 46.40678
+    },
+    {
+      "community": "Մեղրի",
+      "marz_en": "Syunik",
+      "marz_iso": "AM-SU",
+      "registered": 10000,
+      "turnout_pct": 69.1,
+      "valid": 5525,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 19.1,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 49.4
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 30.3
+        },
+        {
+          "id": "hanrapetutyun",
+          "pct": 3.8
+        }
+      ],
+      "lat": 38.90123,
+      "lon": 46.24308
+    },
+    {
+      "community": "Սիսիան",
+      "marz_en": "Syunik",
+      "marz_iso": "AM-SU",
+      "registered": 24914,
+      "turnout_pct": 65.35,
+      "valid": 16111,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 36.6,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 56.4
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 19.8
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 14.1
+        }
+      ],
+      "lat": 39.52191,
+      "lon": 46.02696
+    },
+    {
+      "community": "Տաթև",
+      "marz_en": "Syunik",
+      "marz_iso": "AM-SU",
+      "registered": 4281,
+      "turnout_pct": 62.18,
+      "valid": 2639,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 41.8,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 60.4
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 18.6
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 10.3
+        }
+      ],
+      "lat": 39.38611,
+      "lon": 46.24451
+    },
+    {
+      "community": "Տեղ",
+      "marz_en": "Syunik",
+      "marz_iso": "AM-SU",
+      "registered": 4693,
+      "turnout_pct": 70.1,
+      "valid": 3231,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 26.0,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 52.7
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 26.7
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 9.8
+        }
+      ],
+      "lat": 39.55826,
+      "lon": 46.48054
+    },
+    {
+      "community": "Քաջարան",
+      "marz_en": "Syunik",
+      "marz_iso": "AM-SU",
+      "registered": 6355,
+      "turnout_pct": 74.23,
+      "valid": 4655,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 43.6,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 58.3
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 14.7
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 13.4
+        }
+      ],
+      "lat": 39.15091,
+      "lon": 46.15673
+    },
+    {
+      "community": "Բերդ",
+      "marz_en": "Tavush",
+      "marz_iso": "AM-TV",
+      "registered": 23889,
+      "turnout_pct": 60.82,
+      "valid": 14375,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 29.4,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 54.9
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 25.5
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 8.7
+        }
+      ],
+      "lat": 40.88066,
+      "lon": 45.38901
+    },
+    {
+      "community": "Դիլիջան",
+      "marz_en": "Tavush",
+      "marz_iso": "AM-TV",
+      "registered": 19451,
+      "turnout_pct": 59.91,
+      "valid": 11514,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 30.7,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 52.6
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 21.9
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 6.7
+        }
+      ],
+      "lat": 40.74037,
+      "lon": 44.86344
+    },
+    {
+      "community": "Իջեվան",
+      "marz_en": "Tavush",
+      "marz_iso": "AM-TV",
+      "registered": 35102,
+      "turnout_pct": 66.56,
+      "valid": 23108,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 55.1,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 69.6
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 14.5
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 6.5
+        }
+      ],
+      "lat": 40.88037,
+      "lon": 45.14776
+    },
+    {
+      "community": "Նոյեմբերյան",
+      "marz_en": "Tavush",
+      "marz_iso": "AM-TV",
+      "registered": 25025,
+      "turnout_pct": 63.98,
+      "valid": 15866,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 30.4,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 55.1
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 24.7
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 6.7
+        }
+      ],
+      "lat": 41.17319,
+      "lon": 44.99851
+    },
+    {
+      "community": "Արենի",
+      "marz_en": "Vayots Dzor",
+      "marz_iso": "AM-VD",
+      "registered": 8500,
+      "turnout_pct": 69.44,
+      "valid": 5822,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 45.2,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 61.7
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 16.5
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 7.6
+        }
+      ],
+      "lat": 39.72205,
+      "lon": 45.18392
+    },
+    {
+      "community": "Եղեգիս",
+      "marz_en": "Vayots Dzor",
+      "marz_iso": "AM-VD",
+      "registered": 4630,
+      "turnout_pct": 66.48,
+      "valid": 3052,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 36.1,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 59.1
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 23.0
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 8.4
+        }
+      ],
+      "lat": 39.8667,
+      "lon": 45.32788
+    },
+    {
+      "community": "Եղեգնաձոր",
+      "marz_en": "Vayots Dzor",
+      "marz_iso": "AM-VD",
+      "registered": 14940,
+      "turnout_pct": 59.64,
+      "valid": 8795,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 32.6,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 54.0
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 21.4
+        },
+        {
+          "id": "prosperous_armenia",
+          "pct": 7.8
+        }
+      ],
+      "lat": 39.7644,
+      "lon": 45.33268
+    },
+    {
+      "community": "Ջերմուկ",
+      "marz_en": "Vayots Dzor",
+      "marz_iso": "AM-VD",
+      "registered": 6675,
+      "turnout_pct": 66.85,
+      "valid": 4400,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 51.4,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 66.2
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 14.8
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 6.5
+        }
+      ],
+      "lat": 39.83948,
+      "lon": 45.67112
+    },
+    {
+      "community": "Վայք",
+      "marz_en": "Vayots Dzor",
+      "marz_iso": "AM-VD",
+      "registered": 9908,
+      "turnout_pct": 70.03,
+      "valid": 6855,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 40.5,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 61.4
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 20.9
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 8.2
+        }
+      ],
+      "lat": 39.69026,
+      "lon": 45.46919
+    },
+    {
+      "community": "Աջափնյակ",
+      "marz_en": "Yerevan",
+      "marz_iso": "AM-ER",
+      "registered": 85640,
+      "turnout_pct": 59.25,
+      "valid": 50154,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 18.3,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 42.8
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 24.5
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 12.1
+        }
+      ],
+      "lat": 40.19917,
+      "lon": 44.47056
+    },
+    {
+      "community": "Ավան",
+      "marz_en": "Yerevan",
+      "marz_iso": "AM-ER",
+      "registered": 40644,
+      "turnout_pct": 61.77,
+      "valid": 24843,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 10.8,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 38.0
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 27.2
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 13.0
+        }
+      ],
+      "lat": 40.21436,
+      "lon": 44.57846
+    },
+    {
+      "community": "Արաբկիր",
+      "marz_en": "Yerevan",
+      "marz_iso": "AM-ER",
+      "registered": 96839,
+      "turnout_pct": 59.53,
+      "valid": 57026,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 8.6,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 35.6
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 27.0
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 14.9
+        }
+      ],
+      "lat": 40.20549,
+      "lon": 44.50699
+    },
+    {
+      "community": "Դավթաշեն",
+      "marz_en": "Yerevan",
+      "marz_iso": "AM-ER",
+      "registered": 35411,
+      "turnout_pct": 60.45,
+      "valid": 21172,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 17.7,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 42.1
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 24.4
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 12.1
+        }
+      ],
+      "lat": 40.21642,
+      "lon": 44.48088
+    },
+    {
+      "community": "Էրեբունի",
+      "marz_en": "Yerevan",
+      "marz_iso": "AM-ER",
+      "registered": 91631,
+      "turnout_pct": 55.59,
+      "valid": 50415,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 23.5,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 46.3
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 22.8
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 11.6
+        }
+      ],
+      "lat": 40.17765,
+      "lon": 44.5126
+    },
+    {
+      "community": "Կենտրոն",
+      "marz_en": "Yerevan",
+      "marz_iso": "AM-ER",
+      "registered": 96127,
+      "turnout_pct": 57.52,
+      "valid": 54740,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 9.4,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 36.0
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 26.6
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 15.5
+        }
+      ],
+      "lat": 40.17806,
+      "lon": 44.51303
+    },
+    {
+      "community": "Մալաթիա-Սեբաստիա",
+      "marz_en": "Yerevan",
+      "marz_iso": "AM-ER",
+      "registered": 110182,
+      "turnout_pct": 57.16,
+      "valid": 62349,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 22.8,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 45.8
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 23.0
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 11.6
+        }
+      ],
+      "lat": 40.17396,
+      "lon": 44.4457
+    },
+    {
+      "community": "Նոր Նորք",
+      "marz_en": "Yerevan",
+      "marz_iso": "AM-ER",
+      "registered": 100368,
+      "turnout_pct": 59.71,
+      "valid": 59254,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 13.4,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 39.1
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 25.7
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 13.0
+        }
+      ],
+      "lat": 40.19661,
+      "lon": 44.5669
+    },
+    {
+      "community": "Նորք-Մարաշ",
+      "marz_en": "Yerevan",
+      "marz_iso": "AM-ER",
+      "registered": 10966,
+      "turnout_pct": 60.51,
+      "valid": 6568,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 12.5,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 42.1
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 29.6
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 9.6
+        }
+      ],
+      "lat": 40.17417,
+      "lon": 44.54083
+    },
+    {
+      "community": "Նուբարաշեն",
+      "marz_en": "Yerevan",
+      "marz_iso": "AM-ER",
+      "registered": 10109,
+      "turnout_pct": 60.25,
+      "valid": 4774,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 24.1,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 47.1
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 23.0
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 9.9
+        }
+      ],
+      "lat": 40.1296,
+      "lon": 44.5406
+    },
+    {
+      "community": "Շենգավիթ",
+      "marz_en": "Yerevan",
+      "marz_iso": "AM-ER",
+      "registered": 113847,
+      "turnout_pct": 57.19,
+      "valid": 64405,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 23.8,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 45.8
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 22.0
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 11.6
+        }
+      ],
+      "lat": 40.1557,
+      "lon": 44.4779
+    },
+    {
+      "community": "Քանաքեռ-Զեյթուն",
+      "marz_en": "Yerevan",
+      "marz_iso": "AM-ER",
+      "registered": 58797,
+      "turnout_pct": 59.13,
+      "valid": 34467,
+      "winner": "civil_contract",
+      "winner_color": "#F58220",
+      "margin": 15.7,
+      "top": [
+        {
+          "id": "civil_contract",
+          "pct": 40.6
+        },
+        {
+          "id": "strong_armenia",
+          "pct": 24.9
+        },
+        {
+          "id": "armenia_alliance",
+          "pct": 12.7
+        }
+      ],
+      "lat": 40.22,
+      "lon": 44.53833
+    }
+  ]
+}

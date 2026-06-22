@@ -1,0 +1,21 @@
+{
+  "_source": "Statistical Committee of the Republic of Armenia (ArmStat). Average monthly nominal wage by marz, 2025 (armstat.am). Poverty rate by region, ILCS 2023 (armstat.am, via OPHI Armenia Poverty Snapshot 2020–2023).",
+  "national": { "wage_2025_amd": 303140, "poverty_2023_pct": 23.7 },
+  "indicators": {
+    "wage_2025_amd": { "en": "Avg. monthly wage 2025 (AMD)", "hy": "Միջին ամսական աշխատավարձ 2025 (դրամ)", "fr": "Salaire mensuel moyen 2025 (AMD)", "fmt": "int" },
+    "poverty_2023_pct": { "en": "Poverty rate 2023 (%)", "hy": "Աղքատության մակարդակ 2023 (%)", "fr": "Taux de pauvreté 2023 (%)", "fmt": "pct" }
+  },
+  "marz": {
+    "AM-ER": { "wage_2025_amd": 348141, "poverty_2023_pct": 17.9 },
+    "AM-AG": { "wage_2025_amd": 165969, "poverty_2023_pct": 9.2 },
+    "AM-AR": { "wage_2025_amd": 222453, "poverty_2023_pct": 30.3 },
+    "AM-AV": { "wage_2025_amd": 186922, "poverty_2023_pct": 25.9 },
+    "AM-GR": { "wage_2025_amd": 150233, "poverty_2023_pct": 35.4 },
+    "AM-LO": { "wage_2025_amd": 171479, "poverty_2023_pct": 14.2 },
+    "AM-KT": { "wage_2025_amd": 201018, "poverty_2023_pct": 23.2 },
+    "AM-SH": { "wage_2025_amd": 158854, "poverty_2023_pct": 43.1 },
+    "AM-SU": { "wage_2025_amd": 358347, "poverty_2023_pct": 7.0 },
+    "AM-VD": { "wage_2025_amd": 202612, "poverty_2023_pct": 30.9 },
+    "AM-TV": { "wage_2025_amd": 165080, "poverty_2023_pct": 37.2 }
+  }
+}

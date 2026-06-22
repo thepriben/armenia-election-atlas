@@ -1,0 +1,1212 @@
+{
+  "AM-AG": {
+    "iso": "AM-AG",
+    "name_en": "Aragatsotn",
+    "name_hy": "Արագածոտն",
+    "name_fr": "Aragatsotn",
+    "registered": 113543,
+    "ballots_cast": 69975,
+    "valid": 69277,
+    "invalid": 714,
+    "turnout_pct": 61.63,
+    "stations": 142,
+    "winner": "civil_contract",
+    "winner_pct": 58.856,
+    "runner_up": "strong_armenia",
+    "margin": 39.21,
+    "order": [
+      "civil_contract",
+      "strong_armenia",
+      "armenia_alliance",
+      "prosperous_armenia",
+      "meritocratic",
+      "democracy_law_discipline",
+      "hanrapetutyun",
+      "wings_of_unity",
+      "against_all",
+      "new_power",
+      "bright_armenia",
+      "national_democratic_pole",
+      "for_the_republic",
+      "democratic_consolidation",
+      "anc",
+      "christian_democratic",
+      "reformists",
+      "kochari"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 40774,
+        "pct": 58.856
+      },
+      "strong_armenia": {
+        "votes": 13608,
+        "pct": 19.643
+      },
+      "armenia_alliance": {
+        "votes": 6268,
+        "pct": 9.048
+      },
+      "prosperous_armenia": {
+        "votes": 3099,
+        "pct": 4.473
+      },
+      "wings_of_unity": {
+        "votes": 727,
+        "pct": 1.049
+      },
+      "meritocratic": {
+        "votes": 918,
+        "pct": 1.325
+      },
+      "democracy_law_discipline": {
+        "votes": 879,
+        "pct": 1.269
+      },
+      "new_power": {
+        "votes": 552,
+        "pct": 0.797
+      },
+      "against_all": {
+        "votes": 648,
+        "pct": 0.935
+      },
+      "hanrapetutyun": {
+        "votes": 751,
+        "pct": 1.084
+      },
+      "bright_armenia": {
+        "votes": 221,
+        "pct": 0.319
+      },
+      "for_the_republic": {
+        "votes": 168,
+        "pct": 0.243
+      },
+      "national_democratic_pole": {
+        "votes": 178,
+        "pct": 0.257
+      },
+      "democratic_consolidation": {
+        "votes": 166,
+        "pct": 0.24
+      },
+      "anc": {
+        "votes": 111,
+        "pct": 0.16
+      },
+      "christian_democratic": {
+        "votes": 85,
+        "pct": 0.123
+      },
+      "kochari": {
+        "votes": 58,
+        "pct": 0.084
+      },
+      "reformists": {
+        "votes": 66,
+        "pct": 0.095
+      }
+    }
+  },
+  "AM-AR": {
+    "iso": "AM-AR",
+    "name_en": "Ararat",
+    "name_hy": "Արարատ",
+    "name_fr": "Ararat",
+    "registered": 220368,
+    "ballots_cast": 131687,
+    "valid": 129473,
+    "invalid": 1393,
+    "turnout_pct": 59.76,
+    "stations": 155,
+    "winner": "civil_contract",
+    "winner_pct": 56.101,
+    "runner_up": "strong_armenia",
+    "margin": 36.69,
+    "order": [
+      "civil_contract",
+      "strong_armenia",
+      "armenia_alliance",
+      "prosperous_armenia",
+      "democracy_law_discipline",
+      "meritocratic",
+      "wings_of_unity",
+      "new_power",
+      "hanrapetutyun",
+      "against_all",
+      "bright_armenia",
+      "for_the_republic",
+      "national_democratic_pole",
+      "democratic_consolidation",
+      "christian_democratic",
+      "kochari",
+      "anc",
+      "reformists"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 72636,
+        "pct": 56.101
+      },
+      "strong_armenia": {
+        "votes": 25138,
+        "pct": 19.416
+      },
+      "armenia_alliance": {
+        "votes": 11426,
+        "pct": 8.825
+      },
+      "prosperous_armenia": {
+        "votes": 8477,
+        "pct": 6.547
+      },
+      "wings_of_unity": {
+        "votes": 1601,
+        "pct": 1.237
+      },
+      "meritocratic": {
+        "votes": 1870,
+        "pct": 1.444
+      },
+      "democracy_law_discipline": {
+        "votes": 2210,
+        "pct": 1.707
+      },
+      "new_power": {
+        "votes": 1474,
+        "pct": 1.138
+      },
+      "against_all": {
+        "votes": 1177,
+        "pct": 0.909
+      },
+      "hanrapetutyun": {
+        "votes": 1389,
+        "pct": 1.073
+      },
+      "bright_armenia": {
+        "votes": 451,
+        "pct": 0.348
+      },
+      "for_the_republic": {
+        "votes": 408,
+        "pct": 0.315
+      },
+      "national_democratic_pole": {
+        "votes": 374,
+        "pct": 0.289
+      },
+      "democratic_consolidation": {
+        "votes": 261,
+        "pct": 0.202
+      },
+      "anc": {
+        "votes": 141,
+        "pct": 0.109
+      },
+      "christian_democratic": {
+        "votes": 168,
+        "pct": 0.13
+      },
+      "kochari": {
+        "votes": 159,
+        "pct": 0.123
+      },
+      "reformists": {
+        "votes": 113,
+        "pct": 0.087
+      }
+    }
+  },
+  "AM-AV": {
+    "iso": "AM-AV",
+    "name_en": "Armavir",
+    "name_hy": "Արմավիր",
+    "name_fr": "Armavir",
+    "registered": 226472,
+    "ballots_cast": 126259,
+    "valid": 124998,
+    "invalid": 1234,
+    "turnout_pct": 55.75,
+    "stations": 169,
+    "winner": "civil_contract",
+    "winner_pct": 55.666,
+    "runner_up": "strong_armenia",
+    "margin": 32.57,
+    "order": [
+      "civil_contract",
+      "strong_armenia",
+      "armenia_alliance",
+      "prosperous_armenia",
+      "democracy_law_discipline",
+      "wings_of_unity",
+      "meritocratic",
+      "new_power",
+      "against_all",
+      "hanrapetutyun",
+      "bright_armenia",
+      "for_the_republic",
+      "national_democratic_pole",
+      "democratic_consolidation",
+      "christian_democratic",
+      "anc",
+      "kochari",
+      "reformists"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 69581,
+        "pct": 55.666
+      },
+      "strong_armenia": {
+        "votes": 28870,
+        "pct": 23.096
+      },
+      "armenia_alliance": {
+        "votes": 11308,
+        "pct": 9.047
+      },
+      "prosperous_armenia": {
+        "votes": 4095,
+        "pct": 3.276
+      },
+      "wings_of_unity": {
+        "votes": 1701,
+        "pct": 1.361
+      },
+      "meritocratic": {
+        "votes": 1671,
+        "pct": 1.337
+      },
+      "democracy_law_discipline": {
+        "votes": 2402,
+        "pct": 1.922
+      },
+      "new_power": {
+        "votes": 1303,
+        "pct": 1.042
+      },
+      "against_all": {
+        "votes": 1182,
+        "pct": 0.946
+      },
+      "hanrapetutyun": {
+        "votes": 745,
+        "pct": 0.596
+      },
+      "bright_armenia": {
+        "votes": 455,
+        "pct": 0.364
+      },
+      "for_the_republic": {
+        "votes": 367,
+        "pct": 0.294
+      },
+      "national_democratic_pole": {
+        "votes": 339,
+        "pct": 0.271
+      },
+      "democratic_consolidation": {
+        "votes": 318,
+        "pct": 0.254
+      },
+      "anc": {
+        "votes": 163,
+        "pct": 0.13
+      },
+      "christian_democratic": {
+        "votes": 204,
+        "pct": 0.163
+      },
+      "kochari": {
+        "votes": 151,
+        "pct": 0.121
+      },
+      "reformists": {
+        "votes": 143,
+        "pct": 0.114
+      }
+    }
+  },
+  "AM-GR": {
+    "iso": "AM-GR",
+    "name_en": "Gegharkunik",
+    "name_hy": "Գեղարքունիք",
+    "name_fr": "Guégharkounik",
+    "registered": 178193,
+    "ballots_cast": 97227,
+    "valid": 96048,
+    "invalid": 1166,
+    "turnout_pct": 54.56,
+    "stations": 153,
+    "winner": "civil_contract",
+    "winner_pct": 56.555,
+    "runner_up": "strong_armenia",
+    "margin": 37.27,
+    "order": [
+      "civil_contract",
+      "strong_armenia",
+      "armenia_alliance",
+      "prosperous_armenia",
+      "wings_of_unity",
+      "meritocratic",
+      "democracy_law_discipline",
+      "hanrapetutyun",
+      "against_all",
+      "new_power",
+      "bright_armenia",
+      "national_democratic_pole",
+      "for_the_republic",
+      "democratic_consolidation",
+      "anc",
+      "christian_democratic",
+      "kochari",
+      "reformists"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 54320,
+        "pct": 56.555
+      },
+      "strong_armenia": {
+        "votes": 18528,
+        "pct": 19.29
+      },
+      "armenia_alliance": {
+        "votes": 8868,
+        "pct": 9.233
+      },
+      "prosperous_armenia": {
+        "votes": 5723,
+        "pct": 5.958
+      },
+      "wings_of_unity": {
+        "votes": 2629,
+        "pct": 2.737
+      },
+      "meritocratic": {
+        "votes": 1131,
+        "pct": 1.178
+      },
+      "democracy_law_discipline": {
+        "votes": 1093,
+        "pct": 1.138
+      },
+      "new_power": {
+        "votes": 696,
+        "pct": 0.725
+      },
+      "against_all": {
+        "votes": 719,
+        "pct": 0.749
+      },
+      "hanrapetutyun": {
+        "votes": 831,
+        "pct": 0.865
+      },
+      "bright_armenia": {
+        "votes": 351,
+        "pct": 0.365
+      },
+      "for_the_republic": {
+        "votes": 272,
+        "pct": 0.283
+      },
+      "national_democratic_pole": {
+        "votes": 292,
+        "pct": 0.304
+      },
+      "democratic_consolidation": {
+        "votes": 219,
+        "pct": 0.228
+      },
+      "anc": {
+        "votes": 130,
+        "pct": 0.135
+      },
+      "christian_democratic": {
+        "votes": 101,
+        "pct": 0.105
+      },
+      "kochari": {
+        "votes": 80,
+        "pct": 0.083
+      },
+      "reformists": {
+        "votes": 65,
+        "pct": 0.068
+      }
+    }
+  },
+  "AM-KT": {
+    "iso": "AM-KT",
+    "name_en": "Kotayk",
+    "name_hy": "Կոտայք",
+    "name_fr": "Kotayk",
+    "registered": 240672,
+    "ballots_cast": 148082,
+    "valid": 146226,
+    "invalid": 1826,
+    "turnout_pct": 61.53,
+    "stations": 169,
+    "winner": "civil_contract",
+    "winner_pct": 47.556,
+    "runner_up": "strong_armenia",
+    "margin": 25.95,
+    "order": [
+      "civil_contract",
+      "strong_armenia",
+      "armenia_alliance",
+      "prosperous_armenia",
+      "meritocratic",
+      "wings_of_unity",
+      "democracy_law_discipline",
+      "new_power",
+      "against_all",
+      "hanrapetutyun",
+      "bright_armenia",
+      "for_the_republic",
+      "national_democratic_pole",
+      "democratic_consolidation",
+      "anc",
+      "christian_democratic",
+      "kochari",
+      "reformists"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 69539,
+        "pct": 47.556
+      },
+      "strong_armenia": {
+        "votes": 31597,
+        "pct": 21.608
+      },
+      "armenia_alliance": {
+        "votes": 16236,
+        "pct": 11.103
+      },
+      "prosperous_armenia": {
+        "votes": 12805,
+        "pct": 8.757
+      },
+      "wings_of_unity": {
+        "votes": 2686,
+        "pct": 1.837
+      },
+      "meritocratic": {
+        "votes": 2879,
+        "pct": 1.969
+      },
+      "democracy_law_discipline": {
+        "votes": 2386,
+        "pct": 1.632
+      },
+      "new_power": {
+        "votes": 2057,
+        "pct": 1.407
+      },
+      "against_all": {
+        "votes": 1912,
+        "pct": 1.308
+      },
+      "hanrapetutyun": {
+        "votes": 1190,
+        "pct": 0.814
+      },
+      "bright_armenia": {
+        "votes": 547,
+        "pct": 0.374
+      },
+      "for_the_republic": {
+        "votes": 517,
+        "pct": 0.354
+      },
+      "national_democratic_pole": {
+        "votes": 481,
+        "pct": 0.329
+      },
+      "democratic_consolidation": {
+        "votes": 413,
+        "pct": 0.282
+      },
+      "anc": {
+        "votes": 326,
+        "pct": 0.223
+      },
+      "christian_democratic": {
+        "votes": 289,
+        "pct": 0.198
+      },
+      "kochari": {
+        "votes": 226,
+        "pct": 0.155
+      },
+      "reformists": {
+        "votes": 140,
+        "pct": 0.096
+      }
+    }
+  },
+  "AM-LO": {
+    "iso": "AM-LO",
+    "name_en": "Lori",
+    "name_hy": "Լոռի",
+    "name_fr": "Lorri",
+    "registered": 213477,
+    "ballots_cast": 124884,
+    "valid": 123375,
+    "invalid": 1482,
+    "turnout_pct": 58.5,
+    "stations": 221,
+    "winner": "civil_contract",
+    "winner_pct": 49.34,
+    "runner_up": "strong_armenia",
+    "margin": 15.98,
+    "order": [
+      "civil_contract",
+      "strong_armenia",
+      "armenia_alliance",
+      "prosperous_armenia",
+      "wings_of_unity",
+      "meritocratic",
+      "democracy_law_discipline",
+      "against_all",
+      "bright_armenia",
+      "new_power",
+      "hanrapetutyun",
+      "national_democratic_pole",
+      "democratic_consolidation",
+      "for_the_republic",
+      "anc",
+      "christian_democratic",
+      "reformists",
+      "kochari"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 60873,
+        "pct": 49.34
+      },
+      "strong_armenia": {
+        "votes": 41153,
+        "pct": 33.356
+      },
+      "armenia_alliance": {
+        "votes": 6137,
+        "pct": 4.974
+      },
+      "prosperous_armenia": {
+        "votes": 3904,
+        "pct": 3.164
+      },
+      "wings_of_unity": {
+        "votes": 1919,
+        "pct": 1.555
+      },
+      "meritocratic": {
+        "votes": 1774,
+        "pct": 1.438
+      },
+      "democracy_law_discipline": {
+        "votes": 1640,
+        "pct": 1.329
+      },
+      "new_power": {
+        "votes": 1059,
+        "pct": 0.858
+      },
+      "against_all": {
+        "votes": 1203,
+        "pct": 0.975
+      },
+      "hanrapetutyun": {
+        "votes": 890,
+        "pct": 0.721
+      },
+      "bright_armenia": {
+        "votes": 1078,
+        "pct": 0.874
+      },
+      "for_the_republic": {
+        "votes": 315,
+        "pct": 0.255
+      },
+      "national_democratic_pole": {
+        "votes": 410,
+        "pct": 0.332
+      },
+      "democratic_consolidation": {
+        "votes": 407,
+        "pct": 0.33
+      },
+      "anc": {
+        "votes": 257,
+        "pct": 0.208
+      },
+      "christian_democratic": {
+        "votes": 155,
+        "pct": 0.126
+      },
+      "kochari": {
+        "votes": 92,
+        "pct": 0.075
+      },
+      "reformists": {
+        "votes": 109,
+        "pct": 0.088
+      }
+    }
+  },
+  "AM-SH": {
+    "iso": "AM-SH",
+    "name_en": "Shirak",
+    "name_hy": "Շիրակ",
+    "name_fr": "Chirak",
+    "registered": 207892,
+    "ballots_cast": 115245,
+    "valid": 113656,
+    "invalid": 1578,
+    "turnout_pct": 55.44,
+    "stations": 220,
+    "winner": "civil_contract",
+    "winner_pct": 56.179,
+    "runner_up": "strong_armenia",
+    "margin": 32.72,
+    "order": [
+      "civil_contract",
+      "strong_armenia",
+      "armenia_alliance",
+      "prosperous_armenia",
+      "democracy_law_discipline",
+      "meritocratic",
+      "wings_of_unity",
+      "against_all",
+      "for_the_republic",
+      "hanrapetutyun",
+      "new_power",
+      "bright_armenia",
+      "national_democratic_pole",
+      "democratic_consolidation",
+      "anc",
+      "christian_democratic",
+      "kochari",
+      "reformists"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 63851,
+        "pct": 56.179
+      },
+      "strong_armenia": {
+        "votes": 26665,
+        "pct": 23.461
+      },
+      "armenia_alliance": {
+        "votes": 8178,
+        "pct": 7.195
+      },
+      "prosperous_armenia": {
+        "votes": 4340,
+        "pct": 3.819
+      },
+      "wings_of_unity": {
+        "votes": 1451,
+        "pct": 1.277
+      },
+      "meritocratic": {
+        "votes": 1549,
+        "pct": 1.363
+      },
+      "democracy_law_discipline": {
+        "votes": 1624,
+        "pct": 1.429
+      },
+      "new_power": {
+        "votes": 821,
+        "pct": 0.722
+      },
+      "against_all": {
+        "votes": 1295,
+        "pct": 1.139
+      },
+      "hanrapetutyun": {
+        "votes": 886,
+        "pct": 0.78
+      },
+      "bright_armenia": {
+        "votes": 461,
+        "pct": 0.406
+      },
+      "for_the_republic": {
+        "votes": 1163,
+        "pct": 1.023
+      },
+      "national_democratic_pole": {
+        "votes": 420,
+        "pct": 0.37
+      },
+      "democratic_consolidation": {
+        "votes": 407,
+        "pct": 0.358
+      },
+      "anc": {
+        "votes": 192,
+        "pct": 0.169
+      },
+      "christian_democratic": {
+        "votes": 147,
+        "pct": 0.129
+      },
+      "kochari": {
+        "votes": 110,
+        "pct": 0.097
+      },
+      "reformists": {
+        "votes": 96,
+        "pct": 0.084
+      }
+    }
+  },
+  "AM-SU": {
+    "iso": "AM-SU",
+    "name_en": "Syunik",
+    "name_hy": "Սյունիք",
+    "name_fr": "Syunik",
+    "registered": 107118,
+    "ballots_cast": 71514,
+    "valid": 69344,
+    "invalid": 850,
+    "turnout_pct": 66.76,
+    "stations": 151,
+    "winner": "civil_contract",
+    "winner_pct": 51.168,
+    "runner_up": "strong_armenia",
+    "margin": 30.59,
+    "order": [
+      "civil_contract",
+      "strong_armenia",
+      "armenia_alliance",
+      "wings_of_unity",
+      "prosperous_armenia",
+      "meritocratic",
+      "democracy_law_discipline",
+      "against_all",
+      "new_power",
+      "hanrapetutyun",
+      "bright_armenia",
+      "democratic_consolidation",
+      "for_the_republic",
+      "national_democratic_pole",
+      "kochari",
+      "anc",
+      "christian_democratic",
+      "reformists"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 35482,
+        "pct": 51.168
+      },
+      "strong_armenia": {
+        "votes": 14273,
+        "pct": 20.583
+      },
+      "armenia_alliance": {
+        "votes": 7200,
+        "pct": 10.383
+      },
+      "prosperous_armenia": {
+        "votes": 2006,
+        "pct": 2.893
+      },
+      "wings_of_unity": {
+        "votes": 4948,
+        "pct": 7.135
+      },
+      "meritocratic": {
+        "votes": 1020,
+        "pct": 1.471
+      },
+      "democracy_law_discipline": {
+        "votes": 828,
+        "pct": 1.194
+      },
+      "new_power": {
+        "votes": 576,
+        "pct": 0.831
+      },
+      "against_all": {
+        "votes": 774,
+        "pct": 1.116
+      },
+      "hanrapetutyun": {
+        "votes": 575,
+        "pct": 0.829
+      },
+      "bright_armenia": {
+        "votes": 493,
+        "pct": 0.711
+      },
+      "for_the_republic": {
+        "votes": 247,
+        "pct": 0.356
+      },
+      "national_democratic_pole": {
+        "votes": 206,
+        "pct": 0.297
+      },
+      "democratic_consolidation": {
+        "votes": 361,
+        "pct": 0.521
+      },
+      "anc": {
+        "votes": 94,
+        "pct": 0.136
+      },
+      "christian_democratic": {
+        "votes": 83,
+        "pct": 0.12
+      },
+      "kochari": {
+        "votes": 96,
+        "pct": 0.138
+      },
+      "reformists": {
+        "votes": 82,
+        "pct": 0.118
+      }
+    }
+  },
+  "AM-TV": {
+    "iso": "AM-TV",
+    "name_en": "Tavush",
+    "name_hy": "Տավուշ",
+    "name_fr": "Tavouch",
+    "registered": 103467,
+    "ballots_cast": 65557,
+    "valid": 64863,
+    "invalid": 683,
+    "turnout_pct": 63.36,
+    "stations": 94,
+    "winner": "civil_contract",
+    "winner_pct": 59.751,
+    "runner_up": "strong_armenia",
+    "margin": 39.01,
+    "order": [
+      "civil_contract",
+      "strong_armenia",
+      "armenia_alliance",
+      "prosperous_armenia",
+      "wings_of_unity",
+      "meritocratic",
+      "democracy_law_discipline",
+      "against_all",
+      "hanrapetutyun",
+      "bright_armenia",
+      "new_power",
+      "democratic_consolidation",
+      "for_the_republic",
+      "national_democratic_pole",
+      "kochari",
+      "anc",
+      "christian_democratic",
+      "reformists"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 38756,
+        "pct": 59.751
+      },
+      "strong_armenia": {
+        "votes": 13451,
+        "pct": 20.738
+      },
+      "armenia_alliance": {
+        "votes": 4589,
+        "pct": 7.075
+      },
+      "prosperous_armenia": {
+        "votes": 2222,
+        "pct": 3.426
+      },
+      "wings_of_unity": {
+        "votes": 1424,
+        "pct": 2.195
+      },
+      "meritocratic": {
+        "votes": 867,
+        "pct": 1.337
+      },
+      "democracy_law_discipline": {
+        "votes": 792,
+        "pct": 1.221
+      },
+      "new_power": {
+        "votes": 468,
+        "pct": 0.722
+      },
+      "against_all": {
+        "votes": 616,
+        "pct": 0.95
+      },
+      "hanrapetutyun": {
+        "votes": 538,
+        "pct": 0.829
+      },
+      "bright_armenia": {
+        "votes": 471,
+        "pct": 0.726
+      },
+      "for_the_republic": {
+        "votes": 139,
+        "pct": 0.214
+      },
+      "national_democratic_pole": {
+        "votes": 134,
+        "pct": 0.207
+      },
+      "democratic_consolidation": {
+        "votes": 143,
+        "pct": 0.22
+      },
+      "anc": {
+        "votes": 68,
+        "pct": 0.105
+      },
+      "christian_democratic": {
+        "votes": 63,
+        "pct": 0.097
+      },
+      "kochari": {
+        "votes": 73,
+        "pct": 0.113
+      },
+      "reformists": {
+        "votes": 49,
+        "pct": 0.076
+      }
+    }
+  },
+  "AM-VD": {
+    "iso": "AM-VD",
+    "name_en": "Vayots Dzor",
+    "name_hy": "Վայոց ձոր",
+    "name_fr": "Vayots Dzor",
+    "registered": 44653,
+    "ballots_cast": 29291,
+    "valid": 28924,
+    "invalid": 357,
+    "turnout_pct": 65.6,
+    "stations": 53,
+    "winner": "civil_contract",
+    "winner_pct": 59.694,
+    "runner_up": "strong_armenia",
+    "margin": 40.22,
+    "order": [
+      "civil_contract",
+      "strong_armenia",
+      "armenia_alliance",
+      "prosperous_armenia",
+      "democracy_law_discipline",
+      "meritocratic",
+      "wings_of_unity",
+      "against_all",
+      "new_power",
+      "hanrapetutyun",
+      "christian_democratic",
+      "for_the_republic",
+      "bright_armenia",
+      "national_democratic_pole",
+      "democratic_consolidation",
+      "kochari",
+      "anc",
+      "reformists"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 17266,
+        "pct": 59.694
+      },
+      "strong_armenia": {
+        "votes": 5632,
+        "pct": 19.472
+      },
+      "armenia_alliance": {
+        "votes": 2194,
+        "pct": 7.585
+      },
+      "prosperous_armenia": {
+        "votes": 1269,
+        "pct": 4.387
+      },
+      "wings_of_unity": {
+        "votes": 342,
+        "pct": 1.182
+      },
+      "meritocratic": {
+        "votes": 418,
+        "pct": 1.445
+      },
+      "democracy_law_discipline": {
+        "votes": 422,
+        "pct": 1.459
+      },
+      "new_power": {
+        "votes": 237,
+        "pct": 0.819
+      },
+      "against_all": {
+        "votes": 337,
+        "pct": 1.165
+      },
+      "hanrapetutyun": {
+        "votes": 230,
+        "pct": 0.795
+      },
+      "bright_armenia": {
+        "votes": 101,
+        "pct": 0.349
+      },
+      "for_the_republic": {
+        "votes": 106,
+        "pct": 0.366
+      },
+      "national_democratic_pole": {
+        "votes": 89,
+        "pct": 0.308
+      },
+      "democratic_consolidation": {
+        "votes": 82,
+        "pct": 0.284
+      },
+      "anc": {
+        "votes": 26,
+        "pct": 0.09
+      },
+      "christian_democratic": {
+        "votes": 116,
+        "pct": 0.401
+      },
+      "kochari": {
+        "votes": 31,
+        "pct": 0.107
+      },
+      "reformists": {
+        "votes": 26,
+        "pct": 0.09
+      }
+    }
+  },
+  "AM-ER": {
+    "iso": "AM-ER",
+    "name_en": "Yerevan",
+    "name_hy": "Երևան",
+    "name_fr": "Erevan",
+    "registered": 850561,
+    "ballots_cast": 496638,
+    "valid": 490167,
+    "invalid": 4905,
+    "turnout_pct": 58.39,
+    "stations": 478,
+    "winner": "civil_contract",
+    "winner_pct": 41.498,
+    "runner_up": "strong_armenia",
+    "margin": 16.8,
+    "order": [
+      "civil_contract",
+      "strong_armenia",
+      "armenia_alliance",
+      "meritocratic",
+      "new_power",
+      "wings_of_unity",
+      "democracy_law_discipline",
+      "against_all",
+      "prosperous_armenia",
+      "hanrapetutyun",
+      "for_the_republic",
+      "bright_armenia",
+      "national_democratic_pole",
+      "democratic_consolidation",
+      "anc",
+      "christian_democratic",
+      "kochari",
+      "reformists"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 203411,
+        "pct": 41.498
+      },
+      "strong_armenia": {
+        "votes": 121078,
+        "pct": 24.701
+      },
+      "armenia_alliance": {
+        "votes": 62571,
+        "pct": 12.765
+      },
+      "prosperous_armenia": {
+        "votes": 10342,
+        "pct": 2.11
+      },
+      "wings_of_unity": {
+        "votes": 14096,
+        "pct": 2.876
+      },
+      "meritocratic": {
+        "votes": 16540,
+        "pct": 3.374
+      },
+      "democracy_law_discipline": {
+        "votes": 11481,
+        "pct": 2.342
+      },
+      "new_power": {
+        "votes": 16305,
+        "pct": 3.326
+      },
+      "against_all": {
+        "votes": 11313,
+        "pct": 2.308
+      },
+      "hanrapetutyun": {
+        "votes": 7779,
+        "pct": 1.587
+      },
+      "bright_armenia": {
+        "votes": 2809,
+        "pct": 0.573
+      },
+      "for_the_republic": {
+        "votes": 3052,
+        "pct": 0.623
+      },
+      "national_democratic_pole": {
+        "votes": 2558,
+        "pct": 0.522
+      },
+      "democratic_consolidation": {
+        "votes": 2491,
+        "pct": 0.508
+      },
+      "anc": {
+        "votes": 1635,
+        "pct": 0.334
+      },
+      "christian_democratic": {
+        "votes": 1260,
+        "pct": 0.257
+      },
+      "kochari": {
+        "votes": 910,
+        "pct": 0.186
+      },
+      "reformists": {
+        "votes": 536,
+        "pct": 0.109
+      }
+    }
+  }
+}
