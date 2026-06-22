@@ -1,11 +1,11 @@
 # Armenia 2026 Election Atlas
 
-A fun, fast, **trilingual (EN / ՀՅ / FR)** geographic study of Armenia's **7 June 2026**
+A **trilingual (EN / ՀՅ / FR)** geographic study of Armenia's **7 June 2026**
 parliamentary election — built to be explored and shared by link, not just read.
 
-> Civil Contract won a second outright majority and carried **all eleven provinces**.
-> So the interesting question isn't *who* won, but *by how much* — and *where* the
-> opposition pushed back. This atlas is built around that idea.
+Civil Contract won a second outright majority and carried **all eleven provinces**. The
+atlas focuses on the geography of that result: the margin of victory and the party scores,
+province by province and community by community.
 
 **Live site:** `https://thepriben.github.io/armenia-2026-election-atlas/`
 
@@ -16,13 +16,10 @@ parliamentary election — built to be explored and shared by link, not just rea
   victory**, turnout, and **party share** (any of the 18 forces). Click a province for a
   full breakdown; every view is encoded in the **URL** so you can share an exact state.
 - **Zoom** — a pan-and-zoom bubble map down to the **community** level (81 communities,
-  geocoded), the closest view to the polling places. Hunt for the rare opposition wins.
+  geocoded), the closest view to the polling places.
 - **Parties** — neutral, trilingual profiles cross-referenced to **Wikidata** + Wikipedia.
-- **Context & correlations** — cross provinces against open **ArmStat** socio-economic data
-  (average wage 2025, poverty 2023) with a live trend line.
-- **Electoral forensics** — turnout-vs-share scatter and a turnout histogram over all
-  **2,005 polling stations**, read in-browser straight from a **Parquet** file.
-- **Data** — sortable tables and downloads (Parquet / CSV / GeoJSON).
+- **Data** — sortable tables and downloads (**Parquet** / CSV / GeoJSON), derived from the
+  **2,005 polling stations** in the official CEC workbooks.
 
 ## Single source of truth
 
@@ -35,7 +32,6 @@ All results come from the **Central Electoral Commission of Armenia** (`election
 
 Province boundaries: **geoBoundaries** ARM ADM1 (CC-BY 4.0).
 Community coordinates: **GeoNames** (CC-BY).
-Socio-economic context: **ArmStat** (wages 2025; ILCS poverty 2023).
 Identifiers and multilingual labels: **Wikidata**.
 
 ## Reproducible pipeline
@@ -55,7 +51,7 @@ Outputs land in `data/` (JSON for the site) and `data/clean/` (Parquet + CSV).
 **Note on totals.** The per-station tabulation sums to ~0.05% below the certified national
 figures because it excludes the small electronic vote and three annulled stations. The
 atlas shows the certified national totals and seat allocation, and uses the per-station
-data for everything geographic and forensic.
+data for everything geographic.
 
 ## Run locally
 

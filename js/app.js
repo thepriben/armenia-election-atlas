@@ -85,7 +85,6 @@ function applyI18n() {
   document.querySelectorAll("#langswitch button").forEach((b) =>
     b.classList.toggle("active", b.dataset.l === lang));
   $("#footerLicense").textContent = t("about_license");
-  $("#genStamp").textContent = `${t("generated")} ${core.meta.generated_utc.slice(0, 10)}`;
 }
 
 function buildLangSwitch() {
@@ -134,10 +133,9 @@ function renderHeroMap() {
 
 function renderStats() {
   const n = core.national;
-  const cc = n.parties.find((p) => p.id === "civil_contract");
   const stats = [
     { v: n.turnout_pct + "%", l: t("stat_turnout") },
-    { v: cc.seats + " / " + n.total_seats, l: t("stat_seats") },
+    { v: n.total_seats, l: t("stat_seats") },
     { v: fmtInt(n.stations), l: t("stat_stations") },
     { v: n.parties.length, l: t("stat_forces") },
   ];
@@ -185,7 +183,6 @@ function renderPanel(iso) {
   if (!m) return;
   const partyById = Object.fromEntries(core.parties.map((p) => [p.id, p]));
   const name = pickLangField({ name_en: m.name_en, name_hy: m.name_hy, name_fr: m.name_fr }, "name");
-  const link = core.links[iso]?.wikipedia?.[getLang()] || core.links[iso]?.wikipedia?.en;
   const rows = m.order.filter((pid) => m.shares[pid].pct >= 1).map((pid) => {
     const p = partyById[pid], pct = m.shares[pid].pct;
     return `<div class="barrow"><span class="nm">${pickLangField(p, "name")}</span>
@@ -200,8 +197,7 @@ function renderPanel(iso) {
       <div class="ps"><div class="v">${fmtInt(m.registered)}</div><div class="l">${t("panel_registered")}</div></div>
       <div class="ps"><div class="v">${fmtInt(m.stations)}</div><div class="l">${t("panel_stations")}</div></div>
     </div>
-    <div>${rows}</div>
-    ${link ? `<div class="reflinks"><a href="${link.url}" target="_blank" rel="noopener">${t("panel_more")} ↗</a></div>` : ""}`;
+    <div>${rows}</div>`;
 }
 
 /* ---------------- community zoom map ---------------- */
@@ -224,13 +220,13 @@ function buildCommunityMap() {
 
 /* ---------------- repo star badge ---------------- */
 async function loadRepoStars() {
-  const el = $("#repoStars");
+  const el = $("#repoStars .rb-count");
   if (!el) return;
   try {
     const r = await fetch("https://api.github.com/repos/thepriben/armenia-2026-election-atlas");
     if (!r.ok) return;
     const d = await r.json();
-    el.textContent = `★ ${Number(d.stargazers_count || 0).toLocaleString(getLang())}`;
+    el.textContent = Number(d.stargazers_count || 0).toLocaleString(getLang());
   } catch (e) {}
 }
 

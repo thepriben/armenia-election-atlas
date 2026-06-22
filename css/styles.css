@@ -211,10 +211,14 @@ main { display: block; }
 
 .footer { max-width: var(--maxw); margin: 0 auto; padding: 40px 20px 60px; border-top: 1px solid var(--line); }
 .footer a { color: var(--accent); }
-.repo-badge { display: inline-flex; align-items: center; gap: 5px; padding: 2px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--text); text-decoration: none; vertical-align: middle; transition: border-color .15s, color .15s; }
-.repo-badge:hover { border-color: var(--accent); color: var(--accent); }
+.repo-badge { display: inline-flex; align-items: stretch; border: 1px solid var(--line); border-radius: 7px; overflow: hidden; text-decoration: none; vertical-align: middle; font-size: .8rem; line-height: 1; transition: border-color .15s; }
+.repo-badge:hover { border-color: var(--accent); }
 .repo-badge svg { display: block; }
-.repo-badge #repoStars { font-variant-numeric: tabular-nums; font-weight: 600; }
+.repo-badge .rb-mark { display: inline-flex; align-items: center; gap: 6px; padding: 5px 9px; background: var(--surface-2); color: var(--text); font-weight: 600; }
+.repo-badge .rb-label { letter-spacing: .01em; }
+.repo-badge .rb-stars { display: inline-flex; align-items: center; gap: 5px; padding: 5px 9px; border-left: 1px solid var(--line); color: var(--muted); font-variant-numeric: tabular-nums; font-weight: 700; }
+.repo-badge .rb-stars svg { color: #e3b341; }
+.repo-badge:hover .rb-stars { color: var(--text); }
 .dl-links { display: flex; gap: 8px; flex-wrap: wrap; }
 .dl-links a { text-decoration: none; font-size: .82rem; font-weight: 700; padding: 7px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface-2); }
 .dl-links a:hover { border-color: var(--accent); color: var(--accent); }
