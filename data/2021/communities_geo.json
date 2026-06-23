@@ -67,7 +67,7 @@
       ],
       "lat": 40.2976,
       "lon": 44.36152,
-      "settlement_count": 1
+      "settlement_count": 29
     },
     {
       "community": "Ապարան",
@@ -133,7 +133,7 @@
       ],
       "lat": 40.3253,
       "lon": 44.619,
-      "settlement_count": 1
+      "settlement_count": 6
     },
     {
       "community": "Թալին",
@@ -166,7 +166,7 @@
       ],
       "lat": 40.39172,
       "lon": 43.87793,
-      "settlement_count": 5
+      "settlement_count": 33
     },
     {
       "community": "Ծաղկահովիտ",
@@ -232,7 +232,7 @@
       ],
       "lat": 40.38036,
       "lon": 44.04591,
-      "settlement_count": 1
+      "settlement_count": 2
     },
     {
       "community": "Շամիրամ",
@@ -298,7 +298,7 @@
       ],
       "lat": 39.85494,
       "lon": 44.6947,
-      "settlement_count": 1
+      "settlement_count": 12
     },
     {
       "community": "Արտաշատ",
@@ -331,7 +331,7 @@
       ],
       "lat": 39.95484,
       "lon": 44.54874,
-      "settlement_count": 1
+      "settlement_count": 39
     },
     {
       "community": "Մասիս",
@@ -364,7 +364,7 @@
       ],
       "lat": 40.06595,
       "lon": 44.43669,
-      "settlement_count": 1
+      "settlement_count": 26
     },
     {
       "community": "Վեդի",
@@ -397,7 +397,7 @@
       ],
       "lat": 39.91291,
       "lon": 44.72083,
-      "settlement_count": 4
+      "settlement_count": 19
     },
     {
       "community": "Վերին Դվին",
@@ -463,7 +463,7 @@
       ],
       "lat": 40.05548,
       "lon": 44.30292,
-      "settlement_count": 1
+      "settlement_count": 13
     },
     {
       "community": "Արմավիր",
@@ -496,7 +496,7 @@
       ],
       "lat": 40.15553,
       "lon": 44.0388,
-      "settlement_count": 1
+      "settlement_count": 13
     },
     {
       "community": "Բաղրամյան",
@@ -529,7 +529,7 @@
       ],
       "lat": 40.19324,
       "lon": 44.36934,
-      "settlement_count": 1
+      "settlement_count": 15
     },
     {
       "community": "Մեծամոր",
@@ -562,7 +562,7 @@
       ],
       "lat": 40.14459,
       "lon": 44.11484,
-      "settlement_count": 1
+      "settlement_count": 30
     },
     {
       "community": "Վաղարշապատ",
@@ -595,7 +595,7 @@
       ],
       "lat": 40.16557,
       "lon": 44.29462,
-      "settlement_count": 1
+      "settlement_count": 18
     },
     {
       "community": "Փարաքար",
@@ -628,7 +628,7 @@
       ],
       "lat": 40.16388,
       "lon": 44.4057,
-      "settlement_count": 1
+      "settlement_count": 7
     },
     {
       "community": "Ֆերիկ",
@@ -694,7 +694,7 @@
       ],
       "lat": 40.35398,
       "lon": 45.12386,
-      "settlement_count": 1
+      "settlement_count": 12
     },
     {
       "community": "Ճամբարակ",
@@ -760,7 +760,7 @@
       ],
       "lat": 40.14028,
       "lon": 45.30232,
-      "settlement_count": 1
+      "settlement_count": 17
     },
     {
       "community": "Սեվան",
@@ -793,7 +793,7 @@
       ],
       "lat": 40.548,
       "lon": 44.95314,
-      "settlement_count": 1
+      "settlement_count": 11
     },
     {
       "community": "Վարդենիս",
@@ -826,7 +826,7 @@
       ],
       "lat": 40.1827,
       "lon": 45.73156,
-      "settlement_count": 21
+      "settlement_count": 33
     },
     {
       "community": "Աբովյան",
@@ -859,7 +859,7 @@
       ],
       "lat": 40.2717,
       "lon": 44.63342,
-      "settlement_count": 1
+      "settlement_count": 11
     },
     {
       "community": "Ակունք",
@@ -991,7 +991,7 @@
       ],
       "lat": 40.11931,
       "lon": 44.73442,
-      "settlement_count": 1
+      "settlement_count": 6
     },
     {
       "community": "Ծաղկաձոր",
@@ -1057,7 +1057,7 @@
       ],
       "lat": 40.5169,
       "lon": 44.75591,
-      "settlement_count": 1
+      "settlement_count": 5
     },
     {
       "community": "Նաիրի",
@@ -1090,7 +1090,7 @@
       ],
       "lat": 40.3217,
       "lon": 44.4814,
-      "settlement_count": 7
+      "settlement_count": 9
     },
     {
       "community": "Նոր Հաճըն",
@@ -1123,7 +1123,7 @@
       ],
       "lat": 40.30296,
       "lon": 44.58314,
-      "settlement_count": 1
+      "settlement_count": 9
     },
     {
       "community": "Չարենցավան",
@@ -1288,7 +1288,7 @@
       ],
       "lat": 40.9617,
       "lon": 44.65003,
-      "settlement_count": 8
+      "settlement_count": 9
     },
     {
       "community": "Լերմոնտովո",
@@ -1321,7 +1321,7 @@
       ],
       "lat": 40.75843,
       "lon": 44.63401,
-      "settlement_count": 1
+      "settlement_count": 2
     },
     {
       "community": "Լոռի Բերդ",
@@ -1387,7 +1387,7 @@
       ],
       "lat": 40.83131,
       "lon": 44.27019,
-      "settlement_count": 1
+      "settlement_count": 21
     },
     {
       "community": "Ստեփանավան",
@@ -1453,7 +1453,7 @@
       ],
       "lat": 40.8074,
       "lon": 44.49704,
-      "settlement_count": 1
+      "settlement_count": 4
     },
     {
       "community": "Տաշիր",
@@ -1519,7 +1519,7 @@
       ],
       "lat": 40.83086,
       "lon": 44.55725,
-      "settlement_count": 1
+      "settlement_count": 15
     },
     {
       "community": "Ֆիոլետովո",
@@ -1585,7 +1585,7 @@
       ],
       "lat": 40.78081,
       "lon": 43.90037,
-      "settlement_count": 24
+      "settlement_count": 33
     },
     {
       "community": "Ամասիա",
@@ -1717,7 +1717,7 @@
       ],
       "lat": 40.61918,
       "lon": 43.97207,
-      "settlement_count": 1
+      "settlement_count": 24
     },
     {
       "community": "Գյումրի",
@@ -2080,7 +2080,7 @@
       ],
       "lat": 40.88037,
       "lon": 45.14776,
-      "settlement_count": 1
+      "settlement_count": 19
     },
     {
       "community": "Նոյեմբերյան",
@@ -2212,7 +2212,7 @@
       ],
       "lat": 39.7644,
       "lon": 45.33268,
-      "settlement_count": 4
+      "settlement_count": 5
     },
     {
       "community": "Ջերմուկ",

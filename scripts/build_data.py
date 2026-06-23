@@ -390,8 +390,13 @@ def build():
 
     # Settlement/locality label: CEC "Բնակավայր" when present, otherwise the
     # community column (Yerevan districts, or pre-reform community in 2021).
-    df["locality_hy"] = df.apply(
-        lambda r: str(r["settlement_hy"] or r["community_hy"] or "").strip(), axis=1)
+    def _locality(row):
+        sett = row["settlement_hy"]
+        if pd.notna(sett) and str(sett).strip():
+            return str(sett).strip()
+        return str(row["community_hy"] or "").strip()
+
+    df["locality_hy"] = df.apply(_locality, axis=1)
 
     # Re-aggregate pre-reform communities into modern consolidated municipalities
     # (keeps each station in its own province; only the community label changes).

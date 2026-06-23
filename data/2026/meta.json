@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-06-23T19:12:48+00:00",
+  "generated_utc": "2026-06-23T19:22:55+00:00",
   "source": {
     "results_by_station": "https://www.elections.am/File/ElectionResult?electionId=28826",
     "polling_station_registry": "https://www.elections.am/File/SubDistrictsToExcel?electionId=28826",
@@ -97,6 +97,6 @@
   },
   "levels": {
     "communities": 81,
-    "settlements": 858
+    "settlements": 875
   }
 }

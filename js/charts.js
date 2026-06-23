@@ -129,30 +129,37 @@ export function communityMap({
 
   function commKey(c) { return `${c.marz_iso}|${c.community || c.community_hy}`; }
 
-  function layoutItems(items, rScale) {
+  function layoutItems(items, rScale, maxDrift = 12) {
     items.sort((a, b) => b.registered - a.registered);
     items.forEach((c) => {
       const p = proj([c.lon, c.lat]);
       c._x = p[0]; c._y = p[1]; c.x = p[0]; c.y = p[1];
     });
     const sim = d3.forceSimulation(items)
-      .force("x", d3.forceX((c) => c._x).strength(.75))
-      .force("y", d3.forceY((c) => c._y).strength(.75))
-      .force("collide", d3.forceCollide((c) => rScale(c.registered) + .5).strength(.92))
+      .force("x", d3.forceX((c) => c._x).strength(.85))
+      .force("y", d3.forceY((c) => c._y).strength(.85))
+      .force("collide", d3.forceCollide((c) => rScale(c.registered) + .35).strength(.75))
       .stop();
-    for (let i = 0; i < 180; i++) sim.tick();
+    for (let i = 0; i < 120; i++) sim.tick();
+    for (const c of items) {
+      const dx = c.x - c._x, dy = c.y - c._y, d = Math.hypot(dx, dy);
+      if (d > maxDrift) {
+        c.x = c._x + (dx / d) * maxDrift;
+        c.y = c._y + (dy / d) * maxDrift;
+      }
+    }
     return items;
   }
 
   const rComm = d3.scaleSqrt()
     .domain([0, d3.max(allCommunities, (c) => c.registered)])
-    .range([1.5, 26]);
-  layoutItems(allCommunities, rComm);
+    .range([1.5, 22]);
+  layoutItems(allCommunities, rComm, 12);
 
   function currentRadius() {
     if (drill) {
       const items = drill.items;
-      const r = d3.scaleSqrt().domain([0, d3.max(items, (c) => c.registered)]).range([1.2, 18]);
+      const r = d3.scaleSqrt().domain([0, d3.max(items, (c) => c.registered)]).range([1.2, 14]);
       return (c) => r(c.registered) / Math.sqrt(zoomK);
     }
     return (c) => rComm(c.registered) / Math.sqrt(zoomK);
@@ -198,9 +205,9 @@ export function communityMap({
     if (raw.length <= 1) return;
     hideTip();
     drill = { parent: c, key, items: layoutItems(raw, (n) => {
-      const r = d3.scaleSqrt().domain([0, d3.max(raw, (x) => x.registered)]).range([1.2, 18]);
+      const r = d3.scaleSqrt().domain([0, d3.max(raw, (x) => x.registered)]).range([1.2, 14]);
       return r(n);
-    }) };
+    }, 18) };
     if (onDrill) onDrill(drill);
     zoomToItems(drill.items);
     render();

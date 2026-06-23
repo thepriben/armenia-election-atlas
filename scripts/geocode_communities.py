@@ -122,10 +122,17 @@ def _variants(name):
     yield name.replace("և", "եվ")
 
 
-def match(name, marz_en, idx):
-    """Resolve a community to (lat, lon, fclass, en, fr)."""
+def _km_dist(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+    return math.hypot((lat1 - lat2) * 111.0, (lon1 - lon2) * 85.0)
+
+
+def match(name, marz_en, idx, near=None, max_km: float | None = None):
+    """Resolve to (lat, lon, fclass, en, fr). With *near*, pick the closest
+    homonym in-province and reject matches farther than *max_km*."""
     if name in MANUAL:
         lat, lon, en, fr = MANUAL[name]
+        if near and max_km and _km_dist(lat, lon, near[0], near[1]) > max_km:
+            return None
         return lat, lon, "M", en, fr
     target = MARZ_ADM1.get(marz_en)
     for v in _variants(name):
@@ -133,9 +140,16 @@ def match(name, marz_en, idx):
         if not cands:
             continue
         in_prov = [c for c in cands if c[5] == target]
-        if in_prov:
+        if not in_prov:
+            continue
+        if near:
+            in_prov.sort(key=lambda c: _km_dist(c[2], c[3], near[0], near[1]))
             c = in_prov[0]
-            return c[2], c[3], c[4], c[6], c[7]
+            if max_km and _km_dist(c[2], c[3], near[0], near[1]) > max_km:
+                continue
+        else:
+            c = in_prov[0]
+        return c[2], c[3], c[4], c[6], c[7]
     return None
 
 
@@ -156,14 +170,14 @@ def spread_overlaps(out):
             c["lon"] = round(lon + radius * math.sin(ang) / math.cos(math.radians(lat)), 5)
 
 
-def _result_row(r, hy, marz_hy, idx, pids, color):
+def _result_row(r, hy, marz_hy, idx, pids, color, near=None, max_km=None):
     """Build one geocoded feature dict for a community or settlement row."""
     votes = {pid: int(r[pid]) for pid in pids if pid in r}
     order = sorted(votes, key=votes.get, reverse=True)
     valid = max(int(r["valid"]), 1)
     winner = order[0]
     top = [{"id": pid, "pct": round(100 * votes[pid] / valid, 1)} for pid in order[:3]]
-    m = match(normalize(hy), r["marz_en"], idx)
+    m = match(normalize(hy), r["marz_en"], idx, near=near, max_km=max_km)
     en = fr = None
     if m:
         en, fr = m[3], m[4]
@@ -209,16 +223,25 @@ def geocode_communities(df, idx, marz_hy, pids, color):
     return out, matched
 
 
-def geocode_settlements(df, idx, marz_hy, pids, color):
+def geocode_settlements(df, idx, marz_hy, pids, color, parent_coords):
     by_comm = {}
-    matched = total = 0
+    matched = total = rejected = 0
     for _, r in df.iterrows():
         total += 1
-        hy = r["locality_hy"]
+        hy = str(r["locality_hy"] or "").strip()
+        if not hy or hy.lower() == "nan":
+            continue
         comm = r["community_hy"]
-        rec = _result_row(r, hy, marz_hy, idx, pids, color)
+        key = f"{r['marz_iso']}|{comm}"
+        parent = parent_coords.get(key)
+        near = (parent["lat"], parent["lon"]) if parent and parent.get("lat") else None
+        rec = _result_row(r, hy, marz_hy, idx, pids, color,
+                          near=near, max_km=22 if near else None)
         if rec.pop("_matched"):
             matched += 1
+        elif near and rec["lat"] is not None:
+            rejected += 1
+            rec["lat"] = rec["lon"] = None
         same_comm = normalize(hy) == normalize(comm)
         item = {
             "locality": hy,
@@ -237,7 +260,7 @@ def geocode_settlements(df, idx, marz_hy, pids, color):
         by_comm.setdefault(key, []).append(item)
     for items in by_comm.values():
         spread_overlaps(items)
-    return by_comm, matched, total
+    return by_comm, matched, total, rejected
 
 
 def main():
@@ -259,15 +282,19 @@ def main():
     sett_by_comm = {}
     sett_matched = sett_total = sett_located = 0
     if SETTLEMENTS.exists():
+        parent_coords = {f"{c['marz_iso']}|{c['community']}": c for c in out}
         sdf = pd.read_parquet(SETTLEMENTS)
-        sett_by_comm, sett_matched, sett_total = geocode_settlements(
-            sdf, idx, marz_hy, pids, color)
+        sett_by_comm, sett_matched, sett_total, sett_rejected = geocode_settlements(
+            sdf, idx, marz_hy, pids, color, parent_coords)
         for key, items in sett_by_comm.items():
             sett_counts[key] = len(items)
             sett_located += sum(1 for s in items if s["lat"] is not None)
         for c in out:
             key = f"{c['marz_iso']}|{c['community']}"
             c["settlement_count"] = sett_counts.get(key, 1)
+        if sett_rejected:
+            print(f"   rejected {sett_rejected} settlement homonym matches (>22 km from commune seat)",
+                  file=sys.stderr)
     else:
         for c in out:
             c["settlement_count"] = 1
