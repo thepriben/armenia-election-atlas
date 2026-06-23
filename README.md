@@ -1,13 +1,16 @@
-# Armenia 2026 Election Atlas
+# Armenia Election Atlas
 
-A **trilingual (EN / ՀՅ / FR)** geographic study of Armenia's **7 June 2026**
-parliamentary election — built to be explored and shared by link, not just read.
+A **trilingual (EN / ՀՅ / FR)** geographic atlas of Armenia's parliamentary
+elections — built to be explored and shared by link, not just read.
 
-Civil Contract won a second outright majority and carried **all eleven provinces**. The
-atlas focuses on the geography of that result: the margin of victory and the party scores,
-province by province and community by community.
+The atlas is designed to grow into a multi-election archive. **For now it covers the
+7 June 2026 election only**; earlier elections are planned and will be added later.
 
-**Live site:** `https://thepriben.github.io/armenia-2026-election-atlas/`
+For 2026, Civil Contract won a second outright majority and carried **all eleven
+provinces**. The atlas focuses on the geography of that result: the margin of victory and
+the party scores, province by province and community by community.
+
+**Live site:** `https://thepriben.github.io/armenia-election-atlas/`
 
 ## What's inside
 
@@ -63,7 +66,7 @@ No build step. The site is plain ES modules + D3 (from CDN) + hyparquet for in-b
 
 ## Deploy to GitHub Pages
 
-1. Push to `github.com/thepriben/armenia-2026-election-atlas`.
+1. Push to `github.com/thepriben/armenia-election-atlas`.
 2. Settings → Pages → *Deploy from a branch* → `main` / root.
 3. A `.nojekyll` file is included so `data/` and `.parquet` files are served as-is.
 

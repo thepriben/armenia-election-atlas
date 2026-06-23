@@ -224,7 +224,7 @@ async function loadRepoStars() {
   const el = $("#repoStars .rb-count");
   if (!el) return;
   try {
-    const r = await fetch("https://api.github.com/repos/thepriben/armenia-2026-election-atlas");
+    const r = await fetch("https://api.github.com/repos/thepriben/armenia-election-atlas");
     if (!r.ok) return;
     const d = await r.json();
     el.textContent = Number(d.stargazers_count || 0).toLocaleString(getLang());
