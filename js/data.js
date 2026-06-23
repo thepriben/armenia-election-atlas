@@ -27,7 +27,7 @@ export async function loadElections() {
 
 export async function loadCore(election = DEFAULT_ELECTION) {
   const dir = `data/${election}`;
-  const [national, marz, parties, links, meta, geo, profiles, comGeo] = await Promise.all([
+  const [national, marz, parties, links, meta, geo, profiles, comGeo, settGeo] = await Promise.all([
     getJSON(`${dir}/national.json`),
     getJSON(`${dir}/marz.json`),
     getJSON(`${dir}/parties.json`),
@@ -36,11 +36,13 @@ export async function loadCore(election = DEFAULT_ELECTION) {
     getJSON("data/armenia-marz.geojson"),
     getJSON(`${dir}/party_profiles.json`),
     getJSON(`${dir}/communities_geo.json`),
+    getJSON(`${dir}/settlements_geo.json`).catch(() => ({ by_community: {} })),
   ]);
   return {
     election, national, marz, parties, links, meta, geo,
     profiles: profiles.profiles, communitiesGeo: comGeo.communities,
     comCoverage: { located: comGeo.located, total: comGeo.total },
+    settlementsByCommunity: settGeo.by_community || {},
   };
 }
 

@@ -340,6 +340,7 @@ def read_registry() -> pd.DataFrame:
             "station": str(station).strip(),
             "marz_hy": (marz or "").strip(),
             "community_hy": (community or "").strip(),
+            "settlement_hy": (settlement or "").strip() or None,
             "constituency": str(constituency).strip() if constituency else None,
             "address": (address or "").strip(),
         })
@@ -386,6 +387,11 @@ def build():
     registry = read_registry()
 
     df = results.merge(registry, on="station", how="left")
+
+    # Settlement/locality label: CEC "Բնակավայր" when present, otherwise the
+    # community column (Yerevan districts, or pre-reform community in 2021).
+    df["locality_hy"] = df.apply(
+        lambda r: str(r["settlement_hy"] or r["community_hy"] or "").strip(), axis=1)
 
     # Re-aggregate pre-reform communities into modern consolidated municipalities
     # (keeps each station in its own province; only the community label changes).
@@ -438,6 +444,13 @@ def build():
                            comm["registered"].clip(lower=1)).round(2)
     comm.to_parquet(CLEAN / "communities.parquet", index=False)
     comm.to_csv(CLEAN / "communities.csv", index=False)
+
+    # --- settlement / locality level (within consolidated community) ---
+    sett = aggregate(df, ["marz_en", "marz_iso", "community_hy", "locality_hy"])
+    sett["turnout_pct"] = (100 * sett["ballots_cast"] /
+                           sett["registered"].clip(lower=1)).round(2)
+    sett.to_parquet(CLEAN / "settlements.parquet", index=False)
+    sett.to_csv(CLEAN / "settlements.csv", index=False)
 
     # --- marz level ---
     marz = aggregate(df, ["marz_en", "marz_iso", "marz_hy"])
@@ -557,7 +570,12 @@ def build():
         "files": {
             "stations": [f"data/{ELECTION}/clean/stations.parquet", f"data/{ELECTION}/clean/stations.csv"],
             "communities": [f"data/{ELECTION}/clean/communities.parquet", f"data/{ELECTION}/clean/communities.csv"],
+            "settlements": [f"data/{ELECTION}/clean/settlements.parquet", f"data/{ELECTION}/clean/settlements.csv"],
             "marz": [f"data/{ELECTION}/clean/marz.parquet", f"data/{ELECTION}/clean/marz.csv"],
+        },
+        "levels": {
+            "communities": int(comm["community_hy"].nunique()),
+            "settlements": int(sett["locality_hy"].nunique()),
         },
     }
     (DATA / "meta.json").write_text(

@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-06-23T18:56:08+00:00",
+  "generated_utc": "2026-06-23T19:12:48+00:00",
   "source": {
     "results_by_station": "https://www.elections.am/File/ElectionResult?electionId=28826",
     "polling_station_registry": "https://www.elections.am/File/SubDistrictsToExcel?electionId=28826",
@@ -86,9 +86,17 @@
       "data/2026/clean/communities.parquet",
       "data/2026/clean/communities.csv"
     ],
+    "settlements": [
+      "data/2026/clean/settlements.parquet",
+      "data/2026/clean/settlements.csv"
+    ],
     "marz": [
       "data/2026/clean/marz.parquet",
       "data/2026/clean/marz.csv"
     ]
+  },
+  "levels": {
+    "communities": 81,
+    "settlements": 858
   }
 }

@@ -268,6 +268,9 @@ def main():
         for c in out:
             key = f"{c['marz_iso']}|{c['community']}"
             c["settlement_count"] = sett_counts.get(key, 1)
+    else:
+        for c in out:
+            c["settlement_count"] = 1
 
     (DATA / "communities_geo.json").write_text(
         json.dumps({"source": "GeoNames (CC-BY) + CEC results",

@@ -338,10 +338,22 @@ function renderPanel(iso) {
 /* ---------------- community zoom map ---------------- */
 let comMap = null;
 function buildCommunityMap() {
+  const drillBar = $("#communityDrill");
+  const drillLabel = $("#communityDrillLabel");
   comMap = communityMap({
     el: $("#communityMap"), geo: core.geo, communities: core.communitiesGeo,
     parties: core.parties, lang: getLang(), marzNameFn: marzName,
+    settlementsByCommunity: core.settlementsByCommunity || {},
+    onDrill: (d) => {
+      if (!d) {
+        drillBar.hidden = true;
+        return;
+      }
+      drillBar.hidden = false;
+      drillLabel.textContent = `${placeCaption(d.parent, marzName)} · ${d.items.length} ${t("explore_localities")}`;
+    },
   });
+  $("#communityDrillBack").onclick = () => comMap.exitDrill();
   $("#zoomIn").onclick = () => comMap.zoomBy(1.6);
   $("#zoomOut").onclick = () => comMap.zoomBy(1 / 1.6);
   $("#zoomReset").onclick = () => comMap.reset();
@@ -439,6 +451,7 @@ function buildDataExplorer() {
     ["stations.csv", `${dir}/clean/stations.csv`],
     ["marz.csv", `${dir}/clean/marz.csv`],
     ["communities.csv", `${dir}/clean/communities.csv`],
+    ["settlements.csv", `${dir}/clean/settlements.csv`],
     ["marz.geojson", "data/armenia-marz.geojson"],
   ];
   $("#downloadLinks").innerHTML = dl.map(([n, u]) =>

@@ -10,7 +10,6 @@ export function voteBars(el, national) {
   const x = d3.scaleLinear().domain([0, Math.max(50, d3.max(data, (d) => d.pct))]).range([m.l, W - m.r]);
   const svg = d3.select(el).html("").append("svg").attr("viewBox", `0 0 ${W} ${H}`);
 
-  // party-entry threshold line (varies by election)
   const thr = national.threshold_party_pct ?? 4;
   const xt = x(thr);
   svg.append("line").attr("x1", xt).attr("x2", xt).attr("y1", m.t - 6).attr("y2", H - m.b)
@@ -36,7 +35,6 @@ export function hemicycle(el, national) {
   const total = national.total_seats;
   const W = 460, H = 250, cx = W / 2, cy = H - 12;
   const coords = parliamentSeats(total, 7, 70, W / 2 - 12);
-  // assign parties to seats in left->right order
   const order = [];
   seated.forEach((p) => { for (let i = 0; i < p.seats; i++) order.push(p); });
   while (order.length < total) order.push(null);
@@ -48,19 +46,16 @@ export function hemicycle(el, national) {
     .attr("stroke", "var(--bg)").attr("stroke-width", .8)
     .attr("opacity", 0).transition().delay((d, i) => i * 4).attr("opacity", 1);
 
-  // majority marker
   svg.append("text").attr("x", cx).attr("y", cy - 6).attr("text-anchor", "middle")
     .attr("fill", "var(--muted)").attr("font-size", 11)
     .text(`${seated[0].seats} / ${total}`);
 }
 
 function parliamentSeats(n, rows, r0, r1) {
-  // capacity proportional to row radius
   const radii = d3.range(rows).map((k) => r0 + (r1 - r0) * (rows === 1 ? 0 : k / (rows - 1)));
   const caps = radii.map((r) => r);
   const sum = d3.sum(caps);
   let alloc = caps.map((c) => Math.max(1, Math.round((c / sum) * n)));
-  // fix rounding
   let diff = n - d3.sum(alloc);
   let i = alloc.length - 1;
   while (diff !== 0) { alloc[i] += Math.sign(diff); diff -= Math.sign(diff); i = (i - 1 + alloc.length) % alloc.length; }
@@ -72,7 +67,7 @@ function parliamentSeats(n, rows, r0, r1) {
       pts.push({ x: Math.cos(ang) * r, y: Math.sin(ang) * r, ang });
     }
   });
-  pts.sort((a, b) => b.ang - a.ang); // left to right
+  pts.sort((a, b) => b.ang - a.ang);
   pts.r = Math.min(7, (r1 - r0) / rows / 1.5 + 2);
   return pts;
 }
@@ -103,65 +98,75 @@ export function placeCaption(c, marzNameFn) {
   return `${name}, ${marz}`;
 }
 
-/** @deprecated use placeCaption */
-export function communityLabel(c, marzNameFn) {
-  return placeCaption(c, marzNameFn);
+export function localityCaption(s, parent) {
+  const name = pickLangField(s, "locality") || s.locality || s.locality_hy || "";
+  const comm = pickLangField(parent, "community") || parent.community || parent.community_hy;
+  return `${name}, ${comm}`;
 }
 
-export function communityMap({ el, geo, communities, parties, lang, marzNameFn }) {
+export function communityMap({
+  el, geo, communities, parties, marzNameFn,
+  settlementsByCommunity = {}, onDrill = null,
+}) {
   const partyById = Object.fromEntries(parties.map((p) => [p.id, p]));
   const tip = ensureTooltip();
   const W = 860, H = 560;
-  const located = communities.filter((c) => c.lat != null);
   const proj = d3.geoMercator().fitExtent([[18, 18], [W - 18, H - 28]], geo);
   const path = d3.geoPath(proj);
-  const r = d3.scaleSqrt().domain([0, d3.max(located, (c) => c.registered)]).range([1.5, 26]);
+
+  const allCommunities = communities.filter((c) => c.lat != null);
+  let drill = null;
+  let zoomK = 1;
+  let zoomT = d3.zoomIdentity;
 
   const svg = d3.select(el).html("").append("svg")
     .attr("viewBox", `0 0 ${W} ${H}`).attr("preserveAspectRatio", "xMidYMid meet");
   const g = svg.append("g");
   g.append("g").selectAll("path").data(geo.features).join("path")
     .attr("class", "marz-base").attr("d", path);
-
-  located.sort((a, b) => b.registered - a.registered);
-  located.forEach((c) => { const p = proj([c.lon, c.lat]); c._x = p[0]; c._y = p[1]; c.x = p[0]; c.y = p[1]; });
-  const sim = d3.forceSimulation(located)
-    .force("x", d3.forceX((c) => c._x).strength(.7))
-    .force("y", d3.forceY((c) => c._y).strength(.7))
-    .force("collide", d3.forceCollide((c) => r(c.registered) + .7).strength(.9))
-    .stop();
-  for (let i = 0; i < 150; i++) sim.tick();
-
-  let zoomK = 1;
   const layer = g.append("g").attr("class", "community-layer");
   const clusterG = g.append("g").attr("class", "community-clusters");
 
-  function pixelClusters(threshold) {
-    const n = located.length;
-    const parent = d3.range(n);
-    const find = (i) => { while (parent[i] !== i) { parent[i] = parent[parent[i]]; i = parent[i]; } return i; };
-    const unite = (a, b) => { parent[find(a)] = find(b); };
-    for (let i = 0; i < n; i++) {
-      for (let j = i + 1; j < n; j++) {
-        if (Math.hypot(located[i].x - located[j].x, located[i].y - located[j].y) < threshold) unite(i, j);
-      }
-    }
-    const groups = new Map();
-    located.forEach((c, i) => {
-      const root = find(i);
-      if (!groups.has(root)) groups.set(root, []);
-      groups.get(root).push(c);
+  function commKey(c) { return `${c.marz_iso}|${c.community || c.community_hy}`; }
+
+  function layoutItems(items, rScale) {
+    items.sort((a, b) => b.registered - a.registered);
+    items.forEach((c) => {
+      const p = proj([c.lon, c.lat]);
+      c._x = p[0]; c._y = p[1]; c.x = p[0]; c.y = p[1];
     });
-    return [...groups.values()];
+    const sim = d3.forceSimulation(items)
+      .force("x", d3.forceX((c) => c._x).strength(.75))
+      .force("y", d3.forceY((c) => c._y).strength(.75))
+      .force("collide", d3.forceCollide((c) => rScale(c.registered) + .5).strength(.92))
+      .stop();
+    for (let i = 0; i < 180; i++) sim.tick();
+    return items;
   }
 
-  function showTip(ev, c) {
-    const rows = c.top.map((tp) => {
+  const rComm = d3.scaleSqrt()
+    .domain([0, d3.max(allCommunities, (c) => c.registered)])
+    .range([1.5, 26]);
+  layoutItems(allCommunities, rComm);
+
+  function currentRadius() {
+    if (drill) {
+      const items = drill.items;
+      const r = d3.scaleSqrt().domain([0, d3.max(items, (c) => c.registered)]).range([1.2, 18]);
+      return (c) => r(c.registered) / Math.sqrt(zoomK);
+    }
+    return (c) => rComm(c.registered) / Math.sqrt(zoomK);
+  }
+
+  function showTip(ev, item, caption) {
+    const rows = item.top.map((tp) => {
       const p = partyById[tp.id];
       return `<div class="tt-row"><span><i class="d" style="background:${p.color}"></i>${esc(pickLangField(p, "name"))}</span><b>${tp.pct.toFixed(1)}%</b></div>`;
     }).join("");
-    tip.html(`<div class="tt-title">${esc(placeCaption(c, marzNameFn))}</div>
-      <div class="tt-meta">${c.turnout_pct}% ${t("panel_turnout").toLowerCase()} · ${c.registered.toLocaleString()} ${t("panel_registered").toLowerCase()}</div>${rows}`)
+    const drillHint = !drill && (item.settlement_count || 0) > 1
+      ? `<div class="tt-meta tt-drill">${esc(t("explore_drill_hint").replace("{n}", item.settlement_count))}</div>` : "";
+    tip.html(`<div class="tt-title">${esc(caption)}</div>
+      <div class="tt-meta">${item.turnout_pct}% ${t("panel_turnout").toLowerCase()} · ${item.registered.toLocaleString()} ${t("panel_registered").toLowerCase()}</div>${drillHint}${rows}`)
       .attr("class", "tooltip tooltip--place");
     tip.style("opacity", 1);
     const pad = 12, w = 220;
@@ -173,36 +178,64 @@ export function communityMap({ el, geo, communities, parties, lang, marzNameFn }
     tip.style("opacity", 0).attr("class", "tooltip");
   }
 
-  function render() {
-    const useClusters = zoomK < 3.5;
-    const threshold = 34 / zoomK;
-    const groups = pixelClusters(threshold);
-    const clustered = new Set();
-    const multi = [];
-    if (useClusters) {
-      groups.forEach((members) => {
-        if (members.length > 1) {
-          multi.push(members);
-          members.forEach((c) => clustered.add(c));
-        }
-      });
+  function zoomToItems(items) {
+    if (!items.length) return;
+    const xs = items.map((c) => c.x), ys = items.map((c) => c.y);
+    const pad = 36;
+    const x0 = Math.min(...xs) - pad, x1 = Math.max(...xs) + pad;
+    const y0 = Math.min(...ys) - pad, y1 = Math.max(...ys) + pad;
+    const k = Math.min(14, 0.92 / Math.max((x1 - x0) / W, (y1 - y0) / H));
+    const tx = W / 2 - (k * (x0 + x1) / 2);
+    const ty = H / 2 - (k * (y0 + y1) / 2);
+    svg.transition().duration(450).call(
+      zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(k));
+  }
+
+  function enterDrill(c, ev) {
+    ev.stopPropagation();
+    const key = commKey(c);
+    const raw = (settlementsByCommunity[key] || []).filter((s) => s.lat != null);
+    if (raw.length <= 1) return;
+    hideTip();
+    drill = { parent: c, key, items: layoutItems(raw, (n) => {
+      const r = d3.scaleSqrt().domain([0, d3.max(raw, (x) => x.registered)]).range([1.2, 18]);
+      return r(n);
+    }) };
+    if (onDrill) onDrill(drill);
+    zoomToItems(drill.items);
+    render();
+  }
+
+  function exitDrill() {
+    if (!drill) return;
+    drill = null;
+    hideTip();
+    if (onDrill) onDrill(null);
+    svg.transition().duration(350).call(zoom.transform, d3.zoomIdentity);
+    render();
+  }
+
+  function pixelClusters(items, threshold) {
+    const n = items.length;
+    const parent = d3.range(n);
+    const find = (i) => { while (parent[i] !== i) { parent[i] = parent[parent[i]]; i = parent[i]; } return i; };
+    const unite = (a, b) => { parent[find(a)] = find(b); };
+    for (let i = 0; i < n; i++) {
+      for (let j = i + 1; j < n; j++) {
+        if (Math.hypot(items[i].x - items[j].x, items[i].y - items[j].y) < threshold) unite(i, j);
+      }
     }
+    const groups = new Map();
+    items.forEach((c, i) => {
+      const root = find(i);
+      if (!groups.has(root)) groups.set(root, []);
+      groups.get(root).push(c);
+    });
+    return [...groups.values()];
+  }
 
-    layer.selectAll("circle.community-bubble").data(located.filter((c) => !clustered.has(c)), (c) => c.community + c.marz_iso)
-      .join(
-        (enter) => enter.append("circle").attr("class", "community-bubble")
-          .attr("fill", (c) => c.winner_color).attr("fill-opacity", .82)
-          .on("mouseover", (ev, c) => { d3.select(ev.currentTarget).raise(); showTip(ev, c); })
-          .on("mousemove", (ev, c) => showTip(ev, c))
-          .on("mouseleave", hideTip),
-        (update) => update,
-        (exit) => exit.remove(),
-      )
-      .attr("cx", (c) => c.x).attr("cy", (c) => c.y)
-      .attr("r", (c) => r(c.registered) / Math.sqrt(zoomK))
-      .attr("stroke-width", .5 / zoomK);
-
-    clusterG.selectAll("g.cluster").data(multi, (d) => d.map((c) => c.community).sort().join("|"))
+  function renderClusters(items, clustered, multi) {
+    clusterG.selectAll("g.cluster").data(multi, (d) => d.map((c) => commKey(c)).sort().join("|"))
       .join(
         (enter) => {
           const ng = enter.append("g").attr("class", "cluster").style("cursor", "pointer");
@@ -212,6 +245,10 @@ export function communityMap({ el, geo, communities, parties, lang, marzNameFn }
           ng.on("click", (ev, members) => {
             ev.stopPropagation();
             hideTip();
+            if (!drill && members.length === 1 && (members[0].settlement_count || 0) > 1) {
+              enterDrill(members[0], ev);
+              return;
+            }
             const cx = d3.mean(members, (c) => c.x);
             const cy = d3.mean(members, (c) => c.y);
             const span = Math.max(...members.map((c) => Math.hypot(c.x - cx, c.y - cy)), 12);
@@ -239,11 +276,65 @@ export function communityMap({ el, geo, communities, parties, lang, marzNameFn }
       });
   }
 
+  function render() {
+    const rr = currentRadius();
+    clusterG.selectAll("*").remove();
+
+    if (drill) {
+      const items = drill.items;
+      layer.selectAll("circle").data(items, (c) => c.locality_hy + c.marz_iso)
+        .join(
+          (enter) => enter.append("circle").attr("class", "community-bubble community-bubble--local")
+            .attr("fill", (c) => c.winner_color).attr("fill-opacity", .82)
+            .on("mouseover", (ev, c) => { d3.select(ev.currentTarget).raise(); showTip(ev, c, localityCaption(c, drill.parent)); })
+            .on("mousemove", (ev, c) => showTip(ev, c, localityCaption(c, drill.parent)))
+            .on("mouseleave", hideTip),
+          (update) => update,
+          (exit) => exit.remove(),
+        )
+        .attr("cx", (c) => c.x).attr("cy", (c) => c.y)
+        .attr("r", rr).attr("stroke-width", .5 / zoomK);
+      return;
+    }
+
+    const useClusters = zoomK < 3.5;
+    const threshold = 34 / zoomK;
+    const clustered = new Set();
+    const multi = [];
+    if (useClusters) {
+      pixelClusters(allCommunities, threshold).forEach((members) => {
+        if (members.length > 1) {
+          multi.push(members);
+          members.forEach((c) => clustered.add(c));
+        }
+      });
+    }
+    renderClusters(allCommunities, clustered, multi);
+
+    layer.selectAll("circle.community-bubble").data(allCommunities.filter((c) => !clustered.has(c)), commKey)
+      .join(
+        (enter) => enter.append("circle").attr("class", "community-bubble")
+          .attr("fill", (c) => c.winner_color).attr("fill-opacity", .82)
+          .on("mouseover", (ev, c) => { d3.select(ev.currentTarget).raise(); showTip(ev, c, placeCaption(c, marzNameFn)); })
+          .on("mousemove", (ev, c) => showTip(ev, c, placeCaption(c, marzNameFn)))
+          .on("mouseleave", hideTip)
+          .on("click", (ev, c) => {
+            if ((c.settlement_count || 0) > 1) enterDrill(c, ev);
+          }),
+        (update) => update,
+        (exit) => exit.remove(),
+      )
+      .attr("cx", (c) => c.x).attr("cy", (c) => c.y)
+      .attr("r", rr).attr("stroke-width", .5 / zoomK)
+      .style("cursor", (c) => (c.settlement_count || 0) > 1 ? "pointer" : null);
+  }
+
   render();
 
   const zoom = d3.zoom().scaleExtent([1, 14]).translateExtent([[0, 0], [W, H]])
     .on("zoom", (ev) => {
       zoomK = ev.transform.k;
+      zoomT = ev.transform;
       hideTip();
       g.attr("transform", ev.transform);
       g.selectAll(".marz-base").attr("stroke-width", 1 / zoomK);
@@ -253,7 +344,8 @@ export function communityMap({ el, geo, communities, parties, lang, marzNameFn }
 
   return {
     zoomBy: (k) => svg.transition().duration(300).call(zoom.scaleBy, k),
-    reset: () => { hideTip(); svg.transition().duration(300).call(zoom.transform, d3.zoomIdentity); },
+    reset: () => { exitDrill(); hideTip(); svg.transition().duration(300).call(zoom.transform, d3.zoomIdentity); },
+    exitDrill,
   };
 }
 

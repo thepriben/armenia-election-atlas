@@ -131,6 +131,13 @@ button.epill { cursor: pointer; }
 /* ---------- map ---------- */
 .map-layout { display: grid; grid-template-columns: 1.6fr 1fr; gap: 20px; }
 .map-stage { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); }
+.map-drill { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: .84rem; flex-wrap: wrap; }
+.map-drill[hidden] { display: none !important; }
+.map-drill button { background: var(--surface-2); border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; cursor: pointer; font-weight: 600; color: var(--text); }
+.map-drill button:hover { border-color: var(--accent); color: var(--accent); }
+.map-drill span { color: var(--muted); }
+.tooltip--place .tt-drill { margin-top: 2px; font-style: italic; }
+.community-bubble--local { stroke-dasharray: none; }
 .choropleth svg { width: 100%; height: auto; display: block; }
 .marz { stroke: var(--bg); stroke-width: 1.1; cursor: pointer; transition: opacity .15s, stroke .15s; }
 .marz:hover { stroke: var(--text); stroke-width: 1.8; }
