@@ -291,9 +291,9 @@ function marzName(iso) {
 
 /* ---------------- data explorer ---------------- */
 function buildDataExplorer() {
-  const levels = [["marz", t("nav_map")], ["communities", t("data_level")]];
+  const levels = [["marz", t("data_marz")], ["communities", t("data_communities")]];
   $("#dataLevels").innerHTML = levels.map(([k, l]) =>
-    `<button data-l="${k}">${k === "marz" ? "Marz (11)" : "Communities (81)"}</button>`).join("");
+    `<button data-l="${k}">${l}</button>`).join("");
   $("#dataLevels").querySelectorAll("button").forEach((b) =>
     b.addEventListener("click", () => setState({ level: b.dataset.l }, { push: false }) || drawExplorer()));
 

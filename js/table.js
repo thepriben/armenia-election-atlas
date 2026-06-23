@@ -53,7 +53,7 @@ export function explorerTable(el, rows, level, partiesMeta, search = "") {
   let data = rows;
   if (q) data = rows.filter((r) => Object.values(r).some((v) => String(v).toLowerCase().includes(q)));
 
-  const firstLabel = level === "marz" ? t("nav_map") : t("data_level");
+  const firstLabel = level === "marz" ? "Marz" : t("data_community");
   const cols = [
     { key: level === "marz" ? "name" : "community_hy", label: () => firstLabel,
       cell: (r) => r._name || r.community_hy || r.marz_en },
