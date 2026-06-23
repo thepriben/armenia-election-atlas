@@ -105,6 +105,7 @@ function buildThemeToggle() {
 }
 
 function refreshAll() {
+  renderStats();
   voteBars($("#voteBars"), core.national);
   hemicycle($("#hemicycle"), core.national);
   nationalTable($("#nationalTable"), core.national);
