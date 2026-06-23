@@ -11,6 +11,7 @@ const LEADER_LINK = {
   armenia_alliance: "leader_kocharyan", prosperous_armenia: "leader_tsarukyan",
   anc: "leader_ter_petrosyan", bright_armenia: "leader_marukyan",
   hanrapetutyun: "leader_sargsyan", wings_of_unity: "leader_tandilyan",
+  i_have_honor: "leader_vanetsyan",
 };
 
 let core, mapApi, communities = null, electionId, electionList = [];
@@ -29,12 +30,18 @@ async function init() {
   setState({ election: electionId }, { silent: true });
   core = await loadCore(electionId);
   rewindGeo(core.geo);
+  // A shared URL may pin a party absent from this election — fall back to the winner.
+  const wantParty = getState().party;
+  if (!core.parties.some((p) => p.id === wantParty)) {
+    setState({ party: core.parties[0].id }, { silent: true });
+  }
   setLang(getState().lang);
 
   buildElectionSwitch();
   buildLangSwitch();
   buildThemeToggle();
   applyI18n();
+  applyDynamicCopy();
 
   renderHeroMap();
   renderStats();
@@ -55,7 +62,7 @@ async function init() {
 
   onState((s, patch) => {
     if (patch.election && patch.election !== electionId) { selectElection(patch.election); return; }
-    if (patch.lang) { setLang(s.lang); applyI18n(); buildElectionSwitch(); refreshAll(); }
+    if (patch.lang) { setLang(s.lang); applyI18n(); applyDynamicCopy(); buildElectionSwitch(); refreshAll(); }
     mapApi.render(s);
     renderLegend($("#mapLegend"), mapApi, s);
     syncMapControls(s);
@@ -98,17 +105,61 @@ function applyI18n() {
 function buildElectionSwitch() {
   const wrap = $("#electionSwitch");
   if (!wrap) return;
+  const lang = getLang();
   const order = [...electionList].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
-  wrap.innerHTML = order.map((e) => {
+  const label = `<span class="election-label">${t("election_label")}</span>`;
+  const pills = order.map((e) => {
+    const nm = (e.name && (e.name[lang] || e.name.en)) || e.id;
     const available = e.status === "available";
     const current = available && e.id === electionId;
-    if (!available) return `<span class="epill soon" aria-disabled="true">${e.id} · ${t("election_soon")}</span>`;
+    if (!available) {
+      return `<span class="epill soon" title="${nm}" aria-disabled="true">${e.id} · ${t("election_soon")}</span>`;
+    }
     const cls = current ? "epill active" : "epill avail";
     const cur = current ? ' aria-current="true"' : "";
-    return `<button type="button" class="${cls}" data-e="${e.id}"${cur}>${e.id}</button>`;
+    return `<button type="button" class="${cls}" data-e="${e.id}" title="${nm}"${cur}>${e.id}</button>`;
   }).join("");
+  wrap.innerHTML = label + pills;
   wrap.querySelectorAll("button[data-e]").forEach((b) =>
     b.addEventListener("click", () => setState({ election: b.dataset.e }, { push: true })));
+}
+
+// Election-dependent copy that the static i18n table cannot express (seat count,
+// thresholds and the hero lede vary by election). Call AFTER applyI18n().
+function applyDynamicCopy() {
+  if (!core?.national) return;
+  const n = core.national;
+  const seatsEl = document.querySelector('[data-i18n="seats_title"]');
+  if (seatsEl) seatsEl.textContent = t("seats_title_tpl").replace("{n}", n.total_seats);
+  const ovEl = document.querySelector('[data-i18n="overview_sub"]');
+  if (ovEl) {
+    ovEl.textContent = t("overview_sub_tpl")
+      .replace("{p}", n.threshold_party_pct)
+      .replace("{a}", n.threshold_alliance_pct);
+  }
+  const ledeEl = document.querySelector('[data-i18n="hero_lede"]');
+  if (ledeEl) {
+    const w = n.parties[0];
+    const allWon = core.marz && Object.values(core.marz).every((m) => m.winner === w.id);
+    ledeEl.textContent = t("hero_lede_tpl")
+      .replace("{date}", localizedDate(n.date))
+      .replace("{winner}", pickLangField(w, "name"))
+      .replace("{seats}", w.seats)
+      .replace("{total}", n.total_seats)
+      .replace("{sweep}", allWon ? t("sweep_clause") : "");
+  }
+}
+
+function localizedDate(iso) {
+  const lang = getLang();
+  const loc = lang === "hy" ? "hy-AM" : lang === "fr" ? "fr-FR" : "en-GB";
+  try {
+    return new Date(iso + "T00:00:00").toLocaleDateString(loc, {
+      day: "numeric", month: "long", year: "numeric",
+    });
+  } catch {
+    return iso;
+  }
 }
 
 // Switch the displayed election: reload its data set and redraw everything.
@@ -117,9 +168,12 @@ async function selectElection(id) {
   if (!e) return;
   electionId = id;
   communities = null;
-  setState({ election: id, marz: "" }, { silent: true });
   core = await loadCore(id);
   rewindGeo(core.geo);
+  // The selected party may not exist in the new election — fall back to the winner.
+  const cur = getState();
+  const party = core.parties.some((p) => p.id === cur.party) ? cur.party : core.parties[0].id;
+  setState({ election: id, marz: "", party }, { silent: true });
   redrawForCore();
 }
 
@@ -138,6 +192,7 @@ function redrawForCore() {
   buildDataExplorer();
   renderAbout();
   buildElectionSwitch();
+  applyDynamicCopy();
   const s = getState();
   mapApi.render(s);
   renderLegend($("#mapLegend"), mapApi, s);
@@ -349,7 +404,12 @@ function marzName(iso) {
 
 /* ---------------- data explorer ---------------- */
 function buildDataExplorer() {
-  const levels = [["marz", t("data_marz")], ["communities", t("data_communities")]];
+  const marzN = Object.keys(core.marz).length;
+  const comN = core.comCoverage?.total ?? "";
+  const levels = [
+    ["marz", t("data_marz").replace("{n}", marzN)],
+    ["communities", t("data_communities").replace("{n}", comN)],
+  ];
   $("#dataLevels").innerHTML = levels.map(([k, l]) =>
     `<button data-l="${k}">${l}</button>`).join("");
   $("#dataLevels").querySelectorAll("button").forEach((b) =>
@@ -379,13 +439,14 @@ async function drawExplorer() {
     communities = communities || await loadCommunities(electionId);
     rows = communities;
   } else {
-    rows = Object.values(core.marz).map((m) => ({
-      _name: marzName(m.iso), marz_en: m.name_en, registered: m.registered,
-      turnout_pct: m.turnout_pct, valid: m.valid,
-      civil_contract: m.shares.civil_contract.votes,
-      strong_armenia: m.shares.strong_armenia.votes,
-      armenia_alliance: m.shares.armenia_alliance.votes,
-    }));
+    rows = Object.values(core.marz).map((m) => {
+      const r = {
+        _name: marzName(m.iso), marz_en: m.name_en, registered: m.registered,
+        turnout_pct: m.turnout_pct, valid: m.valid,
+      };
+      for (const pid in m.shares) r[pid] = m.shares[pid].votes;
+      return r;
+    });
   }
   explorerTable($("#explorerTable"), rows, s.level, core.parties, $("#dataSearch").value);
 }

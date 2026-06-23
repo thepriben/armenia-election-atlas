@@ -1,0 +1,1597 @@
+{
+  "AM-AG": {
+    "iso": "AM-AG",
+    "name_en": "Aragatsotn",
+    "name_hy": "Արագածոտն",
+    "name_fr": "Aragatsotn",
+    "registered": 117506,
+    "ballots_cast": 58651,
+    "valid": 58472,
+    "invalid": 139,
+    "turnout_pct": 49.91,
+    "stations": 142,
+    "winner": "civil_contract",
+    "winner_pct": 63.061,
+    "runner_up": "armenia_alliance",
+    "margin": 46.4,
+    "order": [
+      "civil_contract",
+      "armenia_alliance",
+      "i_have_honor",
+      "prosperous_armenia",
+      "hanrapetutyun",
+      "shirinyan_babajanyan",
+      "anc",
+      "national_democratic_pole",
+      "bright_armenia",
+      "movement_5165",
+      "liberal",
+      "homeland_of_armenians",
+      "fair_armenia",
+      "our_home_armenia",
+      "democratic_party",
+      "sovereign_armenia",
+      "zartonk",
+      "citizens_decision",
+      "free_homeland",
+      "european",
+      "verelk",
+      "united_homeland",
+      "liberty",
+      "pan_armenian_statehood",
+      "national_agenda"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 36873,
+        "pct": 63.061
+      },
+      "armenia_alliance": {
+        "votes": 9744,
+        "pct": 16.664
+      },
+      "i_have_honor": {
+        "votes": 4109,
+        "pct": 7.027
+      },
+      "prosperous_armenia": {
+        "votes": 1672,
+        "pct": 2.859
+      },
+      "bright_armenia": {
+        "votes": 356,
+        "pct": 0.609
+      },
+      "anc": {
+        "votes": 542,
+        "pct": 0.927
+      },
+      "liberal": {
+        "votes": 318,
+        "pct": 0.544
+      },
+      "hanrapetutyun": {
+        "votes": 1513,
+        "pct": 2.588
+      },
+      "national_democratic_pole": {
+        "votes": 492,
+        "pct": 0.841
+      },
+      "shirinyan_babajanyan": {
+        "votes": 600,
+        "pct": 1.026
+      },
+      "movement_5165": {
+        "votes": 355,
+        "pct": 0.607
+      },
+      "national_agenda": {
+        "votes": 12,
+        "pct": 0.021
+      },
+      "european": {
+        "votes": 67,
+        "pct": 0.115
+      },
+      "sovereign_armenia": {
+        "votes": 200,
+        "pct": 0.342
+      },
+      "fair_armenia": {
+        "votes": 284,
+        "pct": 0.486
+      },
+      "zartonk": {
+        "votes": 142,
+        "pct": 0.243
+      },
+      "liberty": {
+        "votes": 54,
+        "pct": 0.092
+      },
+      "united_homeland": {
+        "votes": 56,
+        "pct": 0.096
+      },
+      "pan_armenian_statehood": {
+        "votes": 15,
+        "pct": 0.026
+      },
+      "our_home_armenia": {
+        "votes": 258,
+        "pct": 0.441
+      },
+      "homeland_of_armenians": {
+        "votes": 288,
+        "pct": 0.493
+      },
+      "free_homeland": {
+        "votes": 108,
+        "pct": 0.185
+      },
+      "democratic_party": {
+        "votes": 239,
+        "pct": 0.409
+      },
+      "citizens_decision": {
+        "votes": 114,
+        "pct": 0.195
+      },
+      "verelk": {
+        "votes": 61,
+        "pct": 0.104
+      }
+    }
+  },
+  "AM-AR": {
+    "iso": "AM-AR",
+    "name_en": "Ararat",
+    "name_hy": "Արարատ",
+    "name_fr": "Ararat",
+    "registered": 223437,
+    "ballots_cast": 113720,
+    "valid": 113481,
+    "invalid": 217,
+    "turnout_pct": 50.9,
+    "stations": 155,
+    "winner": "civil_contract",
+    "winner_pct": 60.038,
+    "runner_up": "armenia_alliance",
+    "margin": 45.25,
+    "order": [
+      "civil_contract",
+      "armenia_alliance",
+      "i_have_honor",
+      "hanrapetutyun",
+      "prosperous_armenia",
+      "shirinyan_babajanyan",
+      "national_democratic_pole",
+      "anc",
+      "liberal",
+      "our_home_armenia",
+      "movement_5165",
+      "homeland_of_armenians",
+      "bright_armenia",
+      "democratic_party",
+      "fair_armenia",
+      "zartonk",
+      "sovereign_armenia",
+      "free_homeland",
+      "citizens_decision",
+      "european",
+      "pan_armenian_statehood",
+      "verelk",
+      "liberty",
+      "united_homeland",
+      "national_agenda"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 68132,
+        "pct": 60.038
+      },
+      "armenia_alliance": {
+        "votes": 16781,
+        "pct": 14.787
+      },
+      "i_have_honor": {
+        "votes": 11044,
+        "pct": 9.732
+      },
+      "prosperous_armenia": {
+        "votes": 4167,
+        "pct": 3.672
+      },
+      "bright_armenia": {
+        "votes": 479,
+        "pct": 0.422
+      },
+      "anc": {
+        "votes": 808,
+        "pct": 0.712
+      },
+      "liberal": {
+        "votes": 749,
+        "pct": 0.66
+      },
+      "hanrapetutyun": {
+        "votes": 5230,
+        "pct": 4.609
+      },
+      "national_democratic_pole": {
+        "votes": 876,
+        "pct": 0.772
+      },
+      "shirinyan_babajanyan": {
+        "votes": 1017,
+        "pct": 0.896
+      },
+      "movement_5165": {
+        "votes": 737,
+        "pct": 0.649
+      },
+      "national_agenda": {
+        "votes": 26,
+        "pct": 0.023
+      },
+      "european": {
+        "votes": 146,
+        "pct": 0.129
+      },
+      "sovereign_armenia": {
+        "votes": 230,
+        "pct": 0.203
+      },
+      "fair_armenia": {
+        "votes": 298,
+        "pct": 0.263
+      },
+      "zartonk": {
+        "votes": 237,
+        "pct": 0.209
+      },
+      "liberty": {
+        "votes": 109,
+        "pct": 0.096
+      },
+      "united_homeland": {
+        "votes": 55,
+        "pct": 0.048
+      },
+      "pan_armenian_statehood": {
+        "votes": 112,
+        "pct": 0.099
+      },
+      "our_home_armenia": {
+        "votes": 744,
+        "pct": 0.656
+      },
+      "homeland_of_armenians": {
+        "votes": 694,
+        "pct": 0.612
+      },
+      "free_homeland": {
+        "votes": 209,
+        "pct": 0.184
+      },
+      "democratic_party": {
+        "votes": 340,
+        "pct": 0.3
+      },
+      "citizens_decision": {
+        "votes": 151,
+        "pct": 0.133
+      },
+      "verelk": {
+        "votes": 110,
+        "pct": 0.097
+      }
+    }
+  },
+  "AM-AV": {
+    "iso": "AM-AV",
+    "name_en": "Armavir",
+    "name_hy": "Արմավիր",
+    "name_fr": "Armavir",
+    "registered": 235873,
+    "ballots_cast": 104991,
+    "valid": 104699,
+    "invalid": 260,
+    "turnout_pct": 44.51,
+    "stations": 168,
+    "winner": "civil_contract",
+    "winner_pct": 63.234,
+    "runner_up": "armenia_alliance",
+    "margin": 46.17,
+    "order": [
+      "civil_contract",
+      "armenia_alliance",
+      "prosperous_armenia",
+      "i_have_honor",
+      "hanrapetutyun",
+      "our_home_armenia",
+      "shirinyan_babajanyan",
+      "anc",
+      "national_democratic_pole",
+      "bright_armenia",
+      "movement_5165",
+      "liberal",
+      "homeland_of_armenians",
+      "democratic_party",
+      "zartonk",
+      "free_homeland",
+      "fair_armenia",
+      "sovereign_armenia",
+      "european",
+      "citizens_decision",
+      "liberty",
+      "national_agenda",
+      "verelk",
+      "united_homeland",
+      "pan_armenian_statehood"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 66205,
+        "pct": 63.234
+      },
+      "armenia_alliance": {
+        "votes": 17869,
+        "pct": 17.067
+      },
+      "i_have_honor": {
+        "votes": 3389,
+        "pct": 3.237
+      },
+      "prosperous_armenia": {
+        "votes": 6172,
+        "pct": 5.895
+      },
+      "bright_armenia": {
+        "votes": 887,
+        "pct": 0.847
+      },
+      "anc": {
+        "votes": 943,
+        "pct": 0.901
+      },
+      "liberal": {
+        "votes": 791,
+        "pct": 0.755
+      },
+      "hanrapetutyun": {
+        "votes": 1633,
+        "pct": 1.56
+      },
+      "national_democratic_pole": {
+        "votes": 897,
+        "pct": 0.857
+      },
+      "shirinyan_babajanyan": {
+        "votes": 1088,
+        "pct": 1.039
+      },
+      "movement_5165": {
+        "votes": 821,
+        "pct": 0.784
+      },
+      "national_agenda": {
+        "votes": 82,
+        "pct": 0.078
+      },
+      "european": {
+        "votes": 146,
+        "pct": 0.139
+      },
+      "sovereign_armenia": {
+        "votes": 225,
+        "pct": 0.215
+      },
+      "fair_armenia": {
+        "votes": 250,
+        "pct": 0.239
+      },
+      "zartonk": {
+        "votes": 287,
+        "pct": 0.274
+      },
+      "liberty": {
+        "votes": 101,
+        "pct": 0.096
+      },
+      "united_homeland": {
+        "votes": 59,
+        "pct": 0.056
+      },
+      "pan_armenian_statehood": {
+        "votes": 36,
+        "pct": 0.034
+      },
+      "our_home_armenia": {
+        "votes": 1189,
+        "pct": 1.136
+      },
+      "homeland_of_armenians": {
+        "votes": 708,
+        "pct": 0.676
+      },
+      "free_homeland": {
+        "votes": 274,
+        "pct": 0.262
+      },
+      "democratic_party": {
+        "votes": 450,
+        "pct": 0.43
+      },
+      "citizens_decision": {
+        "votes": 135,
+        "pct": 0.129
+      },
+      "verelk": {
+        "votes": 62,
+        "pct": 0.059
+      }
+    }
+  },
+  "AM-GR": {
+    "iso": "AM-GR",
+    "name_en": "Gegharkunik",
+    "name_hy": "Գեղարքունիք",
+    "name_fr": "Guégharkounik",
+    "registered": 189568,
+    "ballots_cast": 86209,
+    "valid": 85967,
+    "invalid": 209,
+    "turnout_pct": 45.48,
+    "stations": 153,
+    "winner": "civil_contract",
+    "winner_pct": 65.953,
+    "runner_up": "armenia_alliance",
+    "margin": 51.37,
+    "order": [
+      "civil_contract",
+      "armenia_alliance",
+      "prosperous_armenia",
+      "i_have_honor",
+      "hanrapetutyun",
+      "national_democratic_pole",
+      "anc",
+      "shirinyan_babajanyan",
+      "bright_armenia",
+      "liberal",
+      "democratic_party",
+      "movement_5165",
+      "homeland_of_armenians",
+      "our_home_armenia",
+      "fair_armenia",
+      "zartonk",
+      "sovereign_armenia",
+      "free_homeland",
+      "citizens_decision",
+      "european",
+      "liberty",
+      "united_homeland",
+      "pan_armenian_statehood",
+      "verelk",
+      "national_agenda"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 56698,
+        "pct": 65.953
+      },
+      "armenia_alliance": {
+        "votes": 12535,
+        "pct": 14.581
+      },
+      "i_have_honor": {
+        "votes": 3656,
+        "pct": 4.253
+      },
+      "prosperous_armenia": {
+        "votes": 4613,
+        "pct": 5.366
+      },
+      "bright_armenia": {
+        "votes": 629,
+        "pct": 0.732
+      },
+      "anc": {
+        "votes": 638,
+        "pct": 0.742
+      },
+      "liberal": {
+        "votes": 597,
+        "pct": 0.694
+      },
+      "hanrapetutyun": {
+        "votes": 1763,
+        "pct": 2.051
+      },
+      "national_democratic_pole": {
+        "votes": 877,
+        "pct": 1.02
+      },
+      "shirinyan_babajanyan": {
+        "votes": 634,
+        "pct": 0.737
+      },
+      "movement_5165": {
+        "votes": 515,
+        "pct": 0.599
+      },
+      "national_agenda": {
+        "votes": 28,
+        "pct": 0.033
+      },
+      "european": {
+        "votes": 107,
+        "pct": 0.124
+      },
+      "sovereign_armenia": {
+        "votes": 270,
+        "pct": 0.314
+      },
+      "fair_armenia": {
+        "votes": 313,
+        "pct": 0.364
+      },
+      "zartonk": {
+        "votes": 275,
+        "pct": 0.32
+      },
+      "liberty": {
+        "votes": 78,
+        "pct": 0.091
+      },
+      "united_homeland": {
+        "votes": 59,
+        "pct": 0.069
+      },
+      "pan_armenian_statehood": {
+        "votes": 55,
+        "pct": 0.064
+      },
+      "our_home_armenia": {
+        "votes": 360,
+        "pct": 0.419
+      },
+      "homeland_of_armenians": {
+        "votes": 391,
+        "pct": 0.455
+      },
+      "free_homeland": {
+        "votes": 144,
+        "pct": 0.168
+      },
+      "democratic_party": {
+        "votes": 565,
+        "pct": 0.657
+      },
+      "citizens_decision": {
+        "votes": 116,
+        "pct": 0.135
+      },
+      "verelk": {
+        "votes": 51,
+        "pct": 0.059
+      }
+    }
+  },
+  "AM-KT": {
+    "iso": "AM-KT",
+    "name_en": "Kotayk",
+    "name_hy": "Կոտայք",
+    "name_fr": "Kotayk",
+    "registered": 242102,
+    "ballots_cast": 121110,
+    "valid": 120643,
+    "invalid": 426,
+    "turnout_pct": 50.02,
+    "stations": 170,
+    "winner": "civil_contract",
+    "winner_pct": 52.549,
+    "runner_up": "armenia_alliance",
+    "margin": 31.31,
+    "order": [
+      "civil_contract",
+      "armenia_alliance",
+      "prosperous_armenia",
+      "i_have_honor",
+      "hanrapetutyun",
+      "anc",
+      "shirinyan_babajanyan",
+      "liberal",
+      "national_democratic_pole",
+      "homeland_of_armenians",
+      "movement_5165",
+      "bright_armenia",
+      "our_home_armenia",
+      "zartonk",
+      "democratic_party",
+      "fair_armenia",
+      "free_homeland",
+      "sovereign_armenia",
+      "citizens_decision",
+      "european",
+      "liberty",
+      "united_homeland",
+      "national_agenda",
+      "verelk",
+      "pan_armenian_statehood"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 63397,
+        "pct": 52.549
+      },
+      "armenia_alliance": {
+        "votes": 25626,
+        "pct": 21.241
+      },
+      "i_have_honor": {
+        "votes": 4282,
+        "pct": 3.549
+      },
+      "prosperous_armenia": {
+        "votes": 9760,
+        "pct": 8.09
+      },
+      "bright_armenia": {
+        "votes": 1052,
+        "pct": 0.872
+      },
+      "anc": {
+        "votes": 1636,
+        "pct": 1.356
+      },
+      "liberal": {
+        "votes": 1491,
+        "pct": 1.236
+      },
+      "hanrapetutyun": {
+        "votes": 3981,
+        "pct": 3.3
+      },
+      "national_democratic_pole": {
+        "votes": 1426,
+        "pct": 1.182
+      },
+      "shirinyan_babajanyan": {
+        "votes": 1567,
+        "pct": 1.299
+      },
+      "movement_5165": {
+        "votes": 1155,
+        "pct": 0.957
+      },
+      "national_agenda": {
+        "votes": 86,
+        "pct": 0.071
+      },
+      "european": {
+        "votes": 211,
+        "pct": 0.175
+      },
+      "sovereign_armenia": {
+        "votes": 292,
+        "pct": 0.242
+      },
+      "fair_armenia": {
+        "votes": 377,
+        "pct": 0.312
+      },
+      "zartonk": {
+        "votes": 653,
+        "pct": 0.541
+      },
+      "liberty": {
+        "votes": 139,
+        "pct": 0.115
+      },
+      "united_homeland": {
+        "votes": 88,
+        "pct": 0.073
+      },
+      "pan_armenian_statehood": {
+        "votes": 73,
+        "pct": 0.061
+      },
+      "our_home_armenia": {
+        "votes": 978,
+        "pct": 0.811
+      },
+      "homeland_of_armenians": {
+        "votes": 1178,
+        "pct": 0.976
+      },
+      "free_homeland": {
+        "votes": 359,
+        "pct": 0.298
+      },
+      "democratic_party": {
+        "votes": 513,
+        "pct": 0.425
+      },
+      "citizens_decision": {
+        "votes": 243,
+        "pct": 0.201
+      },
+      "verelk": {
+        "votes": 80,
+        "pct": 0.066
+      }
+    }
+  },
+  "AM-LO": {
+    "iso": "AM-LO",
+    "name_en": "Lori",
+    "name_hy": "Լոռի",
+    "name_fr": "Lorri",
+    "registered": 234183,
+    "ballots_cast": 109129,
+    "valid": 108744,
+    "invalid": 324,
+    "turnout_pct": 46.6,
+    "stations": 221,
+    "winner": "civil_contract",
+    "winner_pct": 59.861,
+    "runner_up": "armenia_alliance",
+    "margin": 44.04,
+    "order": [
+      "civil_contract",
+      "armenia_alliance",
+      "i_have_honor",
+      "prosperous_armenia",
+      "bright_armenia",
+      "hanrapetutyun",
+      "national_democratic_pole",
+      "shirinyan_babajanyan",
+      "anc",
+      "liberal",
+      "movement_5165",
+      "our_home_armenia",
+      "homeland_of_armenians",
+      "zartonk",
+      "democratic_party",
+      "sovereign_armenia",
+      "free_homeland",
+      "fair_armenia",
+      "european",
+      "citizens_decision",
+      "liberty",
+      "pan_armenian_statehood",
+      "united_homeland",
+      "verelk",
+      "national_agenda"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 65095,
+        "pct": 59.861
+      },
+      "armenia_alliance": {
+        "votes": 17205,
+        "pct": 15.822
+      },
+      "i_have_honor": {
+        "votes": 7114,
+        "pct": 6.542
+      },
+      "prosperous_armenia": {
+        "votes": 4660,
+        "pct": 4.285
+      },
+      "bright_armenia": {
+        "votes": 2744,
+        "pct": 2.523
+      },
+      "anc": {
+        "votes": 1158,
+        "pct": 1.065
+      },
+      "liberal": {
+        "votes": 1118,
+        "pct": 1.028
+      },
+      "hanrapetutyun": {
+        "votes": 2205,
+        "pct": 2.028
+      },
+      "national_democratic_pole": {
+        "votes": 1402,
+        "pct": 1.289
+      },
+      "shirinyan_babajanyan": {
+        "votes": 1215,
+        "pct": 1.117
+      },
+      "movement_5165": {
+        "votes": 934,
+        "pct": 0.859
+      },
+      "national_agenda": {
+        "votes": 48,
+        "pct": 0.044
+      },
+      "european": {
+        "votes": 184,
+        "pct": 0.169
+      },
+      "sovereign_armenia": {
+        "votes": 281,
+        "pct": 0.258
+      },
+      "fair_armenia": {
+        "votes": 227,
+        "pct": 0.209
+      },
+      "zartonk": {
+        "votes": 400,
+        "pct": 0.368
+      },
+      "liberty": {
+        "votes": 113,
+        "pct": 0.104
+      },
+      "united_homeland": {
+        "votes": 64,
+        "pct": 0.059
+      },
+      "pan_armenian_statehood": {
+        "votes": 107,
+        "pct": 0.098
+      },
+      "our_home_armenia": {
+        "votes": 917,
+        "pct": 0.843
+      },
+      "homeland_of_armenians": {
+        "votes": 782,
+        "pct": 0.719
+      },
+      "free_homeland": {
+        "votes": 237,
+        "pct": 0.218
+      },
+      "democratic_party": {
+        "votes": 313,
+        "pct": 0.288
+      },
+      "citizens_decision": {
+        "votes": 172,
+        "pct": 0.158
+      },
+      "verelk": {
+        "votes": 49,
+        "pct": 0.045
+      }
+    }
+  },
+  "AM-SH": {
+    "iso": "AM-SH",
+    "name_en": "Shirak",
+    "name_hy": "Շիրակ",
+    "name_fr": "Chirak",
+    "registered": 226775,
+    "ballots_cast": 93517,
+    "valid": 93164,
+    "invalid": 331,
+    "turnout_pct": 41.24,
+    "stations": 220,
+    "winner": "civil_contract",
+    "winner_pct": 65.102,
+    "runner_up": "armenia_alliance",
+    "margin": 49.68,
+    "order": [
+      "civil_contract",
+      "armenia_alliance",
+      "prosperous_armenia",
+      "i_have_honor",
+      "hanrapetutyun",
+      "bright_armenia",
+      "national_democratic_pole",
+      "anc",
+      "shirinyan_babajanyan",
+      "liberal",
+      "movement_5165",
+      "homeland_of_armenians",
+      "our_home_armenia",
+      "free_homeland",
+      "democratic_party",
+      "zartonk",
+      "fair_armenia",
+      "citizens_decision",
+      "sovereign_armenia",
+      "european",
+      "liberty",
+      "pan_armenian_statehood",
+      "verelk",
+      "united_homeland",
+      "national_agenda"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 60652,
+        "pct": 65.102
+      },
+      "armenia_alliance": {
+        "votes": 14366,
+        "pct": 15.42
+      },
+      "i_have_honor": {
+        "votes": 2696,
+        "pct": 2.894
+      },
+      "prosperous_armenia": {
+        "votes": 3051,
+        "pct": 3.275
+      },
+      "bright_armenia": {
+        "votes": 1584,
+        "pct": 1.7
+      },
+      "anc": {
+        "votes": 1151,
+        "pct": 1.235
+      },
+      "liberal": {
+        "votes": 983,
+        "pct": 1.055
+      },
+      "hanrapetutyun": {
+        "votes": 2147,
+        "pct": 2.305
+      },
+      "national_democratic_pole": {
+        "votes": 1271,
+        "pct": 1.364
+      },
+      "shirinyan_babajanyan": {
+        "votes": 1012,
+        "pct": 1.086
+      },
+      "movement_5165": {
+        "votes": 932,
+        "pct": 1.0
+      },
+      "national_agenda": {
+        "votes": 20,
+        "pct": 0.021
+      },
+      "european": {
+        "votes": 139,
+        "pct": 0.149
+      },
+      "sovereign_armenia": {
+        "votes": 194,
+        "pct": 0.208
+      },
+      "fair_armenia": {
+        "votes": 217,
+        "pct": 0.233
+      },
+      "zartonk": {
+        "votes": 263,
+        "pct": 0.282
+      },
+      "liberty": {
+        "votes": 109,
+        "pct": 0.117
+      },
+      "united_homeland": {
+        "votes": 44,
+        "pct": 0.047
+      },
+      "pan_armenian_statehood": {
+        "votes": 67,
+        "pct": 0.072
+      },
+      "our_home_armenia": {
+        "votes": 698,
+        "pct": 0.749
+      },
+      "homeland_of_armenians": {
+        "votes": 717,
+        "pct": 0.77
+      },
+      "free_homeland": {
+        "votes": 315,
+        "pct": 0.338
+      },
+      "democratic_party": {
+        "votes": 280,
+        "pct": 0.301
+      },
+      "citizens_decision": {
+        "votes": 211,
+        "pct": 0.226
+      },
+      "verelk": {
+        "votes": 45,
+        "pct": 0.048
+      }
+    }
+  },
+  "AM-SU": {
+    "iso": "AM-SU",
+    "name_en": "Syunik",
+    "name_hy": "Սյունիք",
+    "name_fr": "Syunik",
+    "registered": 109749,
+    "ballots_cast": 66145,
+    "valid": 65951,
+    "invalid": 216,
+    "turnout_pct": 60.27,
+    "stations": 151,
+    "winner": "civil_contract",
+    "winner_pct": 53.514,
+    "runner_up": "armenia_alliance",
+    "margin": 25.54,
+    "order": [
+      "civil_contract",
+      "armenia_alliance",
+      "prosperous_armenia",
+      "i_have_honor",
+      "liberal",
+      "hanrapetutyun",
+      "movement_5165",
+      "national_democratic_pole",
+      "bright_armenia",
+      "anc",
+      "shirinyan_babajanyan",
+      "our_home_armenia",
+      "homeland_of_armenians",
+      "fair_armenia",
+      "democratic_party",
+      "sovereign_armenia",
+      "zartonk",
+      "european",
+      "free_homeland",
+      "citizens_decision",
+      "liberty",
+      "pan_armenian_statehood",
+      "national_agenda",
+      "verelk",
+      "united_homeland"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 35293,
+        "pct": 53.514
+      },
+      "armenia_alliance": {
+        "votes": 18452,
+        "pct": 27.978
+      },
+      "i_have_honor": {
+        "votes": 1821,
+        "pct": 2.761
+      },
+      "prosperous_armenia": {
+        "votes": 2478,
+        "pct": 3.757
+      },
+      "bright_armenia": {
+        "votes": 570,
+        "pct": 0.864
+      },
+      "anc": {
+        "votes": 495,
+        "pct": 0.751
+      },
+      "liberal": {
+        "votes": 1804,
+        "pct": 2.735
+      },
+      "hanrapetutyun": {
+        "votes": 1358,
+        "pct": 2.059
+      },
+      "national_democratic_pole": {
+        "votes": 634,
+        "pct": 0.961
+      },
+      "shirinyan_babajanyan": {
+        "votes": 488,
+        "pct": 0.74
+      },
+      "movement_5165": {
+        "votes": 636,
+        "pct": 0.964
+      },
+      "national_agenda": {
+        "votes": 39,
+        "pct": 0.059
+      },
+      "european": {
+        "votes": 117,
+        "pct": 0.177
+      },
+      "sovereign_armenia": {
+        "votes": 157,
+        "pct": 0.238
+      },
+      "fair_armenia": {
+        "votes": 226,
+        "pct": 0.343
+      },
+      "zartonk": {
+        "votes": 141,
+        "pct": 0.214
+      },
+      "liberty": {
+        "votes": 64,
+        "pct": 0.097
+      },
+      "united_homeland": {
+        "votes": 35,
+        "pct": 0.053
+      },
+      "pan_armenian_statehood": {
+        "votes": 43,
+        "pct": 0.065
+      },
+      "our_home_armenia": {
+        "votes": 417,
+        "pct": 0.632
+      },
+      "homeland_of_armenians": {
+        "votes": 278,
+        "pct": 0.422
+      },
+      "free_homeland": {
+        "votes": 117,
+        "pct": 0.177
+      },
+      "democratic_party": {
+        "votes": 172,
+        "pct": 0.261
+      },
+      "citizens_decision": {
+        "votes": 77,
+        "pct": 0.117
+      },
+      "verelk": {
+        "votes": 39,
+        "pct": 0.059
+      }
+    }
+  },
+  "AM-TV": {
+    "iso": "AM-TV",
+    "name_en": "Tavush",
+    "name_hy": "Տավուշ",
+    "name_fr": "Tavouch",
+    "registered": 109692,
+    "ballots_cast": 58677,
+    "valid": 58524,
+    "invalid": 147,
+    "turnout_pct": 53.49,
+    "stations": 96,
+    "winner": "civil_contract",
+    "winner_pct": 68.018,
+    "runner_up": "armenia_alliance",
+    "margin": 51.97,
+    "order": [
+      "civil_contract",
+      "armenia_alliance",
+      "prosperous_armenia",
+      "i_have_honor",
+      "bright_armenia",
+      "hanrapetutyun",
+      "shirinyan_babajanyan",
+      "anc",
+      "liberal",
+      "movement_5165",
+      "national_democratic_pole",
+      "our_home_armenia",
+      "homeland_of_armenians",
+      "zartonk",
+      "free_homeland",
+      "citizens_decision",
+      "fair_armenia",
+      "sovereign_armenia",
+      "democratic_party",
+      "european",
+      "verelk",
+      "liberty",
+      "pan_armenian_statehood",
+      "united_homeland",
+      "national_agenda"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 39807,
+        "pct": 68.018
+      },
+      "armenia_alliance": {
+        "votes": 9391,
+        "pct": 16.046
+      },
+      "i_have_honor": {
+        "votes": 1379,
+        "pct": 2.356
+      },
+      "prosperous_armenia": {
+        "votes": 1763,
+        "pct": 3.012
+      },
+      "bright_armenia": {
+        "votes": 1134,
+        "pct": 1.938
+      },
+      "anc": {
+        "votes": 547,
+        "pct": 0.935
+      },
+      "liberal": {
+        "votes": 516,
+        "pct": 0.882
+      },
+      "hanrapetutyun": {
+        "votes": 728,
+        "pct": 1.244
+      },
+      "national_democratic_pole": {
+        "votes": 395,
+        "pct": 0.675
+      },
+      "shirinyan_babajanyan": {
+        "votes": 652,
+        "pct": 1.114
+      },
+      "movement_5165": {
+        "votes": 398,
+        "pct": 0.68
+      },
+      "national_agenda": {
+        "votes": 23,
+        "pct": 0.039
+      },
+      "european": {
+        "votes": 77,
+        "pct": 0.132
+      },
+      "sovereign_armenia": {
+        "votes": 127,
+        "pct": 0.217
+      },
+      "fair_armenia": {
+        "votes": 153,
+        "pct": 0.261
+      },
+      "zartonk": {
+        "votes": 171,
+        "pct": 0.292
+      },
+      "liberty": {
+        "votes": 40,
+        "pct": 0.068
+      },
+      "united_homeland": {
+        "votes": 30,
+        "pct": 0.051
+      },
+      "pan_armenian_statehood": {
+        "votes": 39,
+        "pct": 0.067
+      },
+      "our_home_armenia": {
+        "votes": 367,
+        "pct": 0.627
+      },
+      "homeland_of_armenians": {
+        "votes": 297,
+        "pct": 0.507
+      },
+      "free_homeland": {
+        "votes": 159,
+        "pct": 0.272
+      },
+      "democratic_party": {
+        "votes": 124,
+        "pct": 0.212
+      },
+      "citizens_decision": {
+        "votes": 155,
+        "pct": 0.265
+      },
+      "verelk": {
+        "votes": 52,
+        "pct": 0.089
+      }
+    }
+  },
+  "AM-VD": {
+    "iso": "AM-VD",
+    "name_en": "Vayots Dzor",
+    "name_hy": "Վայոց ձոր",
+    "name_fr": "Vayots Dzor",
+    "registered": 46637,
+    "ballots_cast": 26130,
+    "valid": 26075,
+    "invalid": 47,
+    "turnout_pct": 56.03,
+    "stations": 53,
+    "winner": "civil_contract",
+    "winner_pct": 58.547,
+    "runner_up": "armenia_alliance",
+    "margin": 42.94,
+    "order": [
+      "civil_contract",
+      "armenia_alliance",
+      "i_have_honor",
+      "prosperous_armenia",
+      "hanrapetutyun",
+      "bright_armenia",
+      "shirinyan_babajanyan",
+      "our_home_armenia",
+      "national_democratic_pole",
+      "anc",
+      "liberal",
+      "movement_5165",
+      "homeland_of_armenians",
+      "sovereign_armenia",
+      "zartonk",
+      "free_homeland",
+      "democratic_party",
+      "citizens_decision",
+      "fair_armenia",
+      "united_homeland",
+      "european",
+      "liberty",
+      "verelk",
+      "national_agenda",
+      "pan_armenian_statehood"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 15266,
+        "pct": 58.547
+      },
+      "armenia_alliance": {
+        "votes": 4070,
+        "pct": 15.609
+      },
+      "i_have_honor": {
+        "votes": 1795,
+        "pct": 6.884
+      },
+      "prosperous_armenia": {
+        "votes": 1688,
+        "pct": 6.474
+      },
+      "bright_armenia": {
+        "votes": 365,
+        "pct": 1.4
+      },
+      "anc": {
+        "votes": 214,
+        "pct": 0.821
+      },
+      "liberal": {
+        "votes": 203,
+        "pct": 0.779
+      },
+      "hanrapetutyun": {
+        "votes": 655,
+        "pct": 2.512
+      },
+      "national_democratic_pole": {
+        "votes": 230,
+        "pct": 0.882
+      },
+      "shirinyan_babajanyan": {
+        "votes": 349,
+        "pct": 1.338
+      },
+      "movement_5165": {
+        "votes": 200,
+        "pct": 0.767
+      },
+      "national_agenda": {
+        "votes": 9,
+        "pct": 0.035
+      },
+      "european": {
+        "votes": 39,
+        "pct": 0.15
+      },
+      "sovereign_armenia": {
+        "votes": 116,
+        "pct": 0.445
+      },
+      "fair_armenia": {
+        "votes": 59,
+        "pct": 0.226
+      },
+      "zartonk": {
+        "votes": 101,
+        "pct": 0.387
+      },
+      "liberty": {
+        "votes": 19,
+        "pct": 0.073
+      },
+      "united_homeland": {
+        "votes": 59,
+        "pct": 0.226
+      },
+      "pan_armenian_statehood": {
+        "votes": 8,
+        "pct": 0.031
+      },
+      "our_home_armenia": {
+        "votes": 255,
+        "pct": 0.978
+      },
+      "homeland_of_armenians": {
+        "votes": 136,
+        "pct": 0.522
+      },
+      "free_homeland": {
+        "votes": 84,
+        "pct": 0.322
+      },
+      "democratic_party": {
+        "votes": 73,
+        "pct": 0.28
+      },
+      "citizens_decision": {
+        "votes": 71,
+        "pct": 0.272
+      },
+      "verelk": {
+        "votes": 11,
+        "pct": 0.042
+      }
+    }
+  },
+  "AM-ER": {
+    "iso": "AM-ER",
+    "name_en": "Yerevan",
+    "name_hy": "Երևան",
+    "name_fr": "Erevan",
+    "registered": 859490,
+    "ballots_cast": 443218,
+    "valid": 440518,
+    "invalid": 2232,
+    "turnout_pct": 51.57,
+    "stations": 479,
+    "winner": "civil_contract",
+    "winner_pct": 41.129,
+    "runner_up": "armenia_alliance",
+    "margin": 13.14,
+    "order": [
+      "civil_contract",
+      "armenia_alliance",
+      "i_have_honor",
+      "hanrapetutyun",
+      "anc",
+      "shirinyan_babajanyan",
+      "national_democratic_pole",
+      "prosperous_armenia",
+      "movement_5165",
+      "homeland_of_armenians",
+      "liberal",
+      "our_home_armenia",
+      "bright_armenia",
+      "citizens_decision",
+      "free_homeland",
+      "zartonk",
+      "democratic_party",
+      "sovereign_armenia",
+      "fair_armenia",
+      "european",
+      "liberty",
+      "verelk",
+      "united_homeland",
+      "national_agenda",
+      "pan_armenian_statehood"
+    ],
+    "shares": {
+      "civil_contract": {
+        "votes": 181180,
+        "pct": 41.129
+      },
+      "armenia_alliance": {
+        "votes": 123307,
+        "pct": 27.991
+      },
+      "i_have_honor": {
+        "votes": 25351,
+        "pct": 5.755
+      },
+      "prosperous_armenia": {
+        "votes": 10417,
+        "pct": 2.365
+      },
+      "bright_armenia": {
+        "votes": 5777,
+        "pct": 1.311
+      },
+      "anc": {
+        "votes": 11516,
+        "pct": 2.614
+      },
+      "liberal": {
+        "votes": 6354,
+        "pct": 1.442
+      },
+      "hanrapetutyun": {
+        "votes": 17528,
+        "pct": 3.979
+      },
+      "national_democratic_pole": {
+        "votes": 10470,
+        "pct": 2.377
+      },
+      "shirinyan_babajanyan": {
+        "votes": 10587,
+        "pct": 2.403
+      },
+      "movement_5165": {
+        "votes": 8854,
+        "pct": 2.01
+      },
+      "national_agenda": {
+        "votes": 346,
+        "pct": 0.079
+      },
+      "european": {
+        "votes": 1207,
+        "pct": 0.274
+      },
+      "sovereign_armenia": {
+        "votes": 1820,
+        "pct": 0.413
+      },
+      "fair_armenia": {
+        "votes": 1509,
+        "pct": 0.343
+      },
+      "zartonk": {
+        "votes": 1949,
+        "pct": 0.442
+      },
+      "liberty": {
+        "votes": 1016,
+        "pct": 0.231
+      },
+      "united_homeland": {
+        "votes": 414,
+        "pct": 0.094
+      },
+      "pan_armenian_statehood": {
+        "votes": 248,
+        "pct": 0.056
+      },
+      "our_home_armenia": {
+        "votes": 5964,
+        "pct": 1.354
+      },
+      "homeland_of_armenians": {
+        "votes": 7657,
+        "pct": 1.738
+      },
+      "free_homeland": {
+        "votes": 2113,
+        "pct": 0.48
+      },
+      "democratic_party": {
+        "votes": 1947,
+        "pct": 0.442
+      },
+      "citizens_decision": {
+        "votes": 2328,
+        "pct": 0.528
+      },
+      "verelk": {
+        "votes": 659,
+        "pct": 0.15
+      }
+    }
+  }
+}

@@ -26,39 +26,9 @@ DATA = ROOT / "data" / ELECTION
 API = "https://en.wikipedia.org/w/api.php"
 UA = "ArmeniaElectionAtlas2026/1.0 (https://github.com/thepriben; data enrichment)"
 
-# id -> English Wikipedia title (None => skip, no reliable article)
-EN_TITLES = {
-    # the election
-    "election": "2026 Armenian parliamentary election",
-    # parties / alliances
-    "civil_contract": "Civil Contract",
-    "strong_armenia": "Strong Armenia",
-    "armenia_alliance": "Armenia Alliance",
-    "prosperous_armenia": "Prosperous Armenia",
-    "wings_of_unity": "Wings of Unity",
-    "bright_armenia": "Bright Armenia",
-    "anc": "Armenian National Congress",
-    "hanrapetutyun": "Hanrapetutyun",
-    "new_power": None,
-    "meritocratic": None,
-    "democracy_law_discipline": None,
-    "against_all": None,
-    "for_the_republic": None,
-    "national_democratic_pole": None,
-    "democratic_consolidation": None,
-    "christian_democratic": None,
-    "kochari": None,
-    "reformists": None,
-    # leaders
-    "leader_pashinyan": "Nikol Pashinyan",
-    "leader_karapetyan": "Samvel Karapetyan (businessman)",
-    "leader_kocharyan": "Robert Kocharyan",
-    "leader_tsarukyan": "Gagik Tsarukyan",
-    "leader_ter_petrosyan": "Levon Ter-Petrosyan",
-    "leader_marukyan": "Edmon Marukyan",
-    "leader_sargsyan": "Aram Sargsyan",
-    "leader_tandilyan": "Mane Tandilyan",
-    # marzer
+# id -> English Wikipedia title (None => skip, no reliable article).
+# The 11 marzer are shared across elections; party/leader/election entries differ.
+MARZ_TITLES = {
     "AM-ER": "Yerevan",
     "AM-AG": "Aragatsotn Province",
     "AM-AR": "Ararat Province",
@@ -71,6 +41,68 @@ EN_TITLES = {
     "AM-VD": "Vayots Dzor Province",
     "AM-TV": "Tavush Province",
 }
+
+TITLES_BY_ELECTION = {
+    "2026": {
+        # the election
+        "election": "2026 Armenian parliamentary election",
+        # parties / alliances
+        "civil_contract": "Civil Contract",
+        "strong_armenia": "Strong Armenia",
+        "armenia_alliance": "Armenia Alliance",
+        "prosperous_armenia": "Prosperous Armenia",
+        "wings_of_unity": "Wings of Unity",
+        "bright_armenia": "Bright Armenia",
+        "anc": "Armenian National Congress",
+        "hanrapetutyun": "Hanrapetutyun",
+        "new_power": None,
+        "meritocratic": None,
+        "democracy_law_discipline": None,
+        "against_all": None,
+        "for_the_republic": None,
+        "national_democratic_pole": None,
+        "democratic_consolidation": None,
+        "christian_democratic": None,
+        "kochari": None,
+        "reformists": None,
+        # leaders
+        "leader_pashinyan": "Nikol Pashinyan",
+        "leader_karapetyan": "Samvel Karapetyan (businessman)",
+        "leader_kocharyan": "Robert Kocharyan",
+        "leader_tsarukyan": "Gagik Tsarukyan",
+        "leader_ter_petrosyan": "Levon Ter-Petrosyan",
+        "leader_marukyan": "Edmon Marukyan",
+        "leader_sargsyan": "Aram Sargsyan",
+        "leader_tandilyan": "Mane Tandilyan",
+    },
+    "2021": {
+        # the election
+        "election": "2021 Armenian parliamentary election",
+        # parties / alliances (only those with reliable EN articles)
+        "civil_contract": "Civil Contract",
+        "armenia_alliance": "Armenia Alliance",
+        "i_have_honor": "I Have Honor Alliance",
+        "prosperous_armenia": "Prosperous Armenia",
+        "bright_armenia": "Bright Armenia",
+        "anc": "Armenian National Congress",
+        "hanrapetutyun": "Hanrapetutyun",
+        "european": "European Party of Armenia",
+        "democratic_party": "Democratic Party of Armenia",
+        # leaders
+        "leader_pashinyan": "Nikol Pashinyan",
+        "leader_kocharyan": "Robert Kocharyan",
+        "leader_vanetsyan": "Artur Vanetsyan",
+        "leader_tsarukyan": "Gagik Tsarukyan",
+        "leader_marukyan": "Edmon Marukyan",
+        "leader_ter_petrosyan": "Levon Ter-Petrosyan",
+        "leader_sargsyan": "Aram Sargsyan",
+    },
+}
+
+if ELECTION not in TITLES_BY_ELECTION:
+    raise SystemExit(f"Unknown ELECTION={ELECTION!r}; known: {', '.join(TITLES_BY_ELECTION)}")
+
+EN_TITLES = {**TITLES_BY_ELECTION[ELECTION], **MARZ_TITLES}
 
 
 def api_get(params: dict) -> dict:

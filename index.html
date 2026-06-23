@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Armenia Election Atlas</title>
-  <meta name="description" content="A fun, sharable geographic atlas of Armenia's parliamentary elections — winner, margins, party maps and electoral forensics from official CEC data. Currently covering the 7 June 2026 election." />
+  <meta name="description" content="A fun, sharable geographic atlas of Armenia's parliamentary elections — winner, margins, party maps and electoral forensics from official CEC data. Covering the 2021 and 2026 elections." />
   <meta property="og:title" content="Armenia Election Atlas" />
-  <meta property="og:description" content="The geography of Armenia's parliamentary elections — explore maps, parties and polling stations. Currently covering the 2026 election." />
+  <meta property="og:description" content="The geography of Armenia's parliamentary elections — explore maps, parties and polling stations. Covering the 2021 and 2026 elections." />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,7 +16,14 @@
 </head>
 <body data-theme="dark">
   <header class="topbar">
-    <a class="brand" href="#top" data-i18n="site_title">Armenia Election Atlas</a>
+    <div class="topbar-main">
+      <a class="brand" href="#top" data-i18n="site_title">Armenia Election Atlas</a>
+      <div class="topctrl">
+        <div class="election-switch" id="electionSwitch" role="group" aria-label="Election"></div>
+        <div class="langswitch" id="langswitch" role="group" aria-label="Language"></div>
+        <button class="iconbtn" id="themebtn" title="Theme" aria-label="Toggle theme">◐</button>
+      </div>
+    </div>
     <nav class="mainnav" id="mainnav">
       <a href="#overview" data-i18n="nav_overview">Overview</a>
       <a href="#map" data-i18n="nav_map">Map</a>
@@ -25,11 +32,6 @@
       <a href="#data" data-i18n="nav_data">Data</a>
       <a href="#about" data-i18n="nav_about">About</a>
     </nav>
-    <div class="topctrl">
-      <div class="election-switch" id="electionSwitch" role="group" aria-label="Election"></div>
-      <div class="langswitch" id="langswitch" role="group" aria-label="Language"></div>
-      <button class="iconbtn" id="themebtn" title="Theme" aria-label="Toggle theme">◐</button>
-    </div>
   </header>
 
   <main id="top">

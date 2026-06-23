@@ -21,11 +21,11 @@
       "dir": "data/2021",
       "type": "parliamentary",
       "date": "2021-06-20",
-      "status": "upcoming",
+      "status": "available",
       "name": {
-        "en": "2021 parliamentary election",
-        "hy": "2021 թ. խորհրդարանական ընտրություններ",
-        "fr": "Élections législatives de 2021"
+        "en": "2021 early parliamentary election",
+        "hy": "2021 թ. արտահերթ խորհրդարանական ընտրություններ",
+        "fr": "Élections législatives anticipées de 2021"
       }
     }
   ]

@@ -1,0 +1,618 @@
+{
+  "election": {
+    "wikipedia": {
+      "en": {
+        "title": "2021 Armenian parliamentary election",
+        "url": "https://en.wikipedia.org/wiki/2021_Armenian_parliamentary_election"
+      },
+      "hy": {
+        "title": "Հայաստանի խորհրդարանական ընտրություններ (2021)",
+        "url": "https://hy.wikipedia.org/wiki/%D5%80%D5%A1%D5%B5%D5%A1%D5%BD%D5%BF%D5%A1%D5%B6%D5%AB_%D5%AD%D5%B8%D6%80%D5%B0%D6%80%D5%A4%D5%A1%D6%80%D5%A1%D5%B6%D5%A1%D5%AF%D5%A1%D5%B6_%D5%A8%D5%B6%D5%BF%D6%80%D5%B8%D6%82%D5%A9%D5%B5%D5%B8%D6%82%D5%B6%D5%B6%D5%A5%D6%80_%282021%29"
+      },
+      "fr": {
+        "title": "Élections législatives arméniennes de 2021",
+        "url": "https://fr.wikipedia.org/wiki/%C3%89lections_l%C3%A9gislatives_arm%C3%A9niennes_de_2021"
+      }
+    },
+    "qid": "Q84081274",
+    "wikidata": "https://www.wikidata.org/wiki/Q84081274",
+    "labels": {
+      "en": "2021 Armenian parliamentary election",
+      "hy": "Հայաստանի խորհրդարանական ընտրություններ (2021)",
+      "fr": "élections législatives arméniennes de 2021"
+    }
+  },
+  "civil_contract": {
+    "wikipedia": {
+      "en": {
+        "title": "Civil contract",
+        "url": "https://en.wikipedia.org/wiki/Civil_contract"
+      }
+    },
+    "qid": "Q60401074",
+    "wikidata": "https://www.wikidata.org/wiki/Q60401074",
+    "labels": {
+      "en": "Civil contract"
+    }
+  },
+  "armenia_alliance": {
+    "wikipedia": {
+      "en": {
+        "title": "Armenia Alliance",
+        "url": "https://en.wikipedia.org/wiki/Armenia_Alliance"
+      },
+      "hy": {
+        "title": "Հայաստան դաշինք",
+        "url": "https://hy.wikipedia.org/wiki/%D5%80%D5%A1%D5%B5%D5%A1%D5%BD%D5%BF%D5%A1%D5%B6_%D5%A4%D5%A1%D5%B7%D5%AB%D5%B6%D6%84"
+      },
+      "fr": {
+        "title": "Alliance arménienne",
+        "url": "https://fr.wikipedia.org/wiki/Alliance_arm%C3%A9nienne"
+      }
+    },
+    "qid": "Q106833126",
+    "wikidata": "https://www.wikidata.org/wiki/Q106833126",
+    "labels": {
+      "en": "Armenia Alliance",
+      "hy": "Հայաստան դաշինք",
+      "fr": "Armenia Alliance"
+    }
+  },
+  "i_have_honor": {
+    "wikipedia": {
+      "en": {
+        "title": "I Have Honor Alliance",
+        "url": "https://en.wikipedia.org/wiki/I_Have_Honor_Alliance"
+      },
+      "hy": {
+        "title": "Պատիվ ունեմ դաշինք",
+        "url": "https://hy.wikipedia.org/wiki/%D5%8A%D5%A1%D5%BF%D5%AB%D5%BE_%D5%B8%D6%82%D5%B6%D5%A5%D5%B4_%D5%A4%D5%A1%D5%B7%D5%AB%D5%B6%D6%84"
+      },
+      "fr": {
+        "title": "Alliance « J'ai l'honneur »",
+        "url": "https://fr.wikipedia.org/wiki/Alliance_%C2%AB_J%27ai_l%27honneur_%C2%BB"
+      }
+    },
+    "qid": "Q107087931",
+    "wikidata": "https://www.wikidata.org/wiki/Q107087931",
+    "labels": {
+      "en": "I Have Honor Alliance",
+      "hy": "Պատիվ ունեմ դաշինք",
+      "fr": "Alliance « J'ai l'honneur »"
+    }
+  },
+  "prosperous_armenia": {
+    "wikipedia": {
+      "en": {
+        "title": "Prosperous Armenia",
+        "url": "https://en.wikipedia.org/wiki/Prosperous_Armenia"
+      },
+      "hy": {
+        "title": "Բարգավաճ Հայաստան կուսակցություն",
+        "url": "https://hy.wikipedia.org/wiki/%D4%B2%D5%A1%D6%80%D5%A3%D5%A1%D5%BE%D5%A1%D5%B3_%D5%80%D5%A1%D5%B5%D5%A1%D5%BD%D5%BF%D5%A1%D5%B6_%D5%AF%D5%B8%D6%82%D5%BD%D5%A1%D5%AF%D6%81%D5%B8%D6%82%D5%A9%D5%B5%D5%B8%D6%82%D5%B6"
+      },
+      "fr": {
+        "title": "Arménie prospère",
+        "url": "https://fr.wikipedia.org/wiki/Arm%C3%A9nie_prosp%C3%A8re"
+      }
+    },
+    "qid": "Q887193",
+    "wikidata": "https://www.wikidata.org/wiki/Q887193",
+    "labels": {
+      "en": "Prosperous Armenia",
+      "hy": "Բարգավաճ Հայաստան կուսակցություն",
+      "fr": "Arménie prospère"
+    }
+  },
+  "bright_armenia": {
+    "wikipedia": {
+      "en": {
+        "title": "Bright Armenia",
+        "url": "https://en.wikipedia.org/wiki/Bright_Armenia"
+      },
+      "hy": {
+        "title": "Լուսավոր Հայաստան կուսակցություն",
+        "url": "https://hy.wikipedia.org/wiki/%D4%BC%D5%B8%D6%82%D5%BD%D5%A1%D5%BE%D5%B8%D6%80_%D5%80%D5%A1%D5%B5%D5%A1%D5%BD%D5%BF%D5%A1%D5%B6_%D5%AF%D5%B8%D6%82%D5%BD%D5%A1%D5%AF%D6%81%D5%B8%D6%82%D5%A9%D5%B5%D5%B8%D6%82%D5%B6"
+      },
+      "fr": {
+        "title": "Arménie lumineuse",
+        "url": "https://fr.wikipedia.org/wiki/Arm%C3%A9nie_lumineuse"
+      }
+    },
+    "qid": "Q27972481",
+    "wikidata": "https://www.wikidata.org/wiki/Q27972481",
+    "labels": {
+      "en": "Bright Armenia",
+      "hy": "Լուսավոր Հայաստան",
+      "fr": "Arménie lumineuse"
+    }
+  },
+  "anc": {
+    "wikipedia": {
+      "en": {
+        "title": "Armenian National Congress",
+        "url": "https://en.wikipedia.org/wiki/Armenian_National_Congress"
+      },
+      "hy": {
+        "title": "Հայ ազգային կոնգրես",
+        "url": "https://hy.wikipedia.org/wiki/%D5%80%D5%A1%D5%B5_%D5%A1%D5%A6%D5%A3%D5%A1%D5%B5%D5%AB%D5%B6_%D5%AF%D5%B8%D5%B6%D5%A3%D6%80%D5%A5%D5%BD"
+      },
+      "fr": {
+        "title": "Congrès national arménien (parti politique)",
+        "url": "https://fr.wikipedia.org/wiki/Congr%C3%A8s_national_arm%C3%A9nien_%28parti_politique%29"
+      }
+    },
+    "qid": "Q284853",
+    "wikidata": "https://www.wikidata.org/wiki/Q284853",
+    "labels": {
+      "en": "Armenian National Congress",
+      "hy": "Հայ ազգային կոնգրես",
+      "fr": "Congrès national arménien"
+    }
+  },
+  "hanrapetutyun": {
+    "wikipedia": {
+      "en": {
+        "title": "Hanrapetutyun Party",
+        "url": "https://en.wikipedia.org/wiki/Hanrapetutyun_Party"
+      },
+      "hy": {
+        "title": "Հանրապետություն կուսակցություն",
+        "url": "https://hy.wikipedia.org/wiki/%D5%80%D5%A1%D5%B6%D6%80%D5%A1%D5%BA%D5%A5%D5%BF%D5%B8%D6%82%D5%A9%D5%B5%D5%B8%D6%82%D5%B6_%D5%AF%D5%B8%D6%82%D5%BD%D5%A1%D5%AF%D6%81%D5%B8%D6%82%D5%A9%D5%B5%D5%B8%D6%82%D5%B6"
+      },
+      "fr": {
+        "title": "République (Arménie)",
+        "url": "https://fr.wikipedia.org/wiki/R%C3%A9publique_%28Arm%C3%A9nie%29"
+      }
+    },
+    "qid": "Q4393593",
+    "wikidata": "https://www.wikidata.org/wiki/Q4393593",
+    "labels": {
+      "en": "Republic",
+      "hy": "Հանրապետություն կուսակցություն",
+      "fr": "République"
+    }
+  },
+  "european": {
+    "wikipedia": {
+      "en": {
+        "title": "European Party of Armenia",
+        "url": "https://en.wikipedia.org/wiki/European_Party_of_Armenia"
+      },
+      "hy": {
+        "title": "Հայաստանի եվրոպական կուսակցություն",
+        "url": "https://hy.wikipedia.org/wiki/%D5%80%D5%A1%D5%B5%D5%A1%D5%BD%D5%BF%D5%A1%D5%B6%D5%AB_%D5%A5%D5%BE%D6%80%D5%B8%D5%BA%D5%A1%D5%AF%D5%A1%D5%B6_%D5%AF%D5%B8%D6%82%D5%BD%D5%A1%D5%AF%D6%81%D5%B8%D6%82%D5%A9%D5%B5%D5%B8%D6%82%D5%B6"
+      }
+    },
+    "qid": "Q63642910",
+    "wikidata": "https://www.wikidata.org/wiki/Q63642910",
+    "labels": {
+      "en": "European Party of Armenia",
+      "hy": "Հայաստանի եվրոպական կուսակցություն"
+    }
+  },
+  "democratic_party": {
+    "wikipedia": {
+      "en": {
+        "title": "Democratic Party of Armenia",
+        "url": "https://en.wikipedia.org/wiki/Democratic_Party_of_Armenia"
+      },
+      "hy": {
+        "title": "Հայաստանի դեմոկրատական կուսակցություն",
+        "url": "https://hy.wikipedia.org/wiki/%D5%80%D5%A1%D5%B5%D5%A1%D5%BD%D5%BF%D5%A1%D5%B6%D5%AB_%D5%A4%D5%A5%D5%B4%D5%B8%D5%AF%D6%80%D5%A1%D5%BF%D5%A1%D5%AF%D5%A1%D5%B6_%D5%AF%D5%B8%D6%82%D5%BD%D5%A1%D5%AF%D6%81%D5%B8%D6%82%D5%A9%D5%B5%D5%B8%D6%82%D5%B6"
+      }
+    },
+    "qid": "Q2598674",
+    "wikidata": "https://www.wikidata.org/wiki/Q2598674",
+    "labels": {
+      "en": "Democratic Party of Armenia",
+      "hy": "Հայաստանի դեմոկրատական կուսակցություն"
+    }
+  },
+  "leader_pashinyan": {
+    "wikipedia": {
+      "en": {
+        "title": "Nikol Pashinyan",
+        "url": "https://en.wikipedia.org/wiki/Nikol_Pashinyan"
+      },
+      "hy": {
+        "title": "Նիկոլ Փաշինյան",
+        "url": "https://hy.wikipedia.org/wiki/%D5%86%D5%AB%D5%AF%D5%B8%D5%AC_%D5%93%D5%A1%D5%B7%D5%AB%D5%B6%D5%B5%D5%A1%D5%B6"
+      },
+      "fr": {
+        "title": "Nikol Pachinian",
+        "url": "https://fr.wikipedia.org/wiki/Nikol_Pachinian"
+      }
+    },
+    "qid": "Q7035479",
+    "wikidata": "https://www.wikidata.org/wiki/Q7035479",
+    "labels": {
+      "en": "Nikol Pashinyan",
+      "hy": "Նիկոլ Փաշինյան",
+      "fr": "Nikol Pachinian"
+    }
+  },
+  "leader_kocharyan": {
+    "wikipedia": {
+      "en": {
+        "title": "Robert Kocharyan",
+        "url": "https://en.wikipedia.org/wiki/Robert_Kocharyan"
+      },
+      "hy": {
+        "title": "Ռոբերտ Քոչարյան",
+        "url": "https://hy.wikipedia.org/wiki/%D5%8C%D5%B8%D5%A2%D5%A5%D6%80%D5%BF_%D5%94%D5%B8%D5%B9%D5%A1%D6%80%D5%B5%D5%A1%D5%B6"
+      },
+      "fr": {
+        "title": "Robert Kotcharian",
+        "url": "https://fr.wikipedia.org/wiki/Robert_Kotcharian"
+      }
+    },
+    "qid": "Q613051",
+    "wikidata": "https://www.wikidata.org/wiki/Q613051",
+    "labels": {
+      "en": "Robert Kocharyan",
+      "hy": "Ռոբերտ Քոչարյան",
+      "fr": "Robert Kotcharian"
+    }
+  },
+  "leader_vanetsyan": {
+    "wikipedia": {
+      "en": {
+        "title": "Artur Vanetsyan",
+        "url": "https://en.wikipedia.org/wiki/Artur_Vanetsyan"
+      },
+      "hy": {
+        "title": "Արթուր Վանեցյան",
+        "url": "https://hy.wikipedia.org/wiki/%D4%B1%D6%80%D5%A9%D5%B8%D6%82%D6%80_%D5%8E%D5%A1%D5%B6%D5%A5%D6%81%D5%B5%D5%A1%D5%B6"
+      }
+    },
+    "qid": "Q53226857",
+    "wikidata": "https://www.wikidata.org/wiki/Q53226857",
+    "labels": {
+      "en": "Arthur Vanetsyan",
+      "hy": "Արթուր Վանեցյան",
+      "fr": "Arthur Vanetsyan"
+    }
+  },
+  "leader_tsarukyan": {
+    "wikipedia": {
+      "en": {
+        "title": "Gagik Tsarukyan",
+        "url": "https://en.wikipedia.org/wiki/Gagik_Tsarukyan"
+      },
+      "hy": {
+        "title": "Գագիկ Ծառուկյան",
+        "url": "https://hy.wikipedia.org/wiki/%D4%B3%D5%A1%D5%A3%D5%AB%D5%AF_%D4%BE%D5%A1%D5%BC%D5%B8%D6%82%D5%AF%D5%B5%D5%A1%D5%B6"
+      },
+      "fr": {
+        "title": "Gagik Tsarukyan",
+        "url": "https://fr.wikipedia.org/wiki/Gagik_Tsarukyan"
+      }
+    },
+    "qid": "Q718634",
+    "wikidata": "https://www.wikidata.org/wiki/Q718634",
+    "labels": {
+      "en": "Gagik Tsarukyan",
+      "hy": "Գագիկ Ծառուկյան",
+      "fr": "Gagik Tsarukyan"
+    }
+  },
+  "leader_marukyan": {
+    "wikipedia": {
+      "en": {
+        "title": "Edmon Marukyan",
+        "url": "https://en.wikipedia.org/wiki/Edmon_Marukyan"
+      },
+      "hy": {
+        "title": "Էդմոն Մարուքյան",
+        "url": "https://hy.wikipedia.org/wiki/%D4%B7%D5%A4%D5%B4%D5%B8%D5%B6_%D5%84%D5%A1%D6%80%D5%B8%D6%82%D6%84%D5%B5%D5%A1%D5%B6"
+      }
+    },
+    "qid": "Q5338820",
+    "wikidata": "https://www.wikidata.org/wiki/Q5338820",
+    "labels": {
+      "en": "Edmon Marukyan",
+      "hy": "Էդմոն Մարուքյան",
+      "fr": "Edmon Marukian"
+    }
+  },
+  "leader_ter_petrosyan": {
+    "wikipedia": {
+      "en": {
+        "title": "Levon Ter-Petrosyan",
+        "url": "https://en.wikipedia.org/wiki/Levon_Ter-Petrosyan"
+      },
+      "hy": {
+        "title": "Լևոն Տեր-Պետրոսյան",
+        "url": "https://hy.wikipedia.org/wiki/%D4%BC%D6%87%D5%B8%D5%B6_%D5%8F%D5%A5%D6%80-%D5%8A%D5%A5%D5%BF%D6%80%D5%B8%D5%BD%D5%B5%D5%A1%D5%B6"
+      },
+      "fr": {
+        "title": "Levon Ter-Petrossian",
+        "url": "https://fr.wikipedia.org/wiki/Levon_Ter-Petrossian"
+      }
+    },
+    "qid": "Q612949",
+    "wikidata": "https://www.wikidata.org/wiki/Q612949",
+    "labels": {
+      "en": "Levon Ter-Petrosyan",
+      "hy": "Լևոն Տեր-Պետրոսյան",
+      "fr": "Levon Ter-Petrossian"
+    }
+  },
+  "leader_sargsyan": {
+    "wikipedia": {
+      "en": {
+        "title": "Aram Sargsyan",
+        "url": "https://en.wikipedia.org/wiki/Aram_Sargsyan"
+      },
+      "hy": {
+        "title": "Արամ Զ. Սարգսյան",
+        "url": "https://hy.wikipedia.org/wiki/%D4%B1%D6%80%D5%A1%D5%B4_%D4%B6._%D5%8D%D5%A1%D6%80%D5%A3%D5%BD%D5%B5%D5%A1%D5%B6"
+      },
+      "fr": {
+        "title": "Aram Sargsian",
+        "url": "https://fr.wikipedia.org/wiki/Aram_Sargsian"
+      }
+    },
+    "qid": "Q501736",
+    "wikidata": "https://www.wikidata.org/wiki/Q501736",
+    "labels": {
+      "en": "Aram Sargsyan",
+      "hy": "Արամ Զ. Սարգսյան",
+      "fr": "Aram Sargsian"
+    }
+  },
+  "AM-ER": {
+    "wikipedia": {
+      "en": {
+        "title": "Yerevan",
+        "url": "https://en.wikipedia.org/wiki/Yerevan"
+      },
+      "hy": {
+        "title": "Երևան",
+        "url": "https://hy.wikipedia.org/wiki/%D4%B5%D6%80%D6%87%D5%A1%D5%B6"
+      },
+      "fr": {
+        "title": "Erevan",
+        "url": "https://fr.wikipedia.org/wiki/Erevan"
+      }
+    },
+    "qid": "Q1953",
+    "wikidata": "https://www.wikidata.org/wiki/Q1953",
+    "labels": {
+      "en": "Yerevan",
+      "hy": "Երևան",
+      "fr": "Erevan"
+    }
+  },
+  "AM-AG": {
+    "wikipedia": {
+      "en": {
+        "title": "Aragatsotn Province",
+        "url": "https://en.wikipedia.org/wiki/Aragatsotn_Province"
+      },
+      "hy": {
+        "title": "Արագածոտնի մարզ",
+        "url": "https://hy.wikipedia.org/wiki/%D4%B1%D6%80%D5%A1%D5%A3%D5%A1%D5%AE%D5%B8%D5%BF%D5%B6%D5%AB_%D5%B4%D5%A1%D6%80%D5%A6"
+      },
+      "fr": {
+        "title": "Aragatsotn",
+        "url": "https://fr.wikipedia.org/wiki/Aragatsotn"
+      }
+    },
+    "qid": "Q17915",
+    "wikidata": "https://www.wikidata.org/wiki/Q17915",
+    "labels": {
+      "en": "Aragatsotn Province",
+      "hy": "Արագածոտնի մարզ",
+      "fr": "Aragatsotn"
+    }
+  },
+  "AM-AR": {
+    "wikipedia": {
+      "en": {
+        "title": "Ararat Province",
+        "url": "https://en.wikipedia.org/wiki/Ararat_Province"
+      },
+      "hy": {
+        "title": "Արարատի մարզ",
+        "url": "https://hy.wikipedia.org/wiki/%D4%B1%D6%80%D5%A1%D6%80%D5%A1%D5%BF%D5%AB_%D5%B4%D5%A1%D6%80%D5%A6"
+      },
+      "fr": {
+        "title": "Ararat (marz)",
+        "url": "https://fr.wikipedia.org/wiki/Ararat_%28marz%29"
+      }
+    },
+    "qid": "Q199880",
+    "wikidata": "https://www.wikidata.org/wiki/Q199880",
+    "labels": {
+      "en": "Ararat Province",
+      "hy": "Արարատի մարզ",
+      "fr": "Ararat"
+    }
+  },
+  "AM-AV": {
+    "wikipedia": {
+      "en": {
+        "title": "Armavir Province",
+        "url": "https://en.wikipedia.org/wiki/Armavir_Province"
+      },
+      "hy": {
+        "title": "Արմավիրի մարզ",
+        "url": "https://hy.wikipedia.org/wiki/%D4%B1%D6%80%D5%B4%D5%A1%D5%BE%D5%AB%D6%80%D5%AB_%D5%B4%D5%A1%D6%80%D5%A6"
+      },
+      "fr": {
+        "title": "Armavir (marz)",
+        "url": "https://fr.wikipedia.org/wiki/Armavir_%28marz%29"
+      }
+    },
+    "qid": "Q201147",
+    "wikidata": "https://www.wikidata.org/wiki/Q201147",
+    "labels": {
+      "en": "Armavir Province",
+      "hy": "Արմավիրի մարզ",
+      "fr": "Armavir"
+    }
+  },
+  "AM-GR": {
+    "wikipedia": {
+      "en": {
+        "title": "Gegharkunik Province",
+        "url": "https://en.wikipedia.org/wiki/Gegharkunik_Province"
+      },
+      "hy": {
+        "title": "Գեղարքունիքի մարզ",
+        "url": "https://hy.wikipedia.org/wiki/%D4%B3%D5%A5%D5%B2%D5%A1%D6%80%D6%84%D5%B8%D6%82%D5%B6%D5%AB%D6%84%D5%AB_%D5%B4%D5%A1%D6%80%D5%A6"
+      },
+      "fr": {
+        "title": "Gegharkunik",
+        "url": "https://fr.wikipedia.org/wiki/Gegharkunik"
+      }
+    },
+    "qid": "Q199905",
+    "wikidata": "https://www.wikidata.org/wiki/Q199905",
+    "labels": {
+      "en": "Gegharkunik Province",
+      "hy": "Գեղարքունիքի մարզ",
+      "fr": "Gegharkunik"
+    }
+  },
+  "AM-LO": {
+    "wikipedia": {
+      "en": {
+        "title": "Lori Province",
+        "url": "https://en.wikipedia.org/wiki/Lori_Province"
+      },
+      "hy": {
+        "title": "Լոռու մարզ",
+        "url": "https://hy.wikipedia.org/wiki/%D4%BC%D5%B8%D5%BC%D5%B8%D6%82_%D5%B4%D5%A1%D6%80%D5%A6"
+      },
+      "fr": {
+        "title": "Lorri",
+        "url": "https://fr.wikipedia.org/wiki/Lorri"
+      }
+    },
+    "qid": "Q200350",
+    "wikidata": "https://www.wikidata.org/wiki/Q200350",
+    "labels": {
+      "en": "Lori Province",
+      "hy": "Լոռու մարզ",
+      "fr": "Lorri"
+    }
+  },
+  "AM-KT": {
+    "wikipedia": {
+      "en": {
+        "title": "Kotayk Province",
+        "url": "https://en.wikipedia.org/wiki/Kotayk_Province"
+      },
+      "hy": {
+        "title": "Կոտայքի մարզ",
+        "url": "https://hy.wikipedia.org/wiki/%D4%BF%D5%B8%D5%BF%D5%A1%D5%B5%D6%84%D5%AB_%D5%B4%D5%A1%D6%80%D5%A6"
+      },
+      "fr": {
+        "title": "Kotayk",
+        "url": "https://fr.wikipedia.org/wiki/Kotayk"
+      }
+    },
+    "qid": "Q4511",
+    "wikidata": "https://www.wikidata.org/wiki/Q4511",
+    "labels": {
+      "en": "Kotayk Province",
+      "hy": "Կոտայքի մարզ",
+      "fr": "Kotayk"
+    }
+  },
+  "AM-SH": {
+    "wikipedia": {
+      "en": {
+        "title": "Shirak Province",
+        "url": "https://en.wikipedia.org/wiki/Shirak_Province"
+      },
+      "hy": {
+        "title": "Շիրակի մարզ",
+        "url": "https://hy.wikipedia.org/wiki/%D5%87%D5%AB%D6%80%D5%A1%D5%AF%D5%AB_%D5%B4%D5%A1%D6%80%D5%A6"
+      },
+      "fr": {
+        "title": "Shirak",
+        "url": "https://fr.wikipedia.org/wiki/Shirak"
+      }
+    },
+    "qid": "Q201063",
+    "wikidata": "https://www.wikidata.org/wiki/Q201063",
+    "labels": {
+      "en": "Shirak Province",
+      "hy": "Շիրակի մարզ",
+      "fr": "Shirak"
+    }
+  },
+  "AM-SU": {
+    "wikipedia": {
+      "en": {
+        "title": "Syunik Province",
+        "url": "https://en.wikipedia.org/wiki/Syunik_Province"
+      },
+      "hy": {
+        "title": "Սյունիքի մարզ",
+        "url": "https://hy.wikipedia.org/wiki/%D5%8D%D5%B5%D5%B8%D6%82%D5%B6%D5%AB%D6%84%D5%AB_%D5%B4%D5%A1%D6%80%D5%A6"
+      },
+      "fr": {
+        "title": "Syunik",
+        "url": "https://fr.wikipedia.org/wiki/Syunik"
+      }
+    },
+    "qid": "Q2523428",
+    "wikidata": "https://www.wikidata.org/wiki/Q2523428",
+    "labels": {
+      "en": "Syunik Province",
+      "hy": "Սյունիքի մարզ",
+      "fr": "Syunik"
+    }
+  },
+  "AM-VD": {
+    "wikipedia": {
+      "en": {
+        "title": "Vayots Dzor Province",
+        "url": "https://en.wikipedia.org/wiki/Vayots_Dzor_Province"
+      },
+      "hy": {
+        "title": "Վայոց ձորի մարզ",
+        "url": "https://hy.wikipedia.org/wiki/%D5%8E%D5%A1%D5%B5%D5%B8%D6%81_%D5%B1%D5%B8%D6%80%D5%AB_%D5%B4%D5%A1%D6%80%D5%A6"
+      },
+      "fr": {
+        "title": "Vayots Dzor",
+        "url": "https://fr.wikipedia.org/wiki/Vayots_Dzor"
+      }
+    },
+    "qid": "Q200124",
+    "wikidata": "https://www.wikidata.org/wiki/Q200124",
+    "labels": {
+      "en": "Vayots Dzor Province",
+      "hy": "Վայոց ձորի մարզ",
+      "fr": "Vayots Dzor"
+    }
+  },
+  "AM-TV": {
+    "wikipedia": {
+      "en": {
+        "title": "Tavush Province",
+        "url": "https://en.wikipedia.org/wiki/Tavush_Province"
+      },
+      "hy": {
+        "title": "Տավուշի մարզ",
+        "url": "https://hy.wikipedia.org/wiki/%D5%8F%D5%A1%D5%BE%D5%B8%D6%82%D5%B7%D5%AB_%D5%B4%D5%A1%D6%80%D5%A6"
+      },
+      "fr": {
+        "title": "Tavush",
+        "url": "https://fr.wikipedia.org/wiki/Tavush"
+      }
+    },
+    "qid": "Q201140",
+    "wikidata": "https://www.wikidata.org/wiki/Q201140",
+    "labels": {
+      "en": "Tavush Province",
+      "hy": "Տավուշի մարզ",
+      "fr": "Tavush"
+    }
+  }
+}

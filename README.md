@@ -4,12 +4,12 @@ A **trilingual (EN / ՀՅ / FR)** geographic atlas of Armenia's parliamentary
 elections — built to be explored and shared by link, not just read.
 
 A **portal** designed to grow into a multi-election archive: pick an election from the
-switcher in the header and the whole site re-renders for that vote. **For now only the
-7 June 2026 election is available**; earlier elections (starting with 2021) are planned
-and appear as *coming soon* until their data lands.
+switcher in the header and the whole site re-renders for that vote. **It currently covers
+the 2021 and 2026 parliamentary elections**; earlier votes are planned and appear as
+*coming soon* until their data lands.
 
-For 2026, Civil Contract won a second outright majority and carried **all eleven
-provinces**. The atlas focuses on the geography of that result: the margin of victory and
+In both 2021 and 2026, Civil Contract won an outright majority and carried **all eleven
+provinces**. The atlas focuses on the geography of each result: the margin of victory and
 the party scores, province by province and community by community.
 
 **Live site:** <https://hayntrutyun.info/> · mirror: `https://thepriben.github.io/armenia-election-atlas/`
@@ -26,16 +26,17 @@ the party scores, province by province and community by community.
   closest view to the polling places.
 - **Parties** — neutral, trilingual profiles cross-referenced to **Wikidata** + Wikipedia.
 - **Data** — sortable tables and downloads (**Parquet** / CSV / GeoJSON), derived from the
-  official CEC workbooks (2026: 2,005 polling stations, 18 forces, 81 communities).
+  official CEC workbooks (2026: 2,005 stations, 18 forces, 81 communities; 2021: 2,008
+  stations, 25 forces, 513 communities).
 
 ## Single source of truth
 
 All results come from the **Central Electoral Commission of Armenia** (`elections.am`):
 
-| File | Source |
+| File | Source (`electionId`: 2026 = `28826`, 2021 = `27697`) |
 |---|---|
-| Results by polling station | `https://www.elections.am/File/ElectionResult?electionId=28826` |
-| Polling-station registry (marz / community) | `https://www.elections.am/File/SubDistrictsToExcel?electionId=28826` |
+| Results by polling station | `https://www.elections.am/File/ElectionResult?electionId=<id>` |
+| Polling-station registry (marz / community) | `https://www.elections.am/File/SubDistrictsToExcel?electionId=<id>` |
 
 Province boundaries: **geoBoundaries** ARM ADM1 (CC-BY 4.0).
 Community coordinates: **GeoNames** (CC-BY).
@@ -45,7 +46,7 @@ Identifiers and multilingual labels: **Wikidata**.
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
-pip install pandas pyarrow openpyxl requests
+pip install -r requirements.txt
 
 bash   scripts/fetch_source.sh        # download the two official CEC workbooks
 python scripts/build_data.py          # join station→community→marz→nation; emit Parquet/CSV/JSON
@@ -70,16 +71,23 @@ data/
     party_profiles.json  communities_geo.json
     clean/  stations.{parquet,csv}  communities.{parquet,csv}  marz.{parquet,csv}
     raw/    original CEC workbooks
+  2021/                       # same structure as 2026/
 ```
 
 `data/elections.json` lists every election, its `date`, trilingual `name`, and
 `status` (`available` or `upcoming`). The header switcher and the site's default
-election are driven entirely by this file. **For now only `2026` is `available`.**
+election are driven entirely by this file. **Both `2021` and `2026` are `available`;
+`2026` is the default.**
 
 ## Add an election
 
-1. Find the election's `electionId` on `elections.am` and set it in `scripts/fetch_source.sh`.
-2. Generate the per-election dataset (everything lands under `data/<year>/`):
+1. Find the election's `electionId` on `elections.am` (the `<option value=...>` in the
+   parliamentary-elections page; e.g. 2021 = `27697`, 2026 = `28826`).
+2. Add a config block for the year to the `ELECTIONS` dict in `scripts/build_data.py`:
+   the ballot (party) **column indices** from the results workbook, trilingual party
+   metadata, thresholds, seat allocation and `election_id`. Add the matching party/leader
+   Wikipedia titles to `TITLES_BY_ELECTION` in `scripts/enrich_links.py`.
+3. Generate the per-election dataset (everything lands under `data/<year>/`):
 
    ```bash
    export ELECTION=2021
@@ -89,7 +97,7 @@ election are driven entirely by this file. **For now only `2026` is `available`.
    python scripts/enrich_links.py
    ```
 
-3. Add the election to `data/elections.json` with `"status": "upcoming"`; flip it to
+4. Add the election to `data/elections.json` with `"status": "upcoming"`; flip it to
    `"available"` once the data is in and verified. Set `"default"` if it should be the
    election shown on first load.
 

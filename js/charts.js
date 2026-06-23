@@ -10,12 +10,13 @@ export function voteBars(el, national) {
   const x = d3.scaleLinear().domain([0, Math.max(50, d3.max(data, (d) => d.pct))]).range([m.l, W - m.r]);
   const svg = d3.select(el).html("").append("svg").attr("viewBox", `0 0 ${W} ${H}`);
 
-  // 4% threshold line
-  const xt = x(4);
+  // party-entry threshold line (varies by election)
+  const thr = national.threshold_party_pct ?? 4;
+  const xt = x(thr);
   svg.append("line").attr("x1", xt).attr("x2", xt).attr("y1", m.t - 6).attr("y2", H - m.b)
     .attr("stroke", "var(--muted)").attr("stroke-dasharray", "3 3").attr("opacity", .7);
   svg.append("text").attr("x", xt).attr("y", m.t - 9).attr("fill", "var(--muted)")
-    .attr("font-size", 10).attr("text-anchor", "middle").text("4%");
+    .attr("font-size", 10).attr("text-anchor", "middle").text(thr + "%");
 
   const g = svg.selectAll("g.row").data(data).join("g").attr("class", "row")
     .attr("transform", (d, i) => `translate(0, ${m.t + i * rowH})`);

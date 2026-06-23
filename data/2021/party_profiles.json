@@ -1,0 +1,39 @@
+{
+  "profiles": {
+    "civil_contract": {
+      "en": "The party of acting Prime Minister Nikol Pashinyan, in power since the 2018 'Velvet Revolution'. It called the snap June 2021 election to seek a new mandate after the lost 2020 Nagorno-Karabakh war, and won 53.9% of the vote and an outright majority.",
+      "fr": "Le parti du Premier ministre par intérim Nikol Pashinyan, au pouvoir depuis la « révolution de velours » de 2018. Il a provoqué les législatives anticipées de juin 2021 pour obtenir un nouveau mandat après la guerre perdue du Haut-Karabakh en 2020, et a remporté 53,9 % des voix et une majorité absolue.",
+      "hy": "Վարչապետի պաշտոնակատար Նիկոլ Փաշինյանի կուսակցությունը՝ իշխանության 2018-ի «թավշյա հեղափոխությունից» ի վեր։ 2020-ի Արցախյան պատերազմից հետո նոր մանդատ ստանալու համար նա նախաձեռնեց 2021-ի հունիսի արտահերթ ընտրությունները և ստացավ ձայների 53,9 %-ը՝ բացարձակ մեծամասնություն։"
+    },
+    "armenia_alliance": {
+      "en": "Opposition alliance led by second President Robert Kocharyan, bringing together the Armenian Revolutionary Federation (Dashnaktsutyun) and Reborn Armenia. Running on national security and criticism of the Karabakh defeat, it finished second with 21.1% and 29 seats.",
+      "fr": "Alliance d'opposition menée par le deuxième président Robert Kocharyan, réunissant la Fédération révolutionnaire arménienne (Dachnaktsoutioun) et Arménie renaissante. Axée sur la sécurité nationale et la critique de la défaite au Karabakh, elle est arrivée deuxième avec 21,1 % et 29 sièges.",
+      "hy": "Ընդդիմադիր դաշինք՝ երկրորդ նախագահ Ռոբերт Քոչարյանի գլխավորությամբ, որը միավորում էր ՀՅԴ-ն (Դաշնակցություն) և «Վերածնվող Հայաստան»-ը։ Ազգային անվտանգության և Արցախի պարտության քննադատության օրակարգով՝ զբաղեցրեց երկրորդ տեղը՝ 21,1 % և 29 մանդատ։"
+    },
+    "i_have_honor": {
+      "en": "Opposition alliance of former President Serzh Sargsyan's Republican Party of Armenia (HHK) and Artur Vanetsyan's Homeland Party. It was the third and last force to clear the threshold, with 5.2% and 7 seats.",
+      "fr": "Alliance d'opposition réunissant le Parti républicain d'Arménie (HHK) de l'ancien président Serge Sargsian et le Parti de la patrie d'Artour Vanetsian. Troisième et dernière force à franchir le seuil, avec 5,2 % et 7 sièges.",
+      "hy": "Ընդդիմադիր դաշինք՝ նախկին նախագահ Սերժ Սարգսյանի Հայաստանի Հանրապետական կուսակցության (ՀՀԿ) և Արթուր Վանեցյանի «Հայրենիք» կուսակցության։ Շեմը հաղթահարած երրորդ և վերջին ուժն էր՝ 5,2 % և 7 մանդատ։"
+    },
+    "prosperous_armenia": {
+      "en": "Centrist-populist party of businessman Gagik Tsarukyan, a major force in earlier parliaments. In 2021 it fell just short of the threshold with 3.95% and lost all its seats.",
+      "fr": "Parti centriste-populiste de l'homme d'affaires Gagik Tsaroukian, force majeure des législatures précédentes. En 2021, il échoue de peu sous le seuil avec 3,95 % et perd tous ses sièges.",
+      "hy": "Գործարար Գագիկ Ծառուկյանի կենտրոնամետ-պոպուլիստական կուսակցությունը՝ նախորդ խորհրդարանների կարևոր ուժ։ 2021-ին սակավով չհաղթահարեց շեմը՝ 3,95 %, և կորցրեց իր բոլոր մանդատները։"
+    },
+    "bright_armenia": {
+      "en": "Liberal, pro-Western party led by Edmon Marukyan, previously represented in parliament. It stayed below the threshold in 2021.",
+      "fr": "Parti libéral et pro-occidental dirigé par Edmon Maroukian, auparavant représenté au parlement. Il reste sous le seuil en 2021.",
+      "hy": "Էդմոն Մարուքյանի ղեկավարած ազատական, արևմտամետ կուսակցությունը՝ նախկինում խորհրդարանում ներկայացված։ 2021-ին մնաց շեմից ցածր։"
+    },
+    "anc": {
+      "en": "The Armenian National Congress of first President Levon Ter-Petrosyan, a veteran liberal-opposition force. It remained below the threshold in 2021.",
+      "fr": "Le Congrès national arménien du premier président Levon Ter-Petrossian, force d'opposition libérale historique. Il reste sous le seuil en 2021.",
+      "hy": "Առաջին նախագահ Լևոն Տեր-Պետրոսյանի Հայ ազգային կոնգրեսը՝ ազատական ընդդիմության փորձառու ուժ։ 2021-ին մնաց շեմից ցածր։"
+    },
+    "hanrapetutyun": {
+      "en": "Liberal-republican party led by Aram Sargsyan, advocating parliamentary reform. It did not clear the threshold in 2021.",
+      "fr": "Parti libéral-républicain dirigé par Aram Sargsian, partisan d'une réforme parlementaire. Il ne franchit pas le seuil en 2021.",
+      "hy": "Արամ Սարգսյանի գլխավորած ազատական-հանրապետական կուսակցությունը՝ խորհրդարանական բարեփոխումների ջատագով։ 2021-ին շեմը չհաղթահարեց։"
+    }
+  }
+}

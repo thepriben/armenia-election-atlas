@@ -1,10 +1,10 @@
 {
-  "generated_utc": "2026-06-23T17:17:55+00:00",
+  "generated_utc": "2026-06-23T17:09:53+00:00",
   "source": {
-    "results_by_station": "https://www.elections.am/File/ElectionResult?electionId=28826",
-    "polling_station_registry": "https://www.elections.am/File/SubDistrictsToExcel?electionId=28826",
+    "results_by_station": "https://www.elections.am/File/ElectionResult?electionId=27697",
+    "polling_station_registry": "https://www.elections.am/File/SubDistrictsToExcel?electionId=27697",
     "authority": "Central Electoral Commission of the Republic of Armenia (elections.am)",
-    "election": "National Assembly of Armenia — ordinary election, 7 June 2026",
+    "election": "National Assembly of Armenia — early election, 20 June 2021",
     "boundaries": "geoBoundaries ARM ADM1 (CC-BY 4.0)"
   },
   "marzer": {
@@ -65,27 +65,27 @@
     }
   },
   "integrity": {
-    "stations_parsed": 2005,
-    "national_valid_votes": 1456351,
-    "national_ballots_cast": 1476359,
+    "stations_parsed": 2008,
+    "national_valid_votes": 1276238,
+    "national_ballots_cast": 1281497,
     "seat_winner_votes": {
-      "civil_contract": 726489,
-      "strong_armenia": 339993,
-      "armenia_alliance": 144975
+      "civil_contract": 688598,
+      "armenia_alliance": 269346,
+      "i_have_honor": 66636
     }
   },
   "files": {
     "stations": [
-      "data/2026/clean/stations.parquet",
-      "data/2026/clean/stations.csv"
+      "data/2021/clean/stations.parquet",
+      "data/2021/clean/stations.csv"
     ],
     "communities": [
-      "data/2026/clean/communities.parquet",
-      "data/2026/clean/communities.csv"
+      "data/2021/clean/communities.parquet",
+      "data/2021/clean/communities.csv"
     ],
     "marz": [
-      "data/2026/clean/marz.parquet",
-      "data/2026/clean/marz.csv"
+      "data/2021/clean/marz.parquet",
+      "data/2021/clean/marz.csv"
     ]
   }
 }

@@ -8,7 +8,12 @@ ELECTION="${ELECTION:-2026}"
 RAW="data/$ELECTION/raw"
 mkdir -p "$RAW"
 
-EID=28826  # National Assembly election, 7 June 2026 (elections.am internal id)
+# elections.am internal electionId per National Assembly election.
+case "$ELECTION" in
+  2026) EID=28826 ;;  # ordinary election, 7 June 2026
+  2021) EID=27697 ;;  # early election, 20 June 2021
+  *) echo "Unknown ELECTION=$ELECTION; add its electionId to scripts/fetch_source.sh" >&2; exit 1 ;;
+esac
 BASE="https://www.elections.am/File"
 
 echo "Fetching CEC results by polling station..."

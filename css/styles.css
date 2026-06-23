@@ -39,19 +39,20 @@ h1,h2,h3 { font-family: var(--serif); font-weight: 600; letter-spacing: -.01em; 
 /* ---------- top bar ---------- */
 .topbar {
   position: sticky; top: 0; z-index: 50;
-  display: flex; align-items: center; gap: 18px;
-  padding: 12px max(20px, calc((100vw - var(--maxw))/2));
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 10px max(20px, calc((100vw - var(--maxw))/2));
   background: color-mix(in srgb, var(--bg) 78%, transparent);
   backdrop-filter: blur(14px); border-bottom: 1px solid var(--line);
 }
+.topbar-main { display: flex; align-items: center; gap: 18px; }
 .brand { font-family: var(--serif); font-weight: 900; text-decoration: none; font-size: 1.02rem; white-space: nowrap; }
-.mainnav { display: flex; gap: 4px; margin-left: auto; flex-wrap: wrap; }
+.mainnav { display: flex; gap: 4px; flex-wrap: wrap; padding-top: 8px; border-top: 1px solid var(--line); }
 .mainnav a {
   text-decoration: none; color: var(--muted); font-weight: 600; font-size: .9rem;
   padding: 7px 12px; border-radius: 999px; transition: .18s;
 }
 .mainnav a:hover, .mainnav a.active { color: var(--text); background: var(--surface-2); }
-.topctrl { display: flex; align-items: center; gap: 10px; }
+.topctrl { display: flex; align-items: center; gap: 10px; margin-left: auto; }
 .langswitch { display: inline-flex; background: var(--surface-2); border-radius: 999px; padding: 3px; border: 1px solid var(--line); }
 .langswitch button {
   border: 0; background: transparent; color: var(--muted); cursor: pointer;
@@ -90,6 +91,7 @@ main { display: block; }
 .hero-bg svg { height: 115%; filter: drop-shadow(0 20px 60px rgba(0,0,0,.5)); }
 .hero-inner { position: relative; max-width: var(--maxw); margin: 0 auto; padding: 90px 20px 70px; }
 .election-switch { display: inline-flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.election-label { text-transform: uppercase; letter-spacing: .12em; font-size: .64rem; font-weight: 800; color: var(--muted); margin-right: 2px; }
 .epill { display: inline-flex; align-items: center; gap: 6px; font-size: .78rem; font-weight: 700; padding: 5px 11px; border-radius: 999px; border: 1px solid var(--line); white-space: nowrap; font-family: var(--font); }
 button.epill { cursor: pointer; }
 .epill.active { background: var(--accent); color: #1a1206; border-color: transparent; }
@@ -237,11 +239,11 @@ button.epill { cursor: pointer; }
 @media (max-width: 900px) {
   .grid-2, .map-layout, .party-detail { grid-template-columns: 1fr; }
   /* Keep navigation on mobile: a horizontally scrollable strip under the brand */
-  .topbar { flex-wrap: wrap; row-gap: 8px; column-gap: 12px; }
+  .topbar-main { flex-wrap: wrap; row-gap: 8px; column-gap: 12px; }
   .topctrl { margin-left: auto; }
   .mainnav {
-    order: 3; width: 100%; margin-left: 0; flex-wrap: nowrap;
-    overflow-x: auto; gap: 2px; padding-bottom: 2px;
+    width: 100%; flex-wrap: nowrap;
+    overflow-x: auto; gap: 2px;
     scrollbar-width: none; -webkit-overflow-scrolling: touch;
   }
   .mainnav::-webkit-scrollbar { display: none; }

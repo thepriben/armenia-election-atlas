@@ -45,7 +45,7 @@ export function nationalTable(el, national) {
 }
 
 export function explorerTable(el, rows, level, partiesMeta, search = "") {
-  const partyCols = ["civil_contract", "strong_armenia", "armenia_alliance"];
+  const partyCols = partiesMeta.slice(0, 3).map((p) => p.id);
   const meta = Object.fromEntries(partiesMeta.map((p) => [p.id, p]));
   const nameOf = (id) => meta[id]?.abbr?.split(" / ")[1] || id;
 
