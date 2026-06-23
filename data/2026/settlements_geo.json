@@ -1,7 +1,7 @@
 {
   "source": "GeoNames (CC-BY) + CEC results",
   "total": 930,
-  "located": 877,
+  "located": 930,
   "by_community": {
     "AM-AG|Ալագյազ": [
       {
@@ -570,8 +570,8 @@
       {
         "locality": "Արուճ գյուղ",
         "locality_hy": "Արուճ գյուղ",
-        "locality_en": "Արուճ գյուղ",
-        "locality_fr": "Արուճ գյուղ",
+        "locality_en": "Aruch",
+        "locality_fr": "Aruch",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Աշտարակ",
@@ -597,8 +597,8 @@
             "pct": 8.6
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.28749,
+        "lon": 44.07798
       },
       {
         "locality": "Արտաշավան գյուղ",
@@ -702,8 +702,8 @@
       {
         "locality": "Դպրեվանք գյուղ",
         "locality_hy": "Դպրեվանք գյուղ",
-        "locality_en": "Դպրեվանք գյուղ",
-        "locality_fr": "Դպրեվանք գյուղ",
+        "locality_en": "Dprevank",
+        "locality_fr": "Dprevank",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Աշտարակ",
@@ -729,14 +729,14 @@
             "pct": 21.9
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.29169,
+        "lon": 44.09729
       },
       {
         "locality": "Լեռնարոտ գյուղ",
         "locality_hy": "Լեռնարոտ գյուղ",
-        "locality_en": "Լեռնարոտ գյուղ",
-        "locality_fr": "Լեռնարոտ գյուղ",
+        "locality_en": "Lernarot",
+        "locality_fr": "Lernarot",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Աշտարակ",
@@ -762,8 +762,8 @@
             "pct": 6.3
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.34896,
+        "lon": 44.10974
       },
       {
         "locality": "Կարբի գյուղ",
@@ -894,8 +894,8 @@
             "pct": 7.4
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.23698,
+        "lon": 44.06789
       },
       {
         "locality": "Նոր Եդեսիա գյուղ",
@@ -1092,8 +1092,8 @@
             "pct": 6.2
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.29591,
+        "lon": 44.20782
       },
       {
         "locality": "Սաղմոսավան գյուղ",
@@ -1191,8 +1191,8 @@
             "pct": 6.7
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.33078,
+        "lon": 44.15109
       },
       {
         "locality": "Տեղեր գյուղ",
@@ -2119,14 +2119,14 @@
             "pct": 19.1
           }
         ],
-        "lat": 40.3253,
-        "lon": 44.619
+        "lat": 40.36394,
+        "lon": 43.81025
       },
       {
         "locality": "Դդմասար գյուղ",
         "locality_hy": "Դդմասար գյուղ",
-        "locality_en": "Դդմասար գյուղ",
-        "locality_fr": "Դդմասար գյուղ",
+        "locality_en": "Ddmasar",
+        "locality_fr": "Ddmasar",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Արեվուտ",
@@ -2152,14 +2152,14 @@
             "pct": 12.5
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.35828,
+        "lon": 43.83069
       },
       {
         "locality": "Թլիկ գյուղ",
         "locality_hy": "Թլիկ գյուղ",
-        "locality_en": "Թլիկ գյուղ",
-        "locality_fr": "Թլիկ գյուղ",
+        "locality_en": "T'lik",
+        "locality_fr": "T'lik",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Արեվուտ",
@@ -2185,14 +2185,14 @@
             "pct": 0.0
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.41388,
+        "lon": 43.63348
       },
       {
         "locality": "Կանչ գյուղ",
         "locality_hy": "Կանչ գյուղ",
-        "locality_en": "Կանչ գյուղ",
-        "locality_fr": "Կանչ գյուղ",
+        "locality_en": "Kanch",
+        "locality_fr": "Kanch",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Արեվուտ",
@@ -2218,14 +2218,14 @@
             "pct": 10.8
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.38196,
+        "lon": 43.72892
       },
       {
         "locality": "Հակո գյուղ",
         "locality_hy": "Հակո գյուղ",
-        "locality_en": "Հակո գյուղ",
-        "locality_fr": "Հակո գյուղ",
+        "locality_en": "Hako",
+        "locality_fr": "Hako",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Արեվուտ",
@@ -2251,14 +2251,14 @@
             "pct": 6.5
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.38611,
+        "lon": 43.69171
       },
       {
         "locality": "Սորիկ գյուղ",
         "locality_hy": "Սորիկ գյուղ",
-        "locality_en": "Սորիկ գյուղ",
-        "locality_fr": "Սորիկ գյուղ",
+        "locality_en": "Sorik",
+        "locality_fr": "Sorik",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Արեվուտ",
@@ -2284,8 +2284,8 @@
             "pct": 2.6
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.39172,
+        "lon": 43.7417
       }
     ],
     "AM-AG|Թալին": [
@@ -2583,8 +2583,8 @@
             "pct": 11.3
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.3603,
+        "lon": 43.95588
       },
       {
         "locality": "Դիան գյուղ",
@@ -3542,8 +3542,8 @@
             "pct": 8.2
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.74241,
+        "lon": 44.1617
       },
       {
         "locality": "Ծաղկահովիտ գյուղ",
@@ -3851,8 +3851,8 @@
       {
         "locality": "Արարատ գյուղ",
         "locality_hy": "Արարատ գյուղ",
-        "locality_en": "Ararat",
-        "locality_fr": "Ararat",
+        "locality_en": "Ararat village",
+        "locality_fr": "Ararat village",
         "same_as_marz": false,
         "same_as_community": true,
         "community_hy": "Արարատ",
@@ -3878,14 +3878,14 @@
             "pct": 12.7
           }
         ],
-        "lat": 39.85494,
-        "lon": 44.6947
+        "lat": 39.83166,
+        "lon": 44.70489
       },
       {
         "locality": "Արարատ քաղաք",
         "locality_hy": "Արարատ քաղաք",
-        "locality_en": "Ararat",
-        "locality_fr": "Ararat",
+        "locality_en": "Ararat village",
+        "locality_fr": "Ararat village",
         "same_as_marz": false,
         "same_as_community": true,
         "community_hy": "Արարատ",
@@ -3911,8 +3911,8 @@
             "pct": 14.3
           }
         ],
-        "lat": 39.84294,
-        "lon": 44.6947
+        "lat": 39.81966,
+        "lon": 44.70489
       },
       {
         "locality": "Արմաշ գյուղ",
@@ -3983,8 +3983,8 @@
       {
         "locality": "Զանգակատուն գյուղ",
         "locality_hy": "Զանգակատուն գյուղ",
-        "locality_en": "Զանգակատուն գյուղ",
-        "locality_fr": "Զանգակատուն գյուղ",
+        "locality_en": "Zangakatun",
+        "locality_fr": "Zangakatun",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Արարատ",
@@ -4010,14 +4010,14 @@
             "pct": 6.0
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 39.82233,
+        "lon": 45.04169
       },
       {
         "locality": "Լանջառ գյուղ",
         "locality_hy": "Լանջառ գյուղ",
-        "locality_en": "Լանջառ գյուղ",
-        "locality_fr": "Լանջառ գյուղ",
+        "locality_en": "Lanjar",
+        "locality_fr": "Lanjar",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Արարատ",
@@ -4043,8 +4043,8 @@
             "pct": 9.1
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 39.82788,
+        "lon": 44.97229
       },
       {
         "locality": "Նոյակերտ գյուղ",
@@ -4082,8 +4082,8 @@
       {
         "locality": "Ուրցալանջ գյուղ",
         "locality_hy": "Ուրցալանջ գյուղ",
-        "locality_en": "Ուրցալանջ գյուղ",
-        "locality_fr": "Ուրցալանջ գյուղ",
+        "locality_en": "Urtsalanj",
+        "locality_fr": "Urtsalanj",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Արարատ",
@@ -4109,8 +4109,8 @@
             "pct": 5.6
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 39.82507,
+        "lon": 44.99731
       },
       {
         "locality": "Պարույր Սեվակ գյուղ",
@@ -4208,8 +4208,8 @@
             "pct": 9.2
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 39.82958,
+        "lon": 45.02535
       }
     ],
     "AM-AR|Արտաշատ": [
@@ -4903,8 +4903,8 @@
             "pct": 15.3
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.06133,
+        "lon": 44.57705
       },
       {
         "locality": "Կանաչուտ գյուղ",
@@ -5101,8 +5101,8 @@
             "pct": 11.5
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.02757,
+        "lon": 44.55939
       },
       {
         "locality": "Մրգավան գյուղ",
@@ -5398,8 +5398,8 @@
             "pct": 19.6
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.03122,
+        "lon": 44.56033
       },
       {
         "locality": "Վերին Արտաշատ գյուղ",
@@ -5862,8 +5862,8 @@
             "pct": 20.7
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.12404,
+        "lon": 44.40198
       },
       {
         "locality": "Հայանիստ գյուղ",
@@ -6491,8 +6491,8 @@
             "pct": 12.5
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 39.90809,
+        "lon": 44.73099
       },
       {
         "locality": "Դաշտաքար գյուղ",
@@ -6596,8 +6596,8 @@
       {
         "locality": "Լուսաշող գյուղ",
         "locality_hy": "Լուսաշող գյուղ",
-        "locality_en": "Լուսաշող գյուղ",
-        "locality_fr": "Լուսաշող գյուղ",
+        "locality_en": "Lusashogh",
+        "locality_fr": "Lusashogh",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Վեդի",
@@ -6623,8 +6623,8 @@
             "pct": 15.4
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 39.8529,
+        "lon": 44.98053
       },
       {
         "locality": "Լուսառատ գյուղ",
@@ -6689,8 +6689,8 @@
             "pct": 6.1
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 39.9002,
+        "lon": 44.63032
       },
       {
         "locality": "Նոր ուղի գյուղ",
@@ -6722,8 +6722,8 @@
             "pct": 8.9
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 39.92605,
+        "lon": 44.63653
       },
       {
         "locality": "Շաղափ գյուղ",
@@ -7825,8 +7825,8 @@
       {
         "locality": "Արգինա գյուղ",
         "locality_hy": "Արգինա գյուղ",
-        "locality_en": "Արգինա գյուղ",
-        "locality_fr": "Արգինա գյուղ",
+        "locality_en": "Argina",
+        "locality_fr": "Argina",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Բաղրամյան",
@@ -7852,14 +7852,14 @@
             "pct": 4.5
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.27312,
+        "lon": 43.73989
       },
       {
         "locality": "Արեվադաշտ գյուղ",
         "locality_hy": "Արեվադաշտ գյուղ",
-        "locality_en": "Արեվադաշտ գյուղ",
-        "locality_fr": "Արեվադաշտ գյուղ",
+        "locality_en": "Arevadasht",
+        "locality_fr": "Arevadasht",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Բաղրամյան",
@@ -7885,14 +7885,14 @@
             "pct": 3.6
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.13285,
+        "lon": 43.93153
       },
       {
         "locality": "Արտամետ գյուղ",
         "locality_hy": "Արտամետ գյուղ",
-        "locality_en": "Արտամետ գյուղ",
-        "locality_fr": "Արտամետ գյուղ",
+        "locality_en": "Artamet",
+        "locality_fr": "Artamet",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Բաղրամյան",
@@ -7918,14 +7918,14 @@
             "pct": 15.6
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.12293,
+        "lon": 43.85882
       },
       {
         "locality": "Բագարան գյուղ",
         "locality_hy": "Բագարան գյուղ",
-        "locality_en": "Բագարան գյուղ",
-        "locality_fr": "Բագարան գյուղ",
+        "locality_en": "Bagaran",
+        "locality_fr": "Bagaran",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Բաղրամյան",
@@ -7951,8 +7951,8 @@
             "pct": 8.0
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.14314,
+        "lon": 43.66018
       },
       {
         "locality": "Բաղրամյան (Բաղրամյան) գյուղ",
@@ -7984,14 +7984,14 @@
             "pct": 6.6
           }
         ],
-        "lat": 40.19324,
-        "lon": 44.36934
+        "lat": 40.19608,
+        "lon": 43.85409
       },
       {
         "locality": "Դալարիկ գյուղ",
         "locality_hy": "Դալարիկ գյուղ",
-        "locality_en": "Դալարիկ գյուղ",
-        "locality_fr": "Դալարիկ գյուղ",
+        "locality_en": "Dalarik",
+        "locality_fr": "Dalarik",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Բաղրամյան",
@@ -8017,14 +8017,14 @@
             "pct": 9.9
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.22648,
+        "lon": 43.8719
       },
       {
         "locality": "Երվանդաշատ գյուղ",
         "locality_hy": "Երվանդաշատ գյուղ",
-        "locality_en": "Երվանդաշատ գյուղ",
-        "locality_fr": "Երվանդաշատ գյուղ",
+        "locality_en": "Yervandashat",
+        "locality_fr": "Yervandashat",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Բաղրամյան",
@@ -8050,14 +8050,14 @@
             "pct": 10.8
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.11735,
+        "lon": 43.67171
       },
       {
         "locality": "Լեռնագոգ գյուղ",
         "locality_hy": "Լեռնագոգ գյուղ",
-        "locality_en": "Լեռնագոգ գյուղ",
-        "locality_fr": "Լեռնագոգ գյուղ",
+        "locality_en": "Lernagog",
+        "locality_fr": "Lernagog",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Բաղրամյան",
@@ -8083,14 +8083,14 @@
             "pct": 7.3
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.24011,
+        "lon": 43.87102
       },
       {
         "locality": "Կողբավան գյուղ",
         "locality_hy": "Կողբավան գյուղ",
-        "locality_en": "Կողբավան գյուղ",
-        "locality_fr": "Կողբավան գյուղ",
+        "locality_en": "Koghbavan",
+        "locality_fr": "Koghbavan",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Բաղրամյան",
@@ -8116,14 +8116,14 @@
             "pct": 23.5
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.14219,
+        "lon": 43.75528
       },
       {
         "locality": "Հուշակերտ գյուղ",
         "locality_hy": "Հուշակերտ գյուղ",
-        "locality_en": "Հուշակերտ գյուղ",
-        "locality_fr": "Հուշակերտ գյուղ",
+        "locality_en": "Hushakert",
+        "locality_fr": "Hushakert",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Բաղրամյան",
@@ -8149,14 +8149,14 @@
             "pct": 5.8
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.08331,
+        "lon": 43.93048
       },
       {
         "locality": "Շենիկ գյուղ",
         "locality_hy": "Շենիկ գյուղ",
-        "locality_en": "Շենիկ գյուղ",
-        "locality_fr": "Շենիկ գյուղ",
+        "locality_en": "Shenik",
+        "locality_fr": "Shenik",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Բաղրամյան",
@@ -8182,14 +8182,14 @@
             "pct": 4.8
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.213,
+        "lon": 43.77033
       },
       {
         "locality": "Վանանդ գյուղ",
         "locality_hy": "Վանանդ գյուղ",
-        "locality_en": "Վանանդ գյուղ",
-        "locality_fr": "Վանանդ գյուղ",
+        "locality_en": "Vanand",
+        "locality_fr": "Vanand",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Բաղրամյան",
@@ -8215,14 +8215,14 @@
             "pct": 7.6
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.10307,
+        "lon": 43.81506
       },
       {
         "locality": "Տալվորիկ գյուղ",
         "locality_hy": "Տալվորիկ գյուղ",
-        "locality_en": "Տալվորիկ գյուղ",
-        "locality_fr": "Տալվորիկ գյուղ",
+        "locality_en": "Talvorik",
+        "locality_fr": "Talvorik",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Բաղրամյան",
@@ -8248,14 +8248,14 @@
             "pct": 6.5
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.09999,
+        "lon": 43.88036
       },
       {
         "locality": "Քարակերտ գյուղ",
         "locality_hy": "Քարակերտ գյուղ",
-        "locality_en": "Քարակերտ գյուղ",
-        "locality_fr": "Քարակերտ գյուղ",
+        "locality_en": "Karakert",
+        "locality_fr": "Karakert",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Բաղրամյան",
@@ -8281,8 +8281,8 @@
             "pct": 13.8
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.24451,
+        "lon": 43.82233
       }
     ],
     "AM-AV|Մեծամոր": [
@@ -10535,8 +10535,8 @@
             "pct": 6.4
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.48178,
+        "lon": 45.04575
       },
       {
         "locality": "Կարմիրգյուղ գյուղ",
@@ -10741,8 +10741,8 @@
       {
         "locality": "Անտառամեջ գյուղ",
         "locality_hy": "Անտառամեջ գյուղ",
-        "locality_en": "Անտառամեջ գյուղ",
-        "locality_fr": "Անտառամեջ գյուղ",
+        "locality_en": "Antaramej",
+        "locality_fr": "Antaramej",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Ճամբարակ",
@@ -10768,8 +10768,8 @@
             "pct": 20.3
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.68446,
+        "lon": 45.08712
       },
       {
         "locality": "Արտանիշ գյուղ",
@@ -10840,8 +10840,8 @@
       {
         "locality": "Դպրաբակ գյուղ",
         "locality_hy": "Դպրաբակ գյուղ",
-        "locality_en": "Դպրաբակ գյուղ",
-        "locality_fr": "Դպրաբակ գյուղ",
+        "locality_en": "Dprabak",
+        "locality_fr": "Dprabak",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Ճամբարակ",
@@ -10867,8 +10867,8 @@
             "pct": 17.5
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.68785,
+        "lon": 45.12505
       },
       {
         "locality": "Դրախտիկ գյուղ",
@@ -10939,8 +10939,8 @@
       {
         "locality": "Ծափաթաղ գյուղ",
         "locality_hy": "Ծափաթաղ գյուղ",
-        "locality_en": "Ծափաթաղ գյուղ",
-        "locality_fr": "Ծափաթաղ գյուղ",
+        "locality_en": "Tsapatagh",
+        "locality_fr": "Tsapatagh",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Ճամբարակ",
@@ -10966,8 +10966,8 @@
             "pct": 22.3
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.41107,
+        "lon": 45.4751
       },
       {
         "locality": "Կալավան գյուղ",
@@ -11005,8 +11005,8 @@
       {
         "locality": "Ձորավանք գյուղ",
         "locality_hy": "Ձորավանք գյուղ",
-        "locality_en": "Ձորավանք գյուղ",
-        "locality_fr": "Ձորավանք գյուղ",
+        "locality_en": "Dzoravank'",
+        "locality_fr": "Dzoravank'",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Ճամբարակ",
@@ -11032,8 +11032,8 @@
             "pct": 12.9
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.69733,
+        "lon": 45.10553
       },
       {
         "locality": "Ճամբարակ քաղաք",
@@ -12985,8 +12985,8 @@
             "pct": 15.2
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.14931,
+        "lon": 45.81636
       },
       {
         "locality": "Սոթք գյուղ",
@@ -13156,8 +13156,8 @@
       {
         "locality": "Փամբակ գյուղ",
         "locality_hy": "Փամբակ գյուղ",
-        "locality_en": "Փամբակ գյուղ",
-        "locality_fr": "Փամբակ գյուղ",
+        "locality_en": "P'ambak",
+        "locality_fr": "P'ambak",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Վարդենիս",
@@ -13183,8 +13183,8 @@
             "pct": 17.2
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.36951,
+        "lon": 45.52508
       },
       {
         "locality": "Փոքր Մասրիկ գյուղ",
@@ -13814,8 +13814,8 @@
             "pct": 17.5
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.26497,
+        "lon": 44.65139
       },
       {
         "locality": "Սեվաբերդ գյուղ",
@@ -14284,14 +14284,14 @@
             "pct": 16.0
           }
         ],
-        "lat": 40.5325,
-        "lon": 44.72323
+        "lat": 40.54309,
+        "lon": 44.7279
       },
       {
         "locality": "Հանքավան գյուղ",
         "locality_hy": "Հանքավան գյուղ",
-        "locality_en": "Հանքավան գյուղ",
-        "locality_fr": "Հանքավան գյուղ",
+        "locality_en": "Hank'avan",
+        "locality_fr": "Hank'avan",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Ծաղկաձոր",
@@ -14317,8 +14317,8 @@
             "pct": 2.1
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.63611,
+        "lon": 44.48749
       },
       {
         "locality": "Մարմարիկ գյուղ",
@@ -21027,8 +21027,8 @@
       {
         "locality": "Անիավան գյուղ",
         "locality_hy": "Անիավան գյուղ",
-        "locality_en": "Անիավան գյուղ",
-        "locality_fr": "Անիավան գյուղ",
+        "locality_en": "Aniavan",
+        "locality_fr": "Aniavan",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Անի",
@@ -21054,14 +21054,14 @@
             "pct": 6.2
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.46393,
+        "lon": 43.64587
       },
       {
         "locality": "Անիպեմզա գյուղ",
         "locality_hy": "Անիպեմզա գյուղ",
-        "locality_en": "Անիպեմզա գյուղ",
-        "locality_fr": "Անիպեմզա գյուղ",
+        "locality_en": "Anipemza",
+        "locality_fr": "Anipemza",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Անի",
@@ -21087,8 +21087,8 @@
             "pct": 11.0
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.44311,
+        "lon": 43.6029
       },
       {
         "locality": "Բագրավան գյուղ",
@@ -22450,8 +22450,8 @@
       {
         "locality": "Արթիկ քաղաք",
         "locality_hy": "Արթիկ քաղաք",
-        "locality_en": "Artik",
-        "locality_fr": "Artik",
+        "locality_en": "Art'ik",
+        "locality_fr": "Art'ik",
         "same_as_marz": false,
         "same_as_community": true,
         "community_hy": "Արթիկ",
@@ -22477,8 +22477,8 @@
             "pct": 8.3
           }
         ],
-        "lat": 40.61918,
-        "lon": 43.97207
+        "lat": 40.6222,
+        "lon": 43.96982
       },
       {
         "locality": "Գեղանիստ գյուղ",
@@ -22906,8 +22906,8 @@
             "pct": 12.7
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.65616,
+        "lon": 43.92862
       },
       {
         "locality": "Պեմզաշեն գյուղ",
@@ -25331,8 +25331,8 @@
       {
         "locality": "Գորայք գյուղ",
         "locality_hy": "Գորայք գյուղ",
-        "locality_en": "Գորայք գյուղ",
-        "locality_fr": "Գորայք գյուղ",
+        "locality_en": "Gorayk",
+        "locality_fr": "Gorayk",
         "same_as_marz": false,
         "same_as_community": false,
         "community_hy": "Սիսիան",
@@ -25358,8 +25358,8 @@
             "pct": 15.6
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 39.68183,
+        "lon": 45.76149
       },
       {
         "locality": "Դաստակերտ քաղաք",
@@ -27148,8 +27148,8 @@
             "pct": 4.6
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.94245,
+        "lon": 45.44441
       },
       {
         "locality": "Նորաշեն գյուղ",
@@ -27412,8 +27412,8 @@
             "pct": 7.0
           }
         ],
-        "lat": null,
-        "lon": null
+        "lat": 40.88121,
+        "lon": 45.44153
       },
       {
         "locality": "Տավուշ գյուղ",

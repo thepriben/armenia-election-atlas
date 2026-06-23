@@ -96,9 +96,10 @@ YEREVAN_DISTRICTS = {
 }
 
 # Communities GeoNames cannot resolve (ligature edge cases / consolidated municipalities).
+# Note: Arevut and Baghramyan are intentionally NOT pinned here — they have several
+# in-province homonyms and are disambiguated by their settlement centroid instead.
 MANUAL = {
     **YEREVAN_DISTRICTS,
-    "Արեվուտ": (40.3253, 44.6190, "Arevut", "Arevut"),
     "Նաիրի": (40.3217, 44.4814, "Nairi", "Nairi"),
     "Անի": (40.5722, 43.8669, "Ani", "Ani"),
 }
@@ -124,6 +125,27 @@ def _variants(name):
 
 def _km_dist(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
     return math.hypot((lat1 - lat2) * 111.0, (lon1 - lon2) * 85.0)
+
+
+OSM_CACHE_PATH = ROOT / "scripts" / "osm_cache.json"
+
+
+def load_osm_cache():
+    """Committed OpenStreetMap (Nominatim) coordinates for villages absent from
+    GeoNames. Rebuild with scripts/refresh_osm_cache.py; reads are offline."""
+    try:
+        return json.loads(OSM_CACHE_PATH.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        return {}
+
+
+def osm_fallback(name_hy, marz_en, near, cache):
+    val = cache.get(f"{marz_en}|{normalize(name_hy)}")
+    if not val:
+        return None
+    if near and _km_dist(val["lat"], val["lon"], near[0], near[1]) > 30:
+        return None
+    return val["lat"], val["lon"]
 
 
 def match(name, marz_en, idx, near=None, max_km: float | None = None):
@@ -170,6 +192,33 @@ def spread_overlaps(out):
             c["lon"] = round(lon + radius * math.sin(ang) / math.cos(math.radians(lat)), 5)
 
 
+def settlement_centroids(sdf, idx):
+    """Province-only pass: weighted centroid of each community's settlements, used
+    to disambiguate communities that share a name with another place in the same
+    province (e.g. the two 'Baghramyan' in Armavir)."""
+    acc = {}
+    for _, r in sdf.iterrows():
+        loc = str(r["locality_hy"]).strip()
+        if not loc or loc.lower() == "nan":
+            continue
+        target = MARZ_ADM1.get(r["marz_en"])
+        cand = None
+        for v in _variants(normalize(loc)):
+            ins = [c for c in idx.get(v, []) if c[5] == target]
+            if ins:
+                cand = ins[0]
+                break
+        if not cand:
+            continue
+        key = f"{r['marz_iso']}|{r['community_hy']}"
+        w = max(int(r["registered"]), 1)
+        a = acc.setdefault(key, [0.0, 0.0, 0])
+        a[0] += cand[2] * w
+        a[1] += cand[3] * w
+        a[2] += w
+    return {k: (v[0] / v[2], v[1] / v[2]) for k, v in acc.items() if v[2] > 0}
+
+
 def _result_row(r, hy, marz_hy, idx, pids, color, near=None, max_km=None):
     """Build one geocoded feature dict for a community or settlement row."""
     votes = {pid: int(r[pid]) for pid in pids if pid in r}
@@ -200,11 +249,13 @@ def _result_row(r, hy, marz_hy, idx, pids, color, near=None, max_km=None):
     }
 
 
-def geocode_communities(df, idx, marz_hy, pids, color):
+def geocode_communities(df, idx, marz_hy, pids, color, centroids=None):
+    centroids = centroids or {}
     out, matched = [], 0
     for _, r in df.iterrows():
         hy = r["community_hy"]
-        rec = _result_row(r, hy, marz_hy, idx, pids, color)
+        near = centroids.get(f"{r['marz_iso']}|{hy}")
+        rec = _result_row(r, hy, marz_hy, idx, pids, color, near=near)
         if rec.pop("_matched"):
             matched += 1
         out.append({
@@ -224,8 +275,9 @@ def geocode_communities(df, idx, marz_hy, pids, color):
 
 
 def geocode_settlements(df, idx, marz_hy, pids, color, parent_coords):
+    osm_cache = load_osm_cache()
     by_comm = {}
-    matched = total = rejected = 0
+    matched = total = rejected = osm_used = 0
     for _, r in df.iterrows():
         total += 1
         hy = str(r["locality_hy"] or "").strip()
@@ -236,12 +288,17 @@ def geocode_settlements(df, idx, marz_hy, pids, color, parent_coords):
         parent = parent_coords.get(key)
         near = (parent["lat"], parent["lon"]) if parent and parent.get("lat") else None
         rec = _result_row(r, hy, marz_hy, idx, pids, color,
-                          near=near, max_km=22 if near else None)
+                          near=near, max_km=30 if near else None)
         if rec.pop("_matched"):
             matched += 1
         elif near and rec["lat"] is not None:
             rejected += 1
             rec["lat"] = rec["lon"] = None
+        if rec["lat"] is None:
+            osm = osm_fallback(hy, r["marz_en"], near, osm_cache)
+            if osm:
+                rec["lat"], rec["lon"] = osm
+                osm_used += 1
         same_comm = normalize(hy) == normalize(comm)
         item = {
             "locality": hy,
@@ -260,7 +317,7 @@ def geocode_settlements(df, idx, marz_hy, pids, color, parent_coords):
         by_comm.setdefault(key, []).append(item)
     for items in by_comm.values():
         spread_overlaps(items)
-    return by_comm, matched, total, rejected
+    return by_comm, matched, total, rejected, osm_used
 
 
 def main():
@@ -275,16 +332,21 @@ def main():
     marz_meta = json.loads((DATA / "marz.json").read_text())
     marz_hy = {m["name_en"]: m["name_hy"] for m in marz_meta.values()}
 
-    out, matched = geocode_communities(df, idx, marz_hy, pids, color)
+    # Pass 1: rough settlement centroids to disambiguate community homonyms.
+    sdf = pd.read_parquet(SETTLEMENTS) if SETTLEMENTS.exists() else None
+    centroids = settlement_centroids(sdf, idx) if sdf is not None else {}
+
+    # Pass 2: communities, picking the in-province homonym nearest its settlements.
+    out, matched = geocode_communities(df, idx, marz_hy, pids, color, centroids)
     located = [c for c in out if c["lat"] is not None]
 
     sett_counts = {}
     sett_by_comm = {}
-    sett_matched = sett_total = sett_located = 0
-    if SETTLEMENTS.exists():
+    sett_matched = sett_total = sett_located = sett_rejected = 0
+    if sdf is not None:
+        # Pass 3: settlements anchored on the corrected community points.
         parent_coords = {f"{c['marz_iso']}|{c['community']}": c for c in out}
-        sdf = pd.read_parquet(SETTLEMENTS)
-        sett_by_comm, sett_matched, sett_total, sett_rejected = geocode_settlements(
+        sett_by_comm, sett_matched, sett_total, sett_rejected, sett_osm = geocode_settlements(
             sdf, idx, marz_hy, pids, color, parent_coords)
         for key, items in sett_by_comm.items():
             sett_counts[key] = len(items)
@@ -293,8 +355,10 @@ def main():
             key = f"{c['marz_iso']}|{c['community']}"
             c["settlement_count"] = sett_counts.get(key, 1)
         if sett_rejected:
-            print(f"   rejected {sett_rejected} settlement homonym matches (>22 km from commune seat)",
+            print(f"   rejected {sett_rejected} settlement homonym matches (>30 km from commune seat)",
                   file=sys.stderr)
+        if sett_osm:
+            print(f"   filled {sett_osm} settlements from OpenStreetMap cache", file=sys.stderr)
     else:
         for c in out:
             c["settlement_count"] = 1
