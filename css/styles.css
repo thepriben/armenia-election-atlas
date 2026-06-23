@@ -150,9 +150,6 @@ button.epill { cursor: pointer; }
 .cluster-halo { fill: rgba(255,255,255,.08); stroke: var(--accent); stroke-dasharray: 3 2; pointer-events: none; }
 .cluster-core { fill: var(--surface-2); stroke: var(--text); fill-opacity: .92; }
 .cluster-count { fill: var(--text); font-weight: 800; pointer-events: none; }
-.bubble-tag-bg { fill: var(--surface); stroke: var(--border); opacity: .96; }
-.bubble-tag-title { fill: var(--text); font-size: 10px; font-weight: 800; pointer-events: none; }
-.bubble-tag-sub { fill: var(--muted); font-size: 9px; pointer-events: none; }
 .marz-base { fill: var(--surface-2); stroke: var(--line); stroke-width: 1; }
 .dot-pt { stroke: var(--bg); stroke-width: 1.2; }
 .dot-label { font-size: 9px; fill: var(--muted); pointer-events: none; }
@@ -219,12 +216,11 @@ button.epill { cursor: pointer; }
 /* ---------- tooltip / toast ---------- */
 .tooltip {
   position: fixed; pointer-events: none; z-index: 100; background: var(--surface-2);
-  border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: .82rem;
-  box-shadow: var(--shadow); max-width: 240px; opacity: 0; transition: opacity .12s;
+  border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font-size: .8rem;
+  box-shadow: var(--shadow); max-width: 220px; opacity: 0; transition: opacity .12s;
 }
-.tooltip .tt-kicker { font-size: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
-.tooltip .tt-title { font-weight: 800; margin-bottom: 2px; }
-.tooltip .tt-sub { font-weight: 600; margin-bottom: 6px; color: var(--text); }
+.tooltip--place .tt-title { font-weight: 800; line-height: 1.25; margin-bottom: 4px; }
+.tooltip--place .tt-meta { color: var(--muted); font-size: .74rem; margin-bottom: 6px; }
 .tooltip .tt-row { display: flex; justify-content: space-between; gap: 14px; }
 .tooltip .tt-row .d { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 5px; }
 .toast {

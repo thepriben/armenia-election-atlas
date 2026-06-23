@@ -25,6 +25,7 @@ ELECTION = os.environ.get("ELECTION", "2026")
 DATA = ROOT / "data" / ELECTION
 GEONAMES = pathlib.Path("/tmp/AM.txt")
 COMMUNITIES = DATA / "clean" / "communities.parquet"
+SETTLEMENTS = DATA / "clean" / "settlements.parquet"
 
 # feature-class preference: populated places, then admin areas
 FCLASS_RANK = {"P": 0, "A": 1, "L": 3, "T": 3, "H": 4, "S": 2, "V": 3, "R": 3}
@@ -78,10 +79,25 @@ def _pick_alt_lang(alt_field: str, lang: str) -> str | None:
     return None
 
 
-# Communities GeoNames cannot resolve (ligature edge cases / Yerevan districts /
-# consolidated municipalities named differently from their seat settlement).
-MANUAL = {
+# Yerevan administrative districts — GeoNames often returns "Yerevan" for several.
+YEREVAN_DISTRICTS = {
+    "Աջափնյակ": (40.19917, 44.47056, "Ajapnyak", "Ajapnyak"),
+    "Ավան": (40.21436, 44.57846, "Avan", "Avan"),
+    "Արաբկիր": (40.20549, 44.50699, "Arabkir", "Arabkir"),
+    "Դավթաշեն": (40.21642, 44.48088, "Davtashen", "Davtashen"),
+    "Էրեբունի": (40.17765, 44.5126, "Erebuni", "Erebouni"),
+    "Կենտրոն": (40.17806, 44.51303, "Kentron", "Kentron"),
+    "Մալաթիա-Սեբաստիա": (40.17396, 44.4457, "Malatia-Sebastia", "Malatia-Sebastia"),
+    "Նոր Նորք": (40.19661, 44.5669, "Nor Nork", "Nor Nork"),
+    "Նորք-Մարաշ": (40.17417, 44.54083, "Nork-Marash", "Nork-Marash"),
     "Նուբարաշեն": (40.1296, 44.5406, "Nubarashen", "Nubarashen"),
+    "Շենգավիթ": (40.1557, 44.4779, "Shengavit", "Shengavit"),
+    "Քանաքեռ-Զեյթուն": (40.22, 44.53833, "Kanaker-Zeytun", "Kanaker-Zeytun"),
+}
+
+# Communities GeoNames cannot resolve (ligature edge cases / consolidated municipalities).
+MANUAL = {
+    **YEREVAN_DISTRICTS,
     "Արեվուտ": (40.3253, 44.6190, "Arevut", "Arevut"),
     "Նաիրի": (40.3217, 44.4814, "Nairi", "Nairi"),
     "Անի": (40.5722, 43.8669, "Ani", "Ani"),
@@ -124,9 +140,7 @@ def match(name, marz_en, idx):
 
 
 def spread_overlaps(out):
-    """Village/town twins (e.g. 'Արարատ գյուղ' + 'Արարատ քաղաք') resolve to the
-    same gazetteer point. Nudge exact duplicates onto a small deterministic ring
-    (~1 km) so every bubble stays individually visible and clickable."""
+    """Nudge exact duplicate coordinates onto a small deterministic ring (~1 km)."""
     groups = collections.defaultdict(list)
     for c in out:
         if c["lat"] is None:
@@ -142,6 +156,90 @@ def spread_overlaps(out):
             c["lon"] = round(lon + radius * math.sin(ang) / math.cos(math.radians(lat)), 5)
 
 
+def _result_row(r, hy, marz_hy, idx, pids, color):
+    """Build one geocoded feature dict for a community or settlement row."""
+    votes = {pid: int(r[pid]) for pid in pids if pid in r}
+    order = sorted(votes, key=votes.get, reverse=True)
+    valid = max(int(r["valid"]), 1)
+    winner = order[0]
+    top = [{"id": pid, "pct": round(100 * votes[pid] / valid, 1)} for pid in order[:3]]
+    m = match(normalize(hy), r["marz_en"], idx)
+    en = fr = None
+    if m:
+        en, fr = m[3], m[4]
+    same_marz = hy == marz_hy.get(r["marz_en"])
+    return {
+        "registered": int(r["registered"]),
+        "turnout_pct": float(r["turnout_pct"]),
+        "valid": valid,
+        "winner": winner,
+        "winner_color": color[winner],
+        "margin": round(top[0]["pct"] - (top[1]["pct"] if len(top) > 1 else 0), 1),
+        "top": top,
+        "lat": m[0] if m else None,
+        "lon": m[1] if m else None,
+        "name_hy": hy,
+        "name_en": en or hy,
+        "name_fr": fr or en or hy,
+        "same_as_marz": same_marz,
+        "_matched": m is not None,
+    }
+
+
+def geocode_communities(df, idx, marz_hy, pids, color):
+    out, matched = [], 0
+    for _, r in df.iterrows():
+        hy = r["community_hy"]
+        rec = _result_row(r, hy, marz_hy, idx, pids, color)
+        if rec.pop("_matched"):
+            matched += 1
+        out.append({
+            "community": hy,
+            "community_hy": hy,
+            "community_en": rec["name_en"],
+            "community_fr": rec["name_fr"],
+            "same_as_marz": rec["same_as_marz"],
+            "is_district": r["marz_en"] == "Yerevan",
+            "marz_en": r["marz_en"],
+            "marz_iso": r["marz_iso"],
+            **{k: rec[k] for k in ("registered", "turnout_pct", "valid", "winner",
+                                   "winner_color", "margin", "top", "lat", "lon")},
+        })
+    spread_overlaps(out)
+    return out, matched
+
+
+def geocode_settlements(df, idx, marz_hy, pids, color):
+    by_comm = {}
+    matched = total = 0
+    for _, r in df.iterrows():
+        total += 1
+        hy = r["locality_hy"]
+        comm = r["community_hy"]
+        rec = _result_row(r, hy, marz_hy, idx, pids, color)
+        if rec.pop("_matched"):
+            matched += 1
+        same_comm = normalize(hy) == normalize(comm)
+        item = {
+            "locality": hy,
+            "locality_hy": hy,
+            "locality_en": rec["name_en"],
+            "locality_fr": rec["name_fr"],
+            "same_as_marz": rec["same_as_marz"],
+            "same_as_community": same_comm,
+            "community_hy": comm,
+            "marz_en": r["marz_en"],
+            "marz_iso": r["marz_iso"],
+            **{k: rec[k] for k in ("registered", "turnout_pct", "valid", "winner",
+                                   "winner_color", "margin", "top", "lat", "lon")},
+        }
+        key = f"{r['marz_iso']}|{comm}"
+        by_comm.setdefault(key, []).append(item)
+    for items in by_comm.values():
+        spread_overlaps(items)
+    return by_comm, matched, total
+
+
 def main():
     if not GEONAMES.exists():
         sys.exit("Missing /tmp/AM.txt — download GeoNames AM.zip first.")
@@ -154,41 +252,23 @@ def main():
     marz_meta = json.loads((DATA / "marz.json").read_text())
     marz_hy = {m["name_en"]: m["name_hy"] for m in marz_meta.values()}
 
-    out, matched = [], 0
-    for _, r in df.iterrows():
-        votes = {pid: int(r[pid]) for pid in pids if pid in r}
-        order = sorted(votes, key=votes.get, reverse=True)
-        valid = max(int(r["valid"]), 1)
-        winner = order[0]
-        top = [{"id": pid, "pct": round(100 * votes[pid] / valid, 1)} for pid in order[:3]]
-        hy = r["community_hy"]
-        m = match(normalize(hy), r["marz_en"], idx)
-        en = fr = None
-        if m:
-            matched += 1
-            en, fr = m[3], m[4]
-        same_marz = hy == marz_hy.get(r["marz_en"])
-        out.append({
-            "community": hy,
-            "community_hy": hy,
-            "community_en": en or hy,
-            "community_fr": fr or en or hy,
-            "same_as_marz": same_marz,
-            "marz_en": r["marz_en"],
-            "marz_iso": r["marz_iso"],
-            "registered": int(r["registered"]),
-            "turnout_pct": float(r["turnout_pct"]),
-            "valid": valid,
-            "winner": winner,
-            "winner_color": color[winner],
-            "margin": round(top[0]["pct"] - (top[1]["pct"] if len(top) > 1 else 0), 1),
-            "top": top,
-            "lat": m[0] if m else None,
-            "lon": m[1] if m else None,
-        })
-
-    spread_overlaps(out)
+    out, matched = geocode_communities(df, idx, marz_hy, pids, color)
     located = [c for c in out if c["lat"] is not None]
+
+    sett_counts = {}
+    sett_by_comm = {}
+    sett_matched = sett_total = sett_located = 0
+    if SETTLEMENTS.exists():
+        sdf = pd.read_parquet(SETTLEMENTS)
+        sett_by_comm, sett_matched, sett_total = geocode_settlements(
+            sdf, idx, marz_hy, pids, color)
+        for key, items in sett_by_comm.items():
+            sett_counts[key] = len(items)
+            sett_located += sum(1 for s in items if s["lat"] is not None)
+        for c in out:
+            key = f"{c['marz_iso']}|{c['community']}"
+            c["settlement_count"] = sett_counts.get(key, 1)
+
     (DATA / "communities_geo.json").write_text(
         json.dumps({"source": "GeoNames (CC-BY) + CEC results",
                     "located": len(located), "total": len(out),
@@ -200,6 +280,18 @@ def main():
         print("Unmatched:", ", ".join(miss))
     from collections import Counter
     print("Winners among located:", Counter(c["winner"] for c in located))
+
+    if sett_by_comm:
+        (DATA / "settlements_geo.json").write_text(
+            json.dumps({
+                "source": "GeoNames (CC-BY) + CEC results",
+                "total": sett_total,
+                "located": sett_located,
+                "by_community": sett_by_comm,
+            }, ensure_ascii=False, indent=2),
+            encoding="utf-8")
+        print(f"Geocoded {sett_matched}/{sett_total} settlements "
+              f"({sett_located} with coordinates) in {len(sett_by_comm)} communities")
 
 
 if __name__ == "__main__":

@@ -93,14 +93,19 @@ export function miniMap(el, geo, marz, parties, pid) {
     });
 }
 
-/** Localized community label; disambiguates when the municipality shares the province name. */
-export function communityLabel(c, marzNameFn) {
+/** One-line place caption: locality + province, with disambiguation when names collide. */
+export function placeCaption(c, marzNameFn) {
   const name = pickLangField(c, "community") || c.community || c.community_hy || "";
-  if (c.same_as_marz) return t("community_municipality").replace("{name}", name);
   const marz = marzNameFn(c.marz_iso);
-  if (name && marz && name.toLowerCase() === marz.toLowerCase())
-    return t("community_municipality").replace("{name}", name);
-  return name;
+  if (c.is_district || c.marz_en === "Yerevan") return `${name}, ${marz}`;
+  if (c.same_as_marz || (name && marz && name.toLowerCase() === marz.toLowerCase()))
+    return `${t("community_municipality").replace("{name}", name)} (${marz})`;
+  return `${name}, ${marz}`;
+}
+
+/** @deprecated use placeCaption */
+export function communityLabel(c, marzNameFn) {
+  return placeCaption(c, marzNameFn);
 }
 
 export function communityMap({ el, geo, communities, parties, lang, marzNameFn }) {
@@ -128,9 +133,7 @@ export function communityMap({ el, geo, communities, parties, lang, marzNameFn }
   for (let i = 0; i < 150; i++) sim.tick();
 
   let zoomK = 1;
-  let active = null;
   const layer = g.append("g").attr("class", "community-layer");
-  const labelG = g.append("g").attr("class", "community-labels");
   const clusterG = g.append("g").attr("class", "community-clusters");
 
   function pixelClusters(threshold) {
@@ -152,50 +155,22 @@ export function communityMap({ el, geo, communities, parties, lang, marzNameFn }
     return [...groups.values()];
   }
 
-  function drawLabels(c) {
-    labelG.selectAll("*").remove();
-    if (!c) return;
-    const rr = r(c.registered) / Math.sqrt(zoomK);
-    const title = communityLabel(c, marzNameFn);
-    const sub = marzNameFn(c.marz_iso);
-    const showSub = !c.same_as_marz && title.toLowerCase() !== sub.toLowerCase();
-    const lines = showSub ? [truncate(title, 22), truncate(sub, 18)] : [truncate(title, 24)];
-    const tg = labelG.append("g").attr("transform", `translate(${c.x},${c.y - rr - 6})`);
-    tg.append("rect")
-      .attr("x", -52).attr("y", -14 - (lines.length - 1) * 11)
-      .attr("width", 104).attr("height", 10 + lines.length * 11)
-      .attr("rx", 4).attr("class", "bubble-tag-bg");
-    lines.forEach((line, i) => {
-      tg.append("text").attr("text-anchor", "middle").attr("y", -4 - (lines.length - 1 - i) * 11)
-        .attr("class", i === 0 ? "bubble-tag-title" : "bubble-tag-sub").text(line);
-    });
-  }
-
   function showTip(ev, c) {
-    active = c;
-    drawLabels(c);
     const rows = c.top.map((tp) => {
       const p = partyById[tp.id];
       return `<div class="tt-row"><span><i class="d" style="background:${p.color}"></i>${esc(pickLangField(p, "name"))}</span><b>${tp.pct.toFixed(1)}%</b></div>`;
     }).join("");
-    const cName = communityLabel(c, marzNameFn);
-    const mName = marzNameFn(c.marz_iso);
-    tip.html(`<div class="tt-kicker">${esc(t("tt_community"))}</div>
-      <div class="tt-title">${esc(cName)}</div>
-      <div class="tt-kicker" style="margin-top:4px">${esc(t("tt_marz"))}</div>
-      <div class="tt-sub">${esc(mName)}</div>${rows}
-      <div class="tt-row" style="margin-top:6px;color:var(--muted)"><span>${t("panel_turnout")}</span><b>${c.turnout_pct}%</b></div>
-      <div class="tt-row" style="color:var(--muted)"><span>${t("panel_registered")}</span><b>${c.registered.toLocaleString()}</b></div>`);
+    tip.html(`<div class="tt-title">${esc(placeCaption(c, marzNameFn))}</div>
+      <div class="tt-meta">${c.turnout_pct}% ${t("panel_turnout").toLowerCase()} · ${c.registered.toLocaleString()} ${t("panel_registered").toLowerCase()}</div>${rows}`)
+      .attr("class", "tooltip tooltip--place");
     tip.style("opacity", 1);
-    const pad = 16, w = 260;
+    const pad = 12, w = 220;
     let x = ev.clientX + pad; if (x + w > innerWidth) x = ev.clientX - w - pad;
     tip.style("left", x + "px").style("top", ev.clientY + pad + "px");
   }
 
   function hideTip() {
-    active = null;
-    tip.style("opacity", 0);
-    labelG.selectAll("*").remove();
+    tip.style("opacity", 0).attr("class", "tooltip");
   }
 
   function render() {
@@ -236,6 +211,7 @@ export function communityMap({ el, geo, communities, parties, lang, marzNameFn }
           ng.append("text").attr("class", "cluster-count");
           ng.on("click", (ev, members) => {
             ev.stopPropagation();
+            hideTip();
             const cx = d3.mean(members, (c) => c.x);
             const cy = d3.mean(members, (c) => c.y);
             const span = Math.max(...members.map((c) => Math.hypot(c.x - cx, c.y - cy)), 12);
@@ -258,12 +234,9 @@ export function communityMap({ el, geo, communities, parties, lang, marzNameFn }
         d3.select(this).select(".cluster-halo").attr("r", rad + 4 / zoomK).attr("stroke-width", 1.2 / zoomK);
         d3.select(this).select(".cluster-core").attr("r", rad).attr("stroke-width", .8 / zoomK);
         d3.select(this).select(".cluster-count")
-          .attr("text-anchor", "middle").attr("dy", ".35em").attr("font-size", Math.max(9, 11 / Math.sqrt(zoomK)))
-          .text(t("cluster_count").replace("{n}", members.length));
+          .attr("text-anchor", "middle").attr("dy", ".35em").attr("font-size", Math.max(10, 12 / Math.sqrt(zoomK)))
+          .text(String(members.length));
       });
-
-    if (active && !clustered.has(active)) drawLabels(active);
-    else if (active && clustered.has(active)) labelG.selectAll("*").remove();
   }
 
   render();
@@ -271,6 +244,7 @@ export function communityMap({ el, geo, communities, parties, lang, marzNameFn }
   const zoom = d3.zoom().scaleExtent([1, 14]).translateExtent([[0, 0], [W, H]])
     .on("zoom", (ev) => {
       zoomK = ev.transform.k;
+      hideTip();
       g.attr("transform", ev.transform);
       g.selectAll(".marz-base").attr("stroke-width", 1 / zoomK);
       render();

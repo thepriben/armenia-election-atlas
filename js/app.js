@@ -3,7 +3,7 @@ import { STRINGS, LANGS, LANG_LABEL, t, setLang, getLang, pickLangField } from "
 import { loadCore, loadCommunities, loadElections } from "./data.js";
 import { initState, getState, setState, onState } from "./state.js";
 import { createMap, renderLegend } from "./map.js";
-import { voteBars, hemicycle, miniMap, communityMap, communityLabel } from "./charts.js";
+import { voteBars, hemicycle, miniMap, communityMap, placeCaption } from "./charts.js";
 import { nationalTable, explorerTable } from "./table.js";
 
 const LEADER_LINK = {
@@ -345,12 +345,7 @@ function buildCommunityMap() {
   $("#zoomIn").onclick = () => comMap.zoomBy(1.6);
   $("#zoomOut").onclick = () => comMap.zoomBy(1 / 1.6);
   $("#zoomReset").onclick = () => comMap.reset();
-  // legend: winners present
-  const partyById = Object.fromEntries(core.parties.map((p) => [p.id, p]));
-  const winners = [...new Set(core.communitiesGeo.map((c) => c.winner))];
-  $("#communityLegend").innerHTML = `<div class="swatches">${winners.map((w) =>
-    `<span class="sw"><i style="background:${partyById[w].color}"></i>${pickLangField(partyById[w], "name")}</span>`).join("")}</div>`;
-  $("#communityHint").textContent = `${t("explore_hint")} · ${core.comCoverage.located}/${core.comCoverage.total} ${t("explore_coverage")}`;
+  $("#communityHint").textContent = `${t("explore_hint")} · ${core.comCoverage.located}/${core.comCoverage.total}`;
 }
 
 /* ---------------- repo star badge ---------------- */
@@ -462,7 +457,7 @@ async function drawExplorer() {
       [`${c.marz_iso}|${c.community}`, c]));
     rows = communities.map((r) => {
       const g = byKey[`${r.marz_iso}|${r.community_hy}`] || {};
-      const row = { ...r, ...g, _marz: marzName(r.marz_iso), _name: communityLabel({ ...r, ...g }, marzName) };
+      const row = { ...r, ...g, _marz: marzName(r.marz_iso), _name: placeCaption({ ...r, ...g }, marzName) };
       return row;
     });
   } else {
