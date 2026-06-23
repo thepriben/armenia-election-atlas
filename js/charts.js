@@ -192,7 +192,7 @@ export function communityMap({
   }
 
   function zoomToItems(items) {
-    if (!items.length) return;
+    if (!items.length) return 1;
     const xs = items.map((c) => c.x), ys = items.map((c) => c.y);
     const pad = 36;
     const x0 = Math.min(...xs) - pad, x1 = Math.max(...xs) + pad;
@@ -202,6 +202,7 @@ export function communityMap({
     const ty = H / 2 - (k * (y0 + y1) / 2);
     svg.transition().duration(450).call(
       zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(k));
+    return k;
   }
 
   function enterDrill(c, ev) {
@@ -215,16 +216,16 @@ export function communityMap({
       return r(n);
     }, 18) };
     if (onDrill) onDrill(drill);
-    zoomToItems(drill.items);
+    drill.entryK = zoomToItems(drill.items);
     render();
   }
 
-  function exitDrill() {
+  function exitDrill(resetZoom = true) {
     if (!drill) return;
     drill = null;
     hideTip();
     if (onDrill) onDrill(null);
-    svg.transition().duration(350).call(zoom.transform, d3.zoomIdentity);
+    if (resetZoom) svg.transition().duration(350).call(zoom.transform, d3.zoomIdentity);
     render();
   }
 
@@ -352,6 +353,12 @@ export function communityMap({
       hideTip();
       g.attr("transform", ev.transform);
       g.selectAll(".marz-base").attr("stroke-width", 1 / zoomK);
+      // A real zoom-out gesture (not the programmatic drill-in transition)
+      // leaves a drilled community and returns to the full map.
+      if (drill && ev.sourceEvent && ev.transform.k < Math.max(1.8, (drill.entryK || 4) * 0.55)) {
+        exitDrill(false);
+        return;
+      }
       if (!renderPending) {
         renderPending = true;
         requestAnimationFrame(() => { renderPending = false; render(); });
