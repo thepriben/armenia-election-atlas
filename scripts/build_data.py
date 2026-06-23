@@ -10,19 +10,21 @@ This script joins the two official workbooks (results keyed by polling station,
 registry providing marz / community / constituency) and produces clean, versioned
 artefacts at every aggregation level: polling station -> community -> marz -> national.
 
-Outputs (all derived, reproducible):
-  data/clean/stations.{parquet,csv}      full granular table (2005 stations x 18 parties)
-  data/clean/communities.{parquet,csv}   aggregated by community
-  data/clean/marz.{parquet,csv}          aggregated by marz (11 provinces)
-  data/national.json                     national party totals + meta (for the site)
-  data/marz.json                         per-marz totals, winner, margin, shares (for the map)
-  data/parties.json                      trilingual party metadata + national result + best/worst marz
-  data/meta.json                         provenance, timestamps, integrity checks
+Each election lives under data/<ELECTION>/ (default 2026; override with the
+ELECTION environment variable). Outputs (all derived, reproducible):
+  data/<ELECTION>/clean/stations.{parquet,csv}      full granular table (stations x parties)
+  data/<ELECTION>/clean/communities.{parquet,csv}   aggregated by community
+  data/<ELECTION>/clean/marz.{parquet,csv}          aggregated by marz (11 provinces)
+  data/<ELECTION>/national.json                     national party totals + meta (for the site)
+  data/<ELECTION>/marz.json                         per-marz totals, winner, margin, shares (for the map)
+  data/<ELECTION>/parties.json                      trilingual party metadata + national result + best/worst marz
+  data/<ELECTION>/meta.json                         provenance, timestamps, integrity checks
 """
 from __future__ import annotations
 
 import datetime as _dt
 import json
+import os
 import pathlib
 import sys
 
@@ -30,9 +32,10 @@ import openpyxl
 import pandas as pd
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-RAW = ROOT / "data" / "raw"
-CLEAN = ROOT / "data" / "clean"
-DATA = ROOT / "data"
+ELECTION = os.environ.get("ELECTION", "2026")
+RAW = ROOT / "data" / ELECTION / "raw"
+CLEAN = ROOT / "data" / ELECTION / "clean"
+DATA = ROOT / "data" / ELECTION
 
 RESULTS_XLSX = RAW / "cec_results_by_station.xlsx"
 REGISTRY_XLSX = RAW / "cec_subdistricts.xlsx"
@@ -242,7 +245,7 @@ def shares_dict(row) -> dict:
 
 def build():
     if not RESULTS_XLSX.exists() or not REGISTRY_XLSX.exists():
-        sys.exit("Raw CEC workbooks missing in data/raw/. Run scripts/fetch_source.sh first.")
+        sys.exit(f"Raw CEC workbooks missing in {RAW}/. Run scripts/fetch_source.sh first.")
 
     CLEAN.mkdir(parents=True, exist_ok=True)
     results = read_results()
@@ -380,9 +383,9 @@ def build():
             "armenia_alliance_votes": int(results["armenia_alliance"].sum()),
         },
         "files": {
-            "stations": ["data/clean/stations.parquet", "data/clean/stations.csv"],
-            "communities": ["data/clean/communities.parquet", "data/clean/communities.csv"],
-            "marz": ["data/clean/marz.parquet", "data/clean/marz.csv"],
+            "stations": [f"data/{ELECTION}/clean/stations.parquet", f"data/{ELECTION}/clean/stations.csv"],
+            "communities": [f"data/{ELECTION}/clean/communities.parquet", f"data/{ELECTION}/clean/communities.csv"],
+            "marz": [f"data/{ELECTION}/clean/marz.parquet", f"data/{ELECTION}/clean/marz.csv"],
         },
     }
     (DATA / "meta.json").write_text(

@@ -1,6 +1,6 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import { STRINGS, LANGS, LANG_LABEL, t, setLang, getLang, pickLangField } from "./i18n.js";
-import { loadCore, loadCommunities } from "./data.js";
+import { loadCore, loadCommunities, loadElections } from "./data.js";
 import { initState, getState, setState, onState } from "./state.js";
 import { createMap, renderLegend } from "./map.js";
 import { voteBars, hemicycle, miniMap, communityMap } from "./charts.js";
@@ -13,7 +13,7 @@ const LEADER_LINK = {
   hanrapetutyun: "leader_sargsyan", wings_of_unity: "leader_tandilyan",
 };
 
-let core, mapApi, communities = null;
+let core, mapApi, communities = null, electionId, electionList = [];
 const $ = (s) => document.querySelector(s);
 const fmtInt = (n) => Number(n).toLocaleString(getLang() === "hy" ? "hy-AM" : getLang());
 
@@ -21,10 +21,14 @@ init();
 
 async function init() {
   initState();
-  core = await loadCore();
+  const elections = await loadElections();
+  electionList = elections.elections || [];
+  electionId = elections.default;
+  core = await loadCore(electionId);
   rewindGeo(core.geo);
   setLang(getState().lang);
 
+  buildElectionSwitch();
   buildLangSwitch();
   buildThemeToggle();
   applyI18n();
@@ -47,7 +51,7 @@ async function init() {
   loadRepoStars();
 
   onState((s, patch) => {
-    if (patch.lang) { setLang(s.lang); applyI18n(); refreshAll(); }
+    if (patch.lang) { setLang(s.lang); applyI18n(); buildElectionSwitch(); refreshAll(); }
     mapApi.render(s);
     renderLegend($("#mapLegend"), mapApi, s);
     syncMapControls(s);
@@ -85,6 +89,20 @@ function applyI18n() {
   document.querySelectorAll("#langswitch button").forEach((b) =>
     b.classList.toggle("active", b.dataset.l === lang));
   $("#footerLicense").textContent = t("about_license");
+}
+
+function buildElectionSwitch() {
+  const wrap = $("#electionSwitch");
+  if (!wrap) return;
+  const order = [...electionList].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+  wrap.innerHTML = order.map((e) => {
+    const available = e.status === "available";
+    const cls = available ? "epill active" : "epill soon";
+    const label = available ? e.id : `${e.id} · ${t("election_soon")}`;
+    const cur = available && e.id === electionId ? ' aria-current="true"' : "";
+    const dis = available ? "" : ' aria-disabled="true"';
+    return `<span class="${cls}"${cur}${dis}>${label}</span>`;
+  }).join("");
 }
 
 function buildLangSwitch() {
@@ -299,11 +317,12 @@ function buildDataExplorer() {
 
   $("#dataSearch").addEventListener("input", drawExplorer);
 
+  const dir = `data/${electionId}`;
   const dl = [
-    ["stations.parquet", "data/clean/stations.parquet"],
-    ["stations.csv", "data/clean/stations.csv"],
-    ["marz.csv", "data/clean/marz.csv"],
-    ["communities.csv", "data/clean/communities.csv"],
+    ["stations.parquet", `${dir}/clean/stations.parquet`],
+    ["stations.csv", `${dir}/clean/stations.csv`],
+    ["marz.csv", `${dir}/clean/marz.csv`],
+    ["communities.csv", `${dir}/clean/communities.csv`],
     ["marz.geojson", "data/armenia-marz.geojson"],
   ];
   $("#downloadLinks").innerHTML = dl.map(([n, u]) =>
@@ -317,7 +336,7 @@ async function drawExplorer() {
     b.classList.toggle("active", b.dataset.l === s.level));
   let rows;
   if (s.level === "communities") {
-    communities = communities || await loadCommunities();
+    communities = communities || await loadCommunities(electionId);
     rows = communities;
   } else {
     rows = Object.values(core.marz).map((m) => ({

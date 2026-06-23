@@ -1,0 +1,32 @@
+{
+  "default": "2026",
+  "shared": {
+    "marz_geojson": "data/armenia-marz.geojson"
+  },
+  "elections": [
+    {
+      "id": "2026",
+      "dir": "data/2026",
+      "type": "parliamentary",
+      "date": "2026-06-07",
+      "status": "available",
+      "name": {
+        "en": "2026 parliamentary election",
+        "hy": "2026 թ. խորհրդարանական ընտրություններ",
+        "fr": "Élections législatives de 2026"
+      }
+    },
+    {
+      "id": "2021",
+      "dir": "data/2021",
+      "type": "parliamentary",
+      "date": "2021-06-20",
+      "status": "upcoming",
+      "name": {
+        "en": "2021 parliamentary election",
+        "hy": "2021 թ. խորհրդարանական ընտրություններ",
+        "fr": "Élections législatives de 2021"
+      }
+    }
+  ]
+}

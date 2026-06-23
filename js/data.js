@@ -3,25 +3,42 @@
 
 const base = new URL(".", import.meta.url).href.replace(/\/js\/$/, "/");
 
+export const DEFAULT_ELECTION = "2026";
+
 async function getJSON(path) {
   const r = await fetch(base + path);
   if (!r.ok) throw new Error(`fetch ${path}: ${r.status}`);
   return r.json();
 }
 
-export async function loadCore() {
+// Index of available elections (data/elections.json). Falls back to a minimal
+// 2026-only manifest if the index is missing, so the site keeps working.
+export async function loadElections() {
+  try {
+    return await getJSON("data/elections.json");
+  } catch (e) {
+    return {
+      default: DEFAULT_ELECTION,
+      shared: { marz_geojson: "data/armenia-marz.geojson" },
+      elections: [{ id: DEFAULT_ELECTION, dir: "data/2026", status: "available" }],
+    };
+  }
+}
+
+export async function loadCore(election = DEFAULT_ELECTION) {
+  const dir = `data/${election}`;
   const [national, marz, parties, links, meta, geo, profiles, comGeo] = await Promise.all([
-    getJSON("data/national.json"),
-    getJSON("data/marz.json"),
-    getJSON("data/parties.json"),
-    getJSON("data/links.json"),
-    getJSON("data/meta.json"),
+    getJSON(`${dir}/national.json`),
+    getJSON(`${dir}/marz.json`),
+    getJSON(`${dir}/parties.json`),
+    getJSON(`${dir}/links.json`),
+    getJSON(`${dir}/meta.json`),
     getJSON("data/armenia-marz.geojson"),
-    getJSON("data/party_profiles.json"),
-    getJSON("data/communities_geo.json"),
+    getJSON(`${dir}/party_profiles.json`),
+    getJSON(`${dir}/communities_geo.json`),
   ]);
   return {
-    national, marz, parties, links, meta, geo,
+    election, national, marz, parties, links, meta, geo,
     profiles: profiles.profiles, communitiesGeo: comGeo.communities,
     comCoverage: { located: comGeo.located, total: comGeo.total },
   };
@@ -45,6 +62,6 @@ async function loadCSV(path) {
   });
 }
 
-export async function loadCommunities() {
-  return loadCSV("data/clean/communities.csv");
+export async function loadCommunities(election = DEFAULT_ELECTION) {
+  return loadCSV(`data/${election}/clean/communities.csv`);
 }

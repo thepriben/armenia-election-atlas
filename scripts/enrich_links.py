@@ -3,7 +3,7 @@
 Enrich entities (parties, leaders, marzer, the election) with Wikidata QIDs and
 Wikipedia article titles in EN / HY / FR, via the MediaWiki API.
 
-Writes data/links.json:
+Writes data/<ELECTION>/links.json:
   { "<id>": { "qid": "Q...", "wikidata": "https://www.wikidata.org/wiki/Q...",
               "wikipedia": { "en": {"title","url"}, "hy": {...}, "fr": {...} } } }
 
@@ -14,12 +14,15 @@ Missing language editions are simply omitted — nothing is fabricated.
 from __future__ import annotations
 
 import json
+import os
 import pathlib
 import time
 import urllib.parse
 import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+ELECTION = os.environ.get("ELECTION", "2026")
+DATA = ROOT / "data" / ELECTION
 API = "https://en.wikipedia.org/w/api.php"
 UA = "ArmeniaElectionAtlas2026/1.0 (https://github.com/thepriben; data enrichment)"
 
@@ -162,9 +165,9 @@ def main():
         if v.get("qid") in labels:
             v["labels"] = labels[v["qid"]]
 
-    (ROOT / "data" / "links.json").write_text(
+    (DATA / "links.json").write_text(
         json.dumps(links, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"Wrote data/links.json with {len(links)} entities, "
+    print(f"Wrote data/{ELECTION}/links.json with {len(links)} entities, "
           f"{len(labels)} label sets")
 
 

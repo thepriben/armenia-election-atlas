@@ -74,16 +74,16 @@
   },
   "files": {
     "stations": [
-      "data/clean/stations.parquet",
-      "data/clean/stations.csv"
+      "data/2026/clean/stations.parquet",
+      "data/2026/clean/stations.csv"
     ],
     "communities": [
-      "data/clean/communities.parquet",
-      "data/clean/communities.csv"
+      "data/2026/clean/communities.parquet",
+      "data/2026/clean/communities.csv"
     ],
     "marz": [
-      "data/clean/marz.parquet",
-      "data/clean/marz.csv"
+      "data/2026/clean/marz.parquet",
+      "data/2026/clean/marz.csv"
     ]
   }
 }

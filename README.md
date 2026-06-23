@@ -49,7 +49,28 @@ python scripts/geocode_communities.py # attach GeoNames coordinates (needs /tmp/
 python scripts/enrich_links.py        # Wikidata QIDs + Wikipedia links/labels (EN/HY/FR)
 ```
 
-Outputs land in `data/` (JSON for the site) and `data/clean/` (Parquet + CSV).
+All scripts target one election at a time, selected with the `ELECTION`
+environment variable (default `2026`), e.g. `ELECTION=2021 python scripts/build_data.py`.
+
+## Data layout
+
+The atlas is a multi-election archive. Each election has its own folder; shared,
+election-independent assets (province boundaries) live at the `data/` root.
+
+```
+data/
+  elections.json            # index of elections (id, date, status, names)
+  armenia-marz.geojson      # shared: province boundaries (geoBoundaries)
+  2026/
+    national.json  marz.json  parties.json  links.json  meta.json
+    party_profiles.json  communities_geo.json
+    clean/  stations.{parquet,csv}  communities.{parquet,csv}  marz.{parquet,csv}
+    raw/    original CEC workbooks
+```
+
+`data/elections.json` lists every election and its `status` (`available` or
+upcoming). **For now only `2026` is `available`.** To add a past election, create
+`data/<year>/` with the same files and append an entry to `elections.json`.
 
 **Note on totals.** The per-station tabulation sums to ~0.05% below the certified national
 figures because it excludes the small electronic vote and three annulled stations. The

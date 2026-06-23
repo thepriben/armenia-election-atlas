@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Attach coordinates to the 81 CEC communities using the GeoNames gazetteer
-(free, CC-BY). Produces data/communities_geo.json for the zoomable bubble map:
+(free, CC-BY). Produces data/<ELECTION>/communities_geo.json for the zoomable bubble map:
 each community as a point (electorate-sized, winner-coloured) with its top results.
 
 GeoNames AM dump: https://download.geonames.org/export/dump/AM.zip  (AM.txt, TSV)
@@ -11,14 +11,17 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 import pathlib
 import sys
 
 import pandas as pd
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+ELECTION = os.environ.get("ELECTION", "2026")
+DATA = ROOT / "data" / ELECTION
 GEONAMES = pathlib.Path("/tmp/AM.txt")
-COMMUNITIES = ROOT / "data" / "clean" / "communities.parquet"
+COMMUNITIES = DATA / "clean" / "communities.parquet"
 
 # feature-class preference: populated places, then admin areas
 FCLASS_RANK = {"P": 0, "A": 1, "L": 3, "T": 3, "H": 4, "S": 2, "V": 3, "R": 3}
@@ -84,7 +87,7 @@ def match(name, idx):
 def main():
     if not GEONAMES.exists():
         sys.exit("Missing /tmp/AM.txt — download GeoNames AM.zip first.")
-    parties = json.loads((ROOT / "data" / "parties.json").read_text())
+    parties = json.loads((DATA / "parties.json").read_text())
     pids = [p["id"] for p in parties]
     color = {p["id"]: p["color"] for p in parties}
 
@@ -117,7 +120,7 @@ def main():
         })
 
     located = [c for c in out if c["lat"] is not None]
-    (ROOT / "data" / "communities_geo.json").write_text(
+    (DATA / "communities_geo.json").write_text(
         json.dumps({"source": "GeoNames (CC-BY) + CEC results",
                     "located": len(located), "total": len(out),
                     "communities": out}, ensure_ascii=False, indent=2),
