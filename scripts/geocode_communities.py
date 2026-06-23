@@ -40,7 +40,7 @@ MARZ_ADM1 = {
 
 
 def load_geonames():
-    """name (Armenian or latin) -> list of (rank, -pop, lat, lon, fclass, admin1)."""
+    """name (Armenian or latin) -> list of (rank, -pop, lat, lon, fclass, admin1, en, fr)."""
     idx = {}
     with open(GEONAMES, encoding="utf-8") as f:
         for row in csv.reader(f, delimiter="\t"):
@@ -54,24 +54,37 @@ def load_geonames():
             admin1 = row[10]
             pop = int(row[14]) if row[14].isdigit() else 0
             rank = FCLASS_RANK.get(fclass, 5)
+            en = row[2] or row[1]
+            fr = _pick_alt_lang(row[3], "fr") or en
             names = {row[1], row[2]}
             names.update(n for n in row[3].split(",") if n)
             for nm in names:
                 key = normalize(nm)
                 if key:
-                    idx.setdefault(key, []).append((rank, -pop, lat, lon, fclass, admin1))
+                    idx.setdefault(key, []).append((rank, -pop, lat, lon, fclass, admin1, en, fr))
     for nm in idx:
         idx[nm].sort()
     return idx
 
 
+def _pick_alt_lang(alt_field: str, lang: str) -> str | None:
+    """Best-effort French (or other) label from GeoNames alternatenames."""
+    if not alt_field:
+        return None
+    parts = [p.strip() for p in alt_field.split(",") if p.strip()]
+    for i, p in enumerate(parts):
+        if p == lang and i > 0:
+            return parts[i - 1]
+    return None
+
+
 # Communities GeoNames cannot resolve (ligature edge cases / Yerevan districts /
 # consolidated municipalities named differently from their seat settlement).
 MANUAL = {
-    "Նուբարաշեն": (40.1296, 44.5406),  # Nubarashen, district of Yerevan
-    "Արեվուտ": (40.3253, 44.6190),     # Arevut community (Kotayk), Nor Hachn area
-    "Նաիրի": (40.3217, 44.4814),       # Nairi municipality (Kotayk), seat Yeghvard
-    "Անի": (40.5722, 43.8669),         # Ani municipality (Shirak), seat Maralik
+    "Նուբարաշեն": (40.1296, 44.5406, "Nubarashen", "Nubarashen"),
+    "Արեվուտ": (40.3253, 44.6190, "Arevut", "Arevut"),
+    "Նաիրի": (40.3217, 44.4814, "Nairi", "Nairi"),
+    "Անի": (40.5722, 43.8669, "Ani", "Ani"),
 }
 
 # Settlement designators appended by the CEC ("village", "town", "station").
@@ -94,12 +107,10 @@ def _variants(name):
 
 
 def match(name, marz_en, idx):
-    """Resolve a community to coordinates, preferring an exact name match inside
-    the community's own province; otherwise accept only a name that is unique in
-    the whole gazetteer. Never fall back to a partial/first-token guess."""
+    """Resolve a community to (lat, lon, fclass, en, fr)."""
     if name in MANUAL:
-        lat, lon = MANUAL[name]
-        return lat, lon, "M"
+        lat, lon, en, fr = MANUAL[name]
+        return lat, lon, "M", en, fr
     target = MARZ_ADM1.get(marz_en)
     for v in _variants(name):
         cands = idx.get(v)
@@ -108,7 +119,7 @@ def match(name, marz_en, idx):
         in_prov = [c for c in cands if c[5] == target]
         if in_prov:
             c = in_prov[0]
-            return c[2], c[3], c[4]
+            return c[2], c[3], c[4], c[6], c[7]
     return None
 
 
@@ -140,6 +151,8 @@ def main():
 
     df = pd.read_parquet(COMMUNITIES)
     idx = load_geonames()
+    marz_meta = json.loads((DATA / "marz.json").read_text())
+    marz_hy = {m["name_en"]: m["name_hy"] for m in marz_meta.values()}
 
     out, matched = [], 0
     for _, r in df.iterrows():
@@ -148,11 +161,19 @@ def main():
         valid = max(int(r["valid"]), 1)
         winner = order[0]
         top = [{"id": pid, "pct": round(100 * votes[pid] / valid, 1)} for pid in order[:3]]
-        m = match(normalize(r["community_hy"]), r["marz_en"], idx)
+        hy = r["community_hy"]
+        m = match(normalize(hy), r["marz_en"], idx)
+        en = fr = None
         if m:
             matched += 1
+            en, fr = m[3], m[4]
+        same_marz = hy == marz_hy.get(r["marz_en"])
         out.append({
-            "community": r["community_hy"],
+            "community": hy,
+            "community_hy": hy,
+            "community_en": en or hy,
+            "community_fr": fr or en or hy,
+            "same_as_marz": same_marz,
             "marz_en": r["marz_en"],
             "marz_iso": r["marz_iso"],
             "registered": int(r["registered"]),

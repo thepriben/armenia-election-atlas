@@ -14,6 +14,14 @@
         "en": "2026 parliamentary election",
         "hy": "2026 թ. խորհրդարանական ընտրություններ",
         "fr": "Élections législatives de 2026"
+      },
+      "evote": {
+        "voters": 410,
+        "window": {
+          "en": "29–31 May 2026",
+          "hy": "2026 թ. մայիսի 29–31",
+          "fr": "29–31 mai 2026"
+        }
       }
     },
     {
@@ -26,6 +34,14 @@
         "en": "2021 early parliamentary election",
         "hy": "2021 թ. արտահերթ խորհրդարանական ընտրություններ",
         "fr": "Élections législatives anticipées de 2021"
+      },
+      "evote": {
+        "voters": 500,
+        "window": {
+          "en": "11–13 June 2021",
+          "hy": "2021 թ. հունիսի 11–13",
+          "fr": "11–13 juin 2021"
+        }
       }
     }
   ]

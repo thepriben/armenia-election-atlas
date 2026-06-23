@@ -57,7 +57,7 @@ export function explorerTable(el, rows, level, partiesMeta, search = "") {
   const cols = [
     { key: level === "marz" ? "name" : "community_hy", label: () => firstLabel,
       cell: (r) => r._name || r.community_hy || r.marz_en },
-    { key: "marz_en", label: () => "Marz", cell: (r) => r.marz_en, hide: level === "marz" },
+    { key: "marz_en", label: () => "Marz", cell: (r) => r._marz || r.marz_en, hide: level === "marz" },
     { key: "registered", label: () => t("panel_registered"), cell: (r) => `<span class="tabnum">${fmtInt(r.registered)}</span>` },
     { key: "turnout_pct", label: () => t("panel_turnout"), cell: (r) => `<span class="tabnum">${(+r.turnout_pct).toFixed(1)}%</span>` },
     ...partyCols.map((pid) => ({

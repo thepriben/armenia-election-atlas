@@ -26,6 +26,7 @@ import datetime as _dt
 import json
 import os
 import pathlib
+import re
 import sys
 
 import openpyxl
@@ -129,6 +130,10 @@ ELECTIONS = {
         "threshold_alliance_pct": 7.0,
         "total_seats": 107,
         "col_inaccuracy": 40,
+        # In June 2021 communities were still pre-consolidation (~500). Re-aggregate
+        # to the modern consolidated municipalities so the community level matches
+        # 2026 and is free of cross-province homonyms.
+        "consolidate_from": "2026",
         "seats": {"civil_contract": 71, "armenia_alliance": 29, "i_have_honor": 7},
         "parties": [
             (17, "civil_contract", "party",
@@ -249,6 +254,46 @@ MARZ = {
 # Reverse lookup keyed by English name -> (iso, en, fr, hy)
 MARZ_INV = {v[1]: v for v in MARZ.values()}
 
+# --- consolidation of pre-reform communities into modern municipalities --------
+_CDESIG = re.compile(r"\s+(գյուղ|քաղաք|կայարան)\s*$")
+
+
+def _cnorm(s: str) -> str:
+    s = (s or "").strip()
+    s = re.sub(r"\s*\([^)]*\)\s*", " ", s)   # drop parenthetical qualifiers
+    s = re.sub(r"\s+", " ", s).strip()
+    s = _CDESIG.sub("", s)                     # drop "գյուղ"/"քաղաք"/…
+    return s.replace(" յ", "յ").replace("եվ", "և")
+
+
+# Pre-reform communities the source registry resolves differently (province
+# changed or community dissolved by the reform). Keyed by (marz_hy, _cnorm).
+MANUAL_CONSOLIDATION = {
+    ("Շիրակ", "Արփի"): "Ամասիա",        # Arpi community (centre Berdashen) merged into Amasia
+    ("Կոտայք", "Նոր Երզնկա"): "Նաիրի",  # Nor Yerznka -> Nairi (centre Yeghvard)
+}
+
+
+def load_consolidation_map(source_election: str) -> dict:
+    """(marz_hy, normalized settlement/community) -> consolidated community name,
+    derived from the source election's registry (col1 community, col2 settlement)."""
+    path = ROOT / "data" / source_election / "raw" / "cec_subdistricts.xlsx"
+    if not path.exists():
+        sys.exit(f"Consolidation source registry missing: {path}")
+    wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    ws = wb.active
+    m = {}
+    for r in ws.iter_rows(min_row=2, values_only=True):
+        if not r or len(r) < 5 or not r[4]:
+            continue
+        marz, comm, sett = r[0], r[1], r[2]
+        if not comm:
+            continue
+        m[(marz, _cnorm(comm))] = comm
+        if sett:
+            m[(marz, _cnorm(sett))] = comm
+    return m
+
 
 def _num(v):
     if v is None or v == "":
@@ -341,6 +386,27 @@ def build():
     registry = read_registry()
 
     df = results.merge(registry, on="station", how="left")
+
+    # Re-aggregate pre-reform communities into modern consolidated municipalities
+    # (keeps each station in its own province; only the community label changes).
+    src = CFG.get("consolidate_from")
+    if src:
+        cmap = load_consolidation_map(src)
+        unresolved = set()
+
+        def _consolidate(row):
+            key = (row["marz_hy"], _cnorm(row["community_hy"]))
+            hit = MANUAL_CONSOLIDATION.get(key) or cmap.get(key)
+            if hit:
+                return hit
+            unresolved.add(row["community_hy"])
+            return row["community_hy"]
+
+        df["community_hy"] = df.apply(_consolidate, axis=1)
+        print(f"   consolidated to {df['community_hy'].nunique()} communities "
+              f"(source {src}); {len(unresolved)} unresolved", file=sys.stderr)
+        if unresolved:
+            print("   unresolved:", ", ".join(sorted(unresolved)), file=sys.stderr)
 
     # Integrity guard against "non-territorial" ballots (electronic votes by
     # diplomats / military, any future out-of-country line) being silently folded

@@ -147,6 +147,12 @@ button.epill { cursor: pointer; }
 .zoom-ctrl .iconbtn { width: 30px; height: 30px; font-weight: 700; }
 .community-bubble { cursor: pointer; stroke: rgba(0,0,0,.35); stroke-width: .5; transition: stroke-width .12s; }
 .community-bubble:hover { stroke: var(--text); stroke-width: 1.5; }
+.cluster-halo { fill: rgba(255,255,255,.08); stroke: var(--accent); stroke-dasharray: 3 2; pointer-events: none; }
+.cluster-core { fill: var(--surface-2); stroke: var(--text); fill-opacity: .92; }
+.cluster-count { fill: var(--text); font-weight: 800; pointer-events: none; }
+.bubble-tag-bg { fill: var(--surface); stroke: var(--border); opacity: .96; }
+.bubble-tag-title { fill: var(--text); font-size: 10px; font-weight: 800; pointer-events: none; }
+.bubble-tag-sub { fill: var(--muted); font-size: 9px; pointer-events: none; }
 .marz-base { fill: var(--surface-2); stroke: var(--line); stroke-width: 1; }
 .dot-pt { stroke: var(--bg); stroke-width: 1.2; }
 .dot-label { font-size: 9px; fill: var(--muted); pointer-events: none; }
@@ -216,7 +222,9 @@ button.epill { cursor: pointer; }
   border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: .82rem;
   box-shadow: var(--shadow); max-width: 240px; opacity: 0; transition: opacity .12s;
 }
-.tooltip .tt-title { font-weight: 800; margin-bottom: 6px; }
+.tooltip .tt-kicker { font-size: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.tooltip .tt-title { font-weight: 800; margin-bottom: 2px; }
+.tooltip .tt-sub { font-weight: 600; margin-bottom: 6px; color: var(--text); }
 .tooltip .tt-row { display: flex; justify-content: space-between; gap: 14px; }
 .tooltip .tt-row .d { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 5px; }
 .toast {

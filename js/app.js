@@ -3,7 +3,7 @@ import { STRINGS, LANGS, LANG_LABEL, t, setLang, getLang, pickLangField } from "
 import { loadCore, loadCommunities, loadElections } from "./data.js";
 import { initState, getState, setState, onState } from "./state.js";
 import { createMap, renderLegend } from "./map.js";
-import { voteBars, hemicycle, miniMap, communityMap } from "./charts.js";
+import { voteBars, hemicycle, miniMap, communityMap, communityLabel } from "./charts.js";
 import { nationalTable, explorerTable } from "./table.js";
 
 const LEADER_LINK = {
@@ -155,6 +155,19 @@ function applyDynamicCopy() {
       .replace("{seats}", w.seats)
       .replace("{total}", n.total_seats)
       .replace("{sweep}", allWon ? t("sweep_clause") : "");
+  }
+  // Overseas electronic vote: dates and turnout differ per election; show the
+  // note only when we have figures for the selected one, otherwise hide it.
+  const overseasSection = document.getElementById("overseas");
+  const overseasEl = $("#overseasBody");
+  const ev = e && e.evote;
+  if (ev && overseasEl) {
+    overseasEl.textContent = t("overseas_body_tpl")
+      .replace("{window}", (ev.window && (ev.window[lang] || ev.window.en)) || "")
+      .replace("{n}", ev.voters);
+    if (overseasSection) overseasSection.hidden = false;
+  } else if (overseasSection) {
+    overseasSection.hidden = true;
   }
 }
 
@@ -445,7 +458,13 @@ async function drawExplorer() {
   let rows;
   if (s.level === "communities") {
     communities = communities || await loadCommunities(electionId);
-    rows = communities;
+    const byKey = Object.fromEntries(core.communitiesGeo.map((c) =>
+      [`${c.marz_iso}|${c.community}`, c]));
+    rows = communities.map((r) => {
+      const g = byKey[`${r.marz_iso}|${r.community_hy}`] || {};
+      const row = { ...r, ...g, _marz: marzName(r.marz_iso), _name: communityLabel({ ...r, ...g }, marzName) };
+      return row;
+    });
   } else {
     rows = Object.values(core.marz).map((m) => {
       const r = {
