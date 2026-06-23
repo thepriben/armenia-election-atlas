@@ -67,6 +67,7 @@ h1,h2,h3 { font-family: var(--serif); font-weight: 600; letter-spacing: -.01em; 
 main { display: block; }
 .section { max-width: var(--maxw); margin: 0 auto; padding: 64px 20px; }
 .section.narrow { max-width: 880px; }
+.section.wide { max-width: min(1340px, 95vw); }
 .section-head { margin-bottom: 26px; }
 .section-head h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); margin: 0 0 8px; }
 .section-head .muted { max-width: 720px; }
