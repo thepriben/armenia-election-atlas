@@ -108,12 +108,25 @@ export function communityMap({ el, geo, communities, parties, lang, marzNameFn }
   g.append("g").selectAll("path").data(geo.features).join("path")
     .attr("class", "marz-base").attr("d", path);
 
+  // Decluster: where several communities project onto (nearly) the same pixel,
+  // a collision force nudges their bubbles apart just enough to stay readable
+  // while a positional force keeps each anchored to its true location.
+  located.sort((a, b) => b.registered - a.registered);
+  located.forEach((c) => { const p = proj([c.lon, c.lat]); c._x = p[0]; c._y = p[1]; c.x = p[0]; c.y = p[1]; });
+  const sim = d3.forceSimulation(located)
+    .force("x", d3.forceX((c) => c._x).strength(.7))
+    .force("y", d3.forceY((c) => c._y).strength(.7))
+    .force("collide", d3.forceCollide((c) => r(c.registered) + .7).strength(.9))
+    .stop();
+  for (let i = 0; i < 150; i++) sim.tick();
+
   const dots = g.append("g").selectAll("circle")
-    .data(located.sort((a, b) => b.registered - a.registered)).join("circle")
+    .data(located).join("circle")
     .attr("class", "community-bubble")
-    .attr("cx", (c) => proj([c.lon, c.lat])[0])
-    .attr("cy", (c) => proj([c.lon, c.lat])[1])
+    .attr("cx", (c) => c.x)
+    .attr("cy", (c) => c.y)
     .attr("r", 0).attr("fill", (c) => c.winner_color).attr("fill-opacity", .82)
+    .on("mouseover", (ev) => d3.select(ev.currentTarget).raise())
     .on("mousemove", (ev, c) => showTip(ev, c))
     .on("mouseleave", () => tip.style("opacity", 0));
   dots.transition().duration(700).delay((c, i) => i * 3).attr("r", (c) => r(c.registered));
