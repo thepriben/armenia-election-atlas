@@ -3,26 +3,30 @@
 A **trilingual (EN / ՀՅ / FR)** geographic atlas of Armenia's parliamentary
 elections — built to be explored and shared by link, not just read.
 
-The atlas is designed to grow into a multi-election archive. **For now it covers the
-7 June 2026 election only**; earlier elections are planned and will be added later.
+A **portal** designed to grow into a multi-election archive: pick an election from the
+switcher in the header and the whole site re-renders for that vote. **For now only the
+7 June 2026 election is available**; earlier elections (starting with 2021) are planned
+and appear as *coming soon* until their data lands.
 
 For 2026, Civil Contract won a second outright majority and carried **all eleven
 provinces**. The atlas focuses on the geography of that result: the margin of victory and
 the party scores, province by province and community by community.
 
-**Live site:** `https://thepriben.github.io/armenia-election-atlas/`
+**Live site:** <https://hayntrutyun.info/> · mirror: `https://thepriben.github.io/armenia-election-atlas/`
 
 ## What's inside
 
+- **Election switcher** — choose the election in the header; the selection is part of the
+  shareable **URL**, so a link can pin both the election and the exact view.
 - **National result** — vote bars with the 4% / 8% thresholds and a 105-seat hemicycle.
 - **The map** — a D3 choropleth of the 11 *marzer* with four metrics: winner, **margin of
-  victory**, turnout, and **party share** (any of the 18 forces). Click a province for a
-  full breakdown; every view is encoded in the **URL** so you can share an exact state.
-- **Zoom** — a pan-and-zoom bubble map down to the **community** level (81 communities,
-  geocoded), the closest view to the polling places.
+  victory**, turnout, and **party share**. Click a province for a full breakdown; every
+  view is encoded in the **URL** so you can share an exact state.
+- **Zoom** — a pan-and-zoom bubble map down to the **community** level (geocoded), the
+  closest view to the polling places.
 - **Parties** — neutral, trilingual profiles cross-referenced to **Wikidata** + Wikipedia.
 - **Data** — sortable tables and downloads (**Parquet** / CSV / GeoJSON), derived from the
-  **2,005 polling stations** in the official CEC workbooks.
+  official CEC workbooks (2026: 2,005 polling stations, 18 forces, 81 communities).
 
 ## Single source of truth
 
@@ -68,9 +72,26 @@ data/
     raw/    original CEC workbooks
 ```
 
-`data/elections.json` lists every election and its `status` (`available` or
-upcoming). **For now only `2026` is `available`.** To add a past election, create
-`data/<year>/` with the same files and append an entry to `elections.json`.
+`data/elections.json` lists every election, its `date`, trilingual `name`, and
+`status` (`available` or `upcoming`). The header switcher and the site's default
+election are driven entirely by this file. **For now only `2026` is `available`.**
+
+## Add an election
+
+1. Find the election's `electionId` on `elections.am` and set it in `scripts/fetch_source.sh`.
+2. Generate the per-election dataset (everything lands under `data/<year>/`):
+
+   ```bash
+   export ELECTION=2021
+   bash   scripts/fetch_source.sh
+   python scripts/build_data.py
+   python scripts/geocode_communities.py
+   python scripts/enrich_links.py
+   ```
+
+3. Add the election to `data/elections.json` with `"status": "upcoming"`; flip it to
+   `"available"` once the data is in and verified. Set `"default"` if it should be the
+   election shown on first load.
 
 **Note on totals.** The per-station tabulation sums to ~0.05% below the certified national
 figures because it excludes the small electronic vote and three annulled stations. The

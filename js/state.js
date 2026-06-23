@@ -2,6 +2,7 @@
 // string, so any view can be copied and exchanged as a plain link.
 
 const DEFAULTS = {
+  election: "2026",    // selected election id (see data/elections.json)
   lang: "hy",
   view: "margin",      // winner | margin | turnout | party
   party: "civil_contract",

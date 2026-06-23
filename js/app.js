@@ -23,7 +23,10 @@ async function init() {
   initState();
   const elections = await loadElections();
   electionList = elections.elections || [];
-  electionId = elections.default;
+  const wanted = getState().election;
+  const valid = electionList.find((e) => e.id === wanted && e.status === "available");
+  electionId = valid ? wanted : elections.default;
+  setState({ election: electionId }, { silent: true });
   core = await loadCore(electionId);
   rewindGeo(core.geo);
   setLang(getState().lang);
@@ -51,6 +54,7 @@ async function init() {
   loadRepoStars();
 
   onState((s, patch) => {
+    if (patch.election && patch.election !== electionId) { selectElection(patch.election); return; }
     if (patch.lang) { setLang(s.lang); applyI18n(); buildElectionSwitch(); refreshAll(); }
     mapApi.render(s);
     renderLegend($("#mapLegend"), mapApi, s);
@@ -97,12 +101,48 @@ function buildElectionSwitch() {
   const order = [...electionList].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
   wrap.innerHTML = order.map((e) => {
     const available = e.status === "available";
-    const cls = available ? "epill active" : "epill soon";
-    const label = available ? e.id : `${e.id} · ${t("election_soon")}`;
-    const cur = available && e.id === electionId ? ' aria-current="true"' : "";
-    const dis = available ? "" : ' aria-disabled="true"';
-    return `<span class="${cls}"${cur}${dis}>${label}</span>`;
+    const current = available && e.id === electionId;
+    if (!available) return `<span class="epill soon" aria-disabled="true">${e.id} · ${t("election_soon")}</span>`;
+    const cls = current ? "epill active" : "epill avail";
+    const cur = current ? ' aria-current="true"' : "";
+    return `<button type="button" class="${cls}" data-e="${e.id}"${cur}>${e.id}</button>`;
   }).join("");
+  wrap.querySelectorAll("button[data-e]").forEach((b) =>
+    b.addEventListener("click", () => setState({ election: b.dataset.e }, { push: true })));
+}
+
+// Switch the displayed election: reload its data set and redraw everything.
+async function selectElection(id) {
+  const e = electionList.find((x) => x.id === id && x.status === "available");
+  if (!e) return;
+  electionId = id;
+  communities = null;
+  setState({ election: id, marz: "" }, { silent: true });
+  core = await loadCore(id);
+  rewindGeo(core.geo);
+  redrawForCore();
+}
+
+function redrawForCore() {
+  $("#choropleth").innerHTML = "";
+  $("#communityMap").innerHTML = "";
+  renderHeroMap();
+  renderStats();
+  voteBars($("#voteBars"), core.national);
+  hemicycle($("#hemicycle"), core.national);
+  nationalTable($("#nationalTable"), core.national);
+  setupMap();
+  buildMapControls();
+  buildCommunityMap();
+  buildPartyChips();
+  buildDataExplorer();
+  renderAbout();
+  buildElectionSwitch();
+  const s = getState();
+  mapApi.render(s);
+  renderLegend($("#mapLegend"), mapApi, s);
+  syncMapControls(s);
+  renderPartyDetail(s.party);
 }
 
 function buildLangSwitch() {
