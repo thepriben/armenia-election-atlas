@@ -516,10 +516,10 @@ function renderAbout() {
   const src = core.meta.source;
   const items = [
     { h: t("about_coverage"), b: t("about_coverage_body") },
-    { h: t("about_source"), b: `${src.authority}<br><a href="${src.results_by_station}" target="_blank" rel="noopener">results by polling station ↗</a> · <a href="${src.polling_station_registry}" target="_blank" rel="noopener">station registry ↗</a>` },
+    { h: t("about_source"), b: `${src.authority}<br><a href="${src.results_by_station}" target="_blank" rel="noopener">${t("about_source_results")} ↗</a> · <a href="${src.polling_station_registry}" target="_blank" rel="noopener">${t("about_source_registry")} ↗</a>` },
     { h: t("about_repro"), b: t("about_repro_body") },
     { h: t("about_boundaries"), b: src.boundaries },
-    { h: t("about_links"), b: "Parties, leaders and provinces are cross-referenced to Wikidata QIDs and Wikipedia articles in EN/HY/FR." },
+    { h: t("about_links"), b: t("about_links_body") },
   ];
   $("#aboutGrid").innerHTML = items.map((i) =>
     `<div class="ab"><h4>${i.h}</h4><p class="muted small">${i.b}</p></div>`).join("");
