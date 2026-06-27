@@ -166,6 +166,7 @@ async function loadYear(year) {
   state.comms = comms.communities || [];
   state.setts = Object.values(setts.by_community || {}).flat();
   parties = Object.fromEntries(prt.map((p) => [p.id, p]));
+  state.partyOrder = prt.map((p) => p.id);
   buildLegend();
 
   const marze = [...new Set(state.comms.map((c) => c.marz_en))].sort();
@@ -181,7 +182,15 @@ async function loadYear(year) {
 let legendCtl = null;
 function buildLegend() {
   if (legendCtl) map.removeControl(legendCtl);
-  const winners = [...new Set(state.comms.map((c) => c.winner))].filter((id) => parties[id]);
+  // Points are coloured by their own winner at BOTH levels, so a party can win a
+  // single settlement without carrying any whole community — include both here.
+  const won = new Set([
+    ...state.comms.map((c) => c.winner),
+    ...state.setts.map((s) => s.winner),
+  ]);
+  const order = state.partyOrder || [];
+  const winners = [...won].filter((id) => parties[id])
+    .sort((a, b) => order.indexOf(a) - order.indexOf(b));
   legendCtl = L.control({ position: "bottomleft" });
   legendCtl.onAdd = () => {
     const div = L.DomUtil.create("div", "legend");
