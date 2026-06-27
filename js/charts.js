@@ -19,9 +19,12 @@ export function voteBars(el, national) {
 
   const g = svg.selectAll("g.row").data(data).join("g").attr("class", "row")
     .attr("transform", (d, i) => `translate(0, ${m.t + i * rowH})`);
-  g.append("text").attr("x", m.l - 10).attr("y", rowH / 2).attr("dy", ".35em")
+  const labels = g.append("text").attr("x", m.l - 10).attr("y", rowH / 2).attr("dy", ".35em")
     .attr("text-anchor", "end").attr("fill", "var(--text)").attr("font-size", 11.5)
+    .style("cursor", "default")
     .text((d) => truncate(pickLangField(d, "name"), 22));
+  // Full party name on hover (the visible label is truncated to fit the gutter).
+  labels.append("title").text((d) => pickLangField(d, "name"));
   g.append("rect").attr("x", m.l).attr("y", 5).attr("height", rowH - 12).attr("rx", 4)
     .attr("fill", (d) => d.color).attr("width", 0)
     .transition().duration(700).attr("width", (d) => x(d.pct) - m.l);
